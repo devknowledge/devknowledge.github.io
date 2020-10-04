@@ -1,7 +1,49 @@
+@import 'mixin';
+
+:root {
+  --transition: all 0.2s ease-in;
+  --navbar-height: 6.5rem;
+  --main-width: 80%;
+  --main-max-width: 1024px;
+  @media screen and (max-width: 480px) {
+    --font-size: 45%;
+  }
+
+  @media screen and (min-width: 481px) and (max-width: 720px) {
+    --font-size: 52%;
+  }
+  @media screen and (min-width: 721px) {
+    --font-size: 62.5%;
+  }
+}
+
+html {
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 *,
 *::after,
-:after {
+*::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-size: 1.6rem;
+}
+
+main {
+  @include site-width;
+  padding-top: var(--navbar-height);
+}
+
+a {
+  text-decoration: none;
+}
+
+code {
+  font-family: 'Roboto Mono', monospace !important;
 }

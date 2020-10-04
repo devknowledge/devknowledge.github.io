@@ -1,0 +1,11 @@
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin site-width {
+  width: var(--main-width);
+  max-width: var(--main-max-width);
+  margin: 0 auto;
+}
