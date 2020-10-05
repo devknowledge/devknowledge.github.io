@@ -4,6 +4,8 @@ title: 'Rotate Nginx logs by date'
 date: 2020-10-04 16:06:43 +0200
 tags: nginx
 categories: nginx
+author: Ahmed HENTETI
+author_profile: https://ahenteti.github.io/
 ---
 
 Here is the technique that I have used to rotate Nginx logs by date :

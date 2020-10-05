@@ -8,9 +8,9 @@ layout: default
     <div class="post-summary">
       <h2 class="post-summary__title">{{ post.title }}</h2>
       <p class="post-summary__extract">{{ post.excerpt }}</p>
-      <div class="post-summary__date">
-        <span class="iconify" data-icon="zmdi:calendar-alt" data-inline="false"></span>
-        <time>{{ post.date | date_to_string }}</time>
+      <div class="post-summary__additional-info">
+        <span>{{ post.date | date_to_string }}</span>
+        <object><a target="_blank" href="{{ post.author_profile }}">{{ post.author }}</a></object>
       </div>
     </div>
   </a>

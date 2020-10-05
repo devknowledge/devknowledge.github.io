@@ -1,6 +1,7 @@
 @import 'mixin';
 
 .post {
+  box-shadow: var(--box-shadow);
   max-width: 85rem;
   margin: 4rem auto;
   background-color: var(--post-background-color);
@@ -37,4 +38,28 @@
     color: var(--post-date-color);
     font-size: 1.4rem;
   }
+}
+
+.post p {
+  margin-bottom: 1.6rem;
+}
+
+.post code {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: var(--code-background-color);
+  border-radius: 0.3rem;
+}
+
+.post pre {
+  background-color: var(--code-background-color);
+  padding: 1.6rem;
+  line-height: 1.45;
+  border-radius: 0.3rem;
+  margin-bottom: 1.6rem;
+}
+
+.post pre code {
+  padding: 0;
 }

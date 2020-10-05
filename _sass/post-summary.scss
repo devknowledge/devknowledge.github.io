@@ -12,8 +12,9 @@
 }
 
 .post-summary {
+  box-shadow: var(--box-shadow);
   background-color: var(--post-summary-background-color);
-  padding: 2.5rem;
+  padding: 3.3rem;
 
   & .post-summary__title {
     color: var(--post-summary-title-color);
@@ -22,25 +23,28 @@
   }
 
   & .post-summary__extract + * {
-    padding-top: 0.7rem;
+    padding-top: 2rem;
     color: var(--post-summary-extract-color);
     font-size: 1.35rem;
 
     @include overflow-ellipsis;
   }
 
-  & .post-summary__date {
-    padding-top: 0.7rem;
-    color: var(--post-summary-date-color);
-    display: flex;
-    align-items: center;
-
-    & .iconify {
-      margin-right: 1rem;
+  & .post-summary__additional-info {
+    & span,
+    & a {
+      color: var(--post-summary-additional-info-color);
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    & span::after {
+      content: '|';
+      display: inline;
+      padding: 0 0.5rem 0 1rem;
     }
 
-    & time {
-      font-size: 1.35rem;
+    & span:last-child::after {
+      display: none;
     }
   }
 }
