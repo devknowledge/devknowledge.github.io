@@ -9,3 +9,9 @@
   max-width: var(--main-max-width);
   margin: 0 auto;
 }
+
+@mixin overflow-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

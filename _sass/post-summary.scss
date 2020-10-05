@@ -1,0 +1,46 @@
+@import 'mixin';
+
+.post-summary-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  padding: 2rem 0;
+}
+
+.post-summary-list > a {
+  min-width: 0;
+}
+
+.post-summary {
+  background-color: var(--post-summary-background-color);
+  padding: 2.5rem;
+
+  & .post-summary__title {
+    color: var(--post-summary-title-color);
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  & .post-summary__extract + * {
+    padding-top: 0.7rem;
+    color: var(--post-summary-extract-color);
+    font-size: 1.35rem;
+
+    @include overflow-ellipsis;
+  }
+
+  & .post-summary__date {
+    padding-top: 0.7rem;
+    color: var(--post-summary-date-color);
+    display: flex;
+    align-items: center;
+
+    & .iconify {
+      margin-right: 1rem;
+    }
+
+    & time {
+      font-size: 1.35rem;
+    }
+  }
+}

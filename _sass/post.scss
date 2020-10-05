@@ -1,0 +1,8 @@
+@import 'mixin';
+
+.post {
+  max-width: 80rem;
+  margin: 4rem auto;
+  background-color: var(--post-background-color);
+  padding: 4rem;
+}
