@@ -1,8 +1,40 @@
 @import 'mixin';
 
 .post {
-  max-width: 80rem;
+  max-width: 85rem;
   margin: 4rem auto;
   background-color: var(--post-background-color);
-  padding: 4rem;
+  padding: 8rem;
+
+  & .post__overview::after {
+    content: '';
+    display: block;
+    height: 0.3rem;
+    width: 100%;
+    background: var(--post-title-border-color);
+    margin: 3rem 0 4rem;
+  }
+
+  & .post__title {
+    color: var(--post-title-color);
+    font-size: 10rem;
+    font-weight: 100;
+    line-height: 1;
+
+    &::first-line {
+      font-weight: 500;
+    }
+  }
+
+  & .post__additional-info {
+    margin-top: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  & .post__date time {
+    color: var(--post-date-color);
+    font-size: 1.4rem;
+  }
 }

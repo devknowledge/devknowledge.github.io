@@ -2,6 +2,7 @@
 layout: post
 title: 'Rotate Nginx logs by date'
 date: 2020-10-04 16:06:43 +0200
+tags: nginx
 categories: nginx
 ---
 

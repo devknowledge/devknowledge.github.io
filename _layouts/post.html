@@ -2,4 +2,19 @@
 layout: default
 ---
 
-<div class="post markdown-body">{{ content }}</div>
+<div class="post">
+  <div class="post__overview">
+    <h1 class="post__title">{{ page.title }}</h1>
+    <div class="post__additional-info">
+      <div class="post__tags">
+        {% for tag in page.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      <div class="post__date">
+        <time>{{ page.date | date: '%B %d, %Y' }}</time>
+      </div>
+    </div>
+  </div>
+  <div class="post__body markdown-body">{{ content }}</div>
+</div>

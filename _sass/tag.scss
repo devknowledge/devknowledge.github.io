@@ -1,0 +1,10 @@
+@import 'mixin';
+
+.tag {
+  padding: 0.5rem 0.8rem;
+  font-size: 1.5rem;
+  color: var(--tag-color);
+  background-color: var(--tag-background-color);
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
