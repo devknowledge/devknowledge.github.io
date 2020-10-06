@@ -1,4 +1,5 @@
 ---
+permalink: shell/my-laptop-bashrc-file
 layout: post
 title: 'My laptop .bachrc file'
 tags: shell
