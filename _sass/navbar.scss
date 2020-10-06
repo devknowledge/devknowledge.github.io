@@ -5,6 +5,7 @@ nav {
   width: 100%;
   background: var(--navbar-background-color);
   box-shadow: var(--box-shadow);
+  z-index: 999;
 }
 
 nav .container {

@@ -1,9 +1,13 @@
 body.light {
+  --primary-color: #078eed;
+  --secondary-color: #f57173;
+
   --text-color-01: #1e1e1e;
   --text-color-02: #3b3b3b;
   --text-color-03: #555555;
   --text-color-04: #767676;
   --text-color-05: #939393;
+  --text-color-06: #ffffff;
   --background-color-01: #ffffff;
   --background-color-02: #fafafa;
   --background-color-03: #cecece;
@@ -19,10 +23,16 @@ body.light {
   --post-title-color: var(--text-color-02);
   --post-title-border-color: var(--border-color);
   --post-date-color: var(--text-color-04);
+
   --post-summary-background-color: var(--background-color-01);
+  --post-summary-category-color: var(--text-color-06);
+  --post-summary-category-background-color: var(--secondary-color);
+  --post-summary-date-color: var(--text-color-06);
+  --post-summary-date-background-color: var(--secondary-color);
   --post-summary-title-color: var(--text-color-03);
   --post-summary-extract-color: var(--text-color-04);
-  --post-summary-additional-info-color: var(--text-color-04);
+  --post-summary-author-color: var(--primary-color);
+  --post-summary-author-icon-color: var(--text-color-04);
 
   --post-background-color: var(--background-color-01);
   --tag-color: var(--text-color-04);

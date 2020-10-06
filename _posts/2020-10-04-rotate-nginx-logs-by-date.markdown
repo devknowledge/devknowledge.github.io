@@ -3,12 +3,13 @@ layout: post
 title: 'Rotate Nginx logs by date'
 date: 2020-10-04 16:06:43 +0200
 tags: nginx
-categories: nginx
+category: nginx
 author: Ahmed HENTETI
 author_profile: https://ahenteti.github.io/
+banner: https://images.unsplash.com/photo-1572061487787-3cd4292f12bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80
 ---
 
-Here is the technique that I have used to rotate Nginx logs by date :
+In this post, I'm going to share with you the technique that I have used to rotate Nginx logs by date.
 
 Firstly, I have defined a custom variable based on the `$time_iso8601` Nginx variable
 in the `conf/nginx.conf` file
