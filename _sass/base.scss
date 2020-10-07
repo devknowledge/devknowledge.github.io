@@ -11,6 +11,9 @@
     --main-width: 90%;
     --font-size: 45%;
     --post-summary-columns: 1;
+    --post-padding: 3rem;
+    --post-margin: 2rem auto;
+    --post-title-font-size: 6rem;
   }
 
   @media screen and (min-width: 376px) and (max-width: 768px) {
@@ -19,6 +22,9 @@
     --main-width: 85%;
     --font-size: 52%;
     --post-summary-columns: 2;
+    --post-padding: 5rem;
+    --post-margin: 3rem auto;
+    --post-title-font-size: 8rem;
   }
   @media screen and (min-width: 769px) {
     --post-summary-list-padding: 6rem 0;
@@ -26,6 +32,9 @@
     --main-width: 80%;
     --font-size: 62.5%;
     --post-summary-columns: 3;
+    --post-padding: 8rem;
+    --post-margin: 4rem auto;
+    --post-title-font-size: 10rem;
   }
 }
 
@@ -46,6 +55,7 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-size: 1.6rem;
 }
 
 main {
