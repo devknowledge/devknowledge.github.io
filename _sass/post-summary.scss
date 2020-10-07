@@ -8,6 +8,7 @@
 }
 
 .post-summary {
+  box-shadow: var(--box-shadow);
   min-width: 0;
   background-color: var(--post-summary-background-color);
   border-radius: 0.8rem;
@@ -34,7 +35,6 @@
     text-transform: uppercase;
     font-size: 1.4rem;
     font-weight: bold;
-    border-top-right-radius: 0.3rem;
   }
 
   & .post-summary__date {
@@ -72,6 +72,8 @@
 
   & .post-summary__title {
     color: var(--post-summary-title-color);
+    transition: var(--transition);
+    transition-property: color;
     font-size: 2rem;
     font-weight: bold;
   }
@@ -104,5 +106,11 @@
     color: var(--post-summary-author-color);
     font-size: 1.35rem;
     font-weight: bold;
+  }
+}
+
+.post-summary:hover {
+  & .post-summary__title {
+    color: var(--post-summary-title-color-on-hover);
   }
 }

@@ -20,6 +20,7 @@ body.light {
   --body-background-color: var(--background-color-02);
   --navbar-background-color: var(--background-color-01);
   --logo-text-color: var(--text-color-03);
+  --logo-text-color-on-hover: var(--primary-color);
   --post-title-color: var(--text-color-02);
   --post-title-border-color: var(--border-color);
   --post-date-color: var(--text-color-04);
@@ -33,6 +34,7 @@ body.light {
   --post-summary-extract-color: var(--text-color-04);
   --post-summary-author-color: var(--primary-color);
   --post-summary-author-icon-color: var(--text-color-04);
+  --post-summary-title-color-on-hover: var(--primary-color);
 
   --post-background-color: var(--background-color-01);
   --tag-color: var(--text-color-04);

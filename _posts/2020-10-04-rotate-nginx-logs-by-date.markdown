@@ -59,5 +59,5 @@ I hope it was useful :)
 
 ## References
 
-- [Logging milliseconds in ISO8601 format](https://thatsamguy.com/nginx-iso8601-time-format/)
-- [How To Configure Logging and Log Rotation in Nginx](https://www.digitalocean.com/community/tutorials/how-to-configure-logging-and-log-rotation-in-nginx-on-an-ubuntu-vps)
+- [Logging milliseconds in ISO8601 format](https://thatsamguy.com/nginx-iso8601-time-format/){:target="\_blank"}
+- [How To Configure Logging and Log Rotation in Nginx](https://www.digitalocean.com/community/tutorials/how-to-configure-logging-and-log-rotation-in-nginx-on-an-ubuntu-vps){:target="\_blank"}

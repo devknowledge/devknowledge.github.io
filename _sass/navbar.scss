@@ -33,3 +33,7 @@ nav .container .left span {
   padding-left: 1rem;
   color: var(--logo-text-color);
 }
+
+nav .container .left:hover span {
+  color: var(--logo-text-color-on-hover);
+}
