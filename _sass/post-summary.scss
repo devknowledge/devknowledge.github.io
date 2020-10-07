@@ -2,9 +2,9 @@
 
 .post-summary-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
-  padding: 6rem 0;
+  grid-template-columns: repeat(var(--post-summary-columns), 1fr);
+  grid-gap: var(--post-summary-grid-gap);
+  padding: var(--post-summary-list-padding);
 }
 
 .post-summary {
