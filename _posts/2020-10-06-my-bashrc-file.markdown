@@ -1,7 +1,7 @@
 ---
-permalink: shell/my-laptop-bashrc-file
+permalink: shell/my-bashrc-file
 layout: post
-title: 'My laptop .bachrc file'
+title: 'My .bachrc file'
 tags: shell
 category: shell
 author: Ahmed HENTETI
@@ -26,8 +26,12 @@ PS1="$PS1"'\n'
 PS1="$PS1"'\[\033[1;35m\]'
 PS1="$PS1"'> '
 PS1="$PS1"'\[\033[0m\]'
+
+alias ll='ls -alF'
+alias gs='git status'
+alias gl='git log --oneline'
+alias ga='git commit -a --amend --no-edit'
+alias gp='git pull --rebase && git push'
+alias vim-bashrc='vim ~/.bashrc'
+alias source-bashrc='source ~/.bashrc'
 ```
-
-Here is the screenshot of my terminal
-
-![terminal output](/assets/my-laptop-bashrc-file__terminal-screenshot.png)

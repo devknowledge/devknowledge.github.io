@@ -10,8 +10,8 @@ body.light {
   --text-color-06: #ffffff;
   --background-color-01: #ffffff;
   --background-color-02: #fafafa;
-  --background-color-03: #cecece;
-  --background-color-04: #eeeeee;
+  --background-color-03: #eeeeee;
+  --background-color-04: #cecece;
   --background-color-05: #b1b1b1;
   --border-color: #eee;
   --box-shadow: rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -36,6 +36,6 @@ body.light {
 
   --post-background-color: var(--background-color-01);
   --tag-color: var(--text-color-04);
-  --tag-background-color: var(--background-color-04);
+  --tag-background-color: var(--background-color-03);
   --code-background-color: #f6f8fa;
 }
