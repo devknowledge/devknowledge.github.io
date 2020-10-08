@@ -8,6 +8,7 @@
     --post-padding: 3rem;
     --post-margin: 2rem auto;
     --post-title-font-size: 6rem;
+    --post-additional-info-margin-top: 3rem;
   }
 
   @media screen and (min-width: 376px) and (max-width: 768px) {
@@ -19,6 +20,7 @@
     --post-padding: 5rem;
     --post-margin: 3rem auto;
     --post-title-font-size: 8rem;
+    --post-additional-info-margin-top: 5rem;
   }
   @media screen and (min-width: 769px) {
     --post-summary-list-padding: 6rem 0;
@@ -29,5 +31,6 @@
     --post-padding: 8rem;
     --post-margin: 4rem auto;
     --post-title-font-size: 10rem;
+    --post-additional-info-margin-top: 7rem;
   }
 }
