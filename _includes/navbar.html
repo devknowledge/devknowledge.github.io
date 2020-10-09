@@ -6,9 +6,60 @@
     </a>
   </div>
   <div class="right">
-    <div class="dropdown-menu">
-      <span class="dropdown-menu-icon iconify" data-icon="openmoji:hamburger-menu" data-inline="false"></span>
-      <div class="dropdown-menu-content"></div>
-    </div>
+    <span class="iconify" data-icon="ic:outline-search" data-inline="false"></span>
+    <span id="ChangeToDarkThemeIcon" class="change-theme-icon user-action">
+      <span class="iconify" data-icon="bx:bx-moon" data-inline="false"></span>
+    </span>
+    <span id="ChangeToLightThemeIcon" class="change-theme-icon user-action">
+      <span class="iconify" data-icon="heroicons-solid:sun" data-inline="false"></span>
+    </span>
   </div>
 </nav>
+
+<script>
+  (function () {
+    const lightTheme = 'light';
+    const darkTheme = 'dark';
+    const currentThemeKey = 'CURRENT_THEME';
+    const changeToDarkThemeIcon = document.getElementById('ChangeToDarkThemeIcon');
+    const changeToLightThemeIcon = document.getElementById('ChangeToLightThemeIcon');
+    const body = document.querySelector('body');
+
+    initCurrentTheme();
+    changeToDarkThemeIcon.addEventListener('click', toggleTheme);
+    changeToLightThemeIcon.addEventListener('click', toggleTheme);
+    console.log(changeToDarkThemeIcon);
+
+    function initCurrentTheme() {
+      const currentTheme = localStorage.getItem(currentThemeKey) || lightTheme;
+      body.classList.remove(lightTheme, darkTheme);
+      body.classList.add(currentTheme);
+      localStorage.setItem(currentThemeKey, currentTheme);
+      if (currentTheme === lightTheme) {
+        changeToDarkThemeIcon.style.display = 'flex';
+      } else {
+        changeToLightThemeIcon.style.display = 'flex';
+      }
+    }
+
+    function toggleTheme() {
+      console.log('toggleTheme');
+      const currentTheme = localStorage.getItem(currentThemeKey);
+      if (currentTheme === lightTheme) {
+        body.classList.remove(lightTheme);
+        body.classList.remove(darkTheme);
+        body.classList.add(darkTheme);
+        localStorage.setItem(currentThemeKey, darkTheme);
+        changeToDarkThemeIcon.style.display = 'none';
+        changeToLightThemeIcon.style.display = 'flex';
+      } else {
+        body.classList.remove(lightTheme);
+        body.classList.remove(darkTheme);
+        body.classList.add(lightTheme);
+        localStorage.setItem(currentThemeKey, lightTheme);
+        changeToDarkThemeIcon.style.display = 'flex';
+        changeToLightThemeIcon.style.display = 'none';
+      }
+    }
+  })();
+</script>

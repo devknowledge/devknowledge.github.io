@@ -11,8 +11,6 @@ body.light {
   --background-color-01: #ffffff;
   --background-color-02: #fafafa;
   --background-color-03: #eeeeee;
-  --background-color-04: #cecece;
-  --background-color-05: #b1b1b1;
   --border-color: #eee;
   --box-shadow-01: 0 2px 5px 0 rgba(74, 74, 74, 0.2);
   --box-shadow-02: 0 0 5px 2px rgba(74, 74, 74, 0.2);
@@ -40,5 +38,48 @@ body.light {
   --post-background-color: var(--background-color-01);
   --tag-color: var(--text-color-04);
   --tag-background-color: var(--background-color-03);
-  --code-background-color: #f6f8fa;
+  --icon-color: var(--text-color-02);
+}
+
+body.dark {
+  --primary-color: #078eed;
+  --secondary-color: #f57173;
+
+  --text-color-01: #fafafa;
+  --text-color-02: #eeeeee;
+  --text-color-03: #cecece;
+  --text-color-04: #b1b1b1;
+  --text-color-05: #a0a0a0;
+  --text-color-06: #9b9a9a;
+  --background-color-01: #1C1F23;
+  --background-color-02: #262A2D;
+  --background-color-03: #383838;
+  --border-color: transparent;
+  --box-shadow-01: none;
+  --box-shadow-02: none
+
+  --body-color: var(--text-color-03);
+  --body-background-color: var(--background-color-01);
+  --navbar-background-color: var(--background-color-01);
+  --logo-text-color: var(--text-color-03);
+  --logo-text-color-on-hover: var(--primary-color);
+  --post-title-color: var(--text-color-02);
+  --post-title-border-color: var(--border-color);
+  --post-date-color: var(--text-color-04);
+
+  --post-summary-background-color: var(--background-color-02);
+  --post-summary-category-color: var(--text-color-01);
+  --post-summary-category-background-color: var(--secondary-color);
+  --post-summary-date-color: var(--text-color-01);
+  --post-summary-date-background-color: var(--secondary-color);
+  --post-summary-title-color: var(--text-color-03);
+  --post-summary-extract-color: var(--text-color-04);
+  --post-summary-author-color: var(--primary-color);
+  --post-summary-author-icon-color: var(--text-color-04);
+  --post-summary-title-color-on-hover: var(--primary-color);
+
+  --post-background-color: var(--background-color-02);
+  --tag-color: var(--text-color-04);
+  --tag-background-color: var(--background-color-03);
+  --icon-color: var(--text-color-02);
 }

@@ -42,25 +42,13 @@ nav .right {
   align-items: center;
 }
 
-nav .right .dropdown-menu {
-  position: relative;
-
-  & .dropdown-menu-icon {
-    font-size: 4.5rem;
+nav .right {
+  & .iconify {
+    font-size: 2.75rem;
+    margin-left: 1rem;
   }
 
-  & .dropdown-menu-content {
+  & .change-theme-icon {
     display: none;
-    visibility: hidden;
-    position: absolute;
-    transition: var(--transition);
-    transition-property: visibility;
-  }
-  & .dropdown-menu-content span {
-    padding: 0.8rem 1.6rem;
-  }
-
-  &:hover .dropdown-menu-content {
-    visibility: visible;
   }
 }
