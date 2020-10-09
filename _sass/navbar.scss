@@ -3,49 +3,46 @@
 nav {
   position: fixed;
   width: 100%;
+  padding: 0 2rem;
   background: var(--navbar-background-color);
   box-shadow: var(--box-shadow-01);
   z-index: 999;
-}
-
-nav .container {
   height: var(--navbar-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @include site-width;
 }
 
-nav .container .left {
+nav .left {
   display: flex;
 }
 
-nav .container .left a {
+nav .left a {
   display: flex;
   align-items: center;
 }
 
-nav .container .left img {
+nav .left img {
   height: 2.5rem;
 }
 
-nav .container .left span {
+nav .left span {
   font-size: 1.8rem;
   font-weight: bold;
   padding-left: 1rem;
   color: var(--logo-text-color);
 }
 
-nav .container .left:hover span {
+nav .left:hover span {
   color: var(--logo-text-color-on-hover);
 }
 
-nav .container .right {
+nav .right {
   display: flex;
   align-items: center;
 }
 
-nav .container .right .dropdown-menu {
+nav .right .dropdown-menu {
   position: relative;
 
   & .dropdown-menu-icon {
