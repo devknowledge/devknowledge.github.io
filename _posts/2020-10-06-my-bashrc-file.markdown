@@ -2,8 +2,8 @@
 permalink: shell/my-bashrc-file
 layout: post
 title: 'My .bachrc file'
-tags: shell
-category: shell
+tags: linux shell
+category: linux
 author: Ahmed HENTETI
 author_profile: https://ahenteti.github.io/
 banner: https://images.unsplash.com/photo-1597775861008-13fa328f39c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1166&q=80

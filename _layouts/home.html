@@ -15,8 +15,10 @@ layout: default
         </div>
       </div>
       <div class="post-summary__bottom-section">
-        <h2 class="post-summary__title">{{ post.title }}</h2>
-        <p class="post-summary__extract">{{ post.excerpt }}</p>
+        <div>
+          <h2 class="post-summary__title">{{ post.title }}</h2>
+          <p class="post-summary__extract">{{ post.excerpt }}</p>
+        </div>
         <div class="post-summary__author-wrapper">
           <span class="post-summary__author-icon iconify" data-icon="mdi:account-edit" data-inline="false"></span>
           <object><a target="_blank" class="post-summary__author" href="{{ post.author_profile }}">{{ post.author }}</a></object>
