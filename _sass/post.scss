@@ -1,7 +1,7 @@
 @import 'mixin';
 
 .post {
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-01);
   max-width: 85rem;
   margin: var(--post-margin);
   background-color: var(--post-background-color);

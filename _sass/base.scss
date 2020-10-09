@@ -1,7 +1,7 @@
 @import 'mixin';
 
 :root {
-  --transition: all 0.15s ease-in;
+  --transition: all 0.15s ease-in-out;
   --navbar-height: 6.5rem;
   --main-max-width: 1024px;
 }

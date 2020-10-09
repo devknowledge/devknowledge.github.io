@@ -8,15 +8,16 @@
 }
 
 .post-summary {
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-01);
   min-width: 0;
   background-color: var(--post-summary-background-color);
-  border-radius: 0.8rem;
+  border-radius: 0.4rem;
   overflow: hidden;
   transition: var(--transition);
-  transition-property: transform;
+  transition-property: transform box-shadow;
 
   &:hover {
+    box-shadow: var(--box-shadow-02);
     transform: scale(1.01);
   }
 
