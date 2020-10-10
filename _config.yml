@@ -31,3 +31,7 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+assets:
+  sources:
+    - _assets/
