@@ -28,7 +28,7 @@
     --welcome-message-margin-bottom: 5rem;
     --welcome-message-logo-size: 8rem;
   }
-  @media screen and (min-width: 769px) and (max-width: 1024px) {
+  @media screen and (min-width: 769px) and (max-width: 1920px) {
     --post-summary-list-padding: 0 0 6rem;
     --post-summary-grid-gap: 2rem;
     --main-width: 85%;
@@ -43,13 +43,13 @@
     --welcome-message-logo-size: 10rem;
   }
 
-  @media screen and (min-width: 1025px) {
+  @media screen and (min-width: 1921px) {
     --post-summary-list-padding: 0 0 6rem;
     --post-summary-grid-gap: 2rem;
     --main-width: 80%;
-    --main-max-width: 1520px;
+    --main-max-width: 2000px;
     --font-size: 72.5%;
-    --post-summary-columns: 3;
+    --post-summary-columns: 4;
     --post-padding: 8rem;
     --post-margin: 4rem auto;
     --post-title-font-size: 10rem;
