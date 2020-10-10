@@ -3,7 +3,6 @@
 :root {
   --transition: all 0.15s ease-in-out;
   --navbar-height: 6.5rem;
-  --main-max-width: 1024px;
 }
 
 html {
@@ -53,4 +52,8 @@ code {
   color: var(--icon-color);
   transition: var(--transition);
   transition-property: color;
+}
+
+.primary-color {
+  color: var(--primary-color);
 }

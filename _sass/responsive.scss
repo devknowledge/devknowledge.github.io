@@ -1,6 +1,6 @@
 :root {
   @media screen and (max-width: 375px) {
-    --post-summary-list-padding: 3rem 0;
+    --post-summary-list-padding: 0 0 3rem;
     --post-summary-grid-gap: 3rem;
     --main-width: 90%;
     --font-size: 45%;
@@ -9,10 +9,13 @@
     --post-margin: 2rem auto;
     --post-title-font-size: 6rem;
     --post-additional-info-margin-top: 3rem;
+    --welcome-message-margin-top: 3rem;
+    --welcome-message-margin-bottom: 3rem;
+    --welcome-message-logo-size: 5rem;
   }
 
   @media screen and (min-width: 376px) and (max-width: 768px) {
-    --post-summary-list-padding: 4rem 0;
+    --post-summary-list-padding: 0 0 4rem;
     --post-summary-grid-gap: 2rem;
     --main-width: 85%;
     --font-size: 52%;
@@ -21,16 +24,38 @@
     --post-margin: 3rem auto;
     --post-title-font-size: 8rem;
     --post-additional-info-margin-top: 5rem;
+    --welcome-message-margin-top: 5rem;
+    --welcome-message-margin-bottom: 5rem;
+    --welcome-message-logo-size: 8rem;
   }
-  @media screen and (min-width: 769px) {
-    --post-summary-list-padding: 6rem 0;
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    --post-summary-list-padding: 0 0 6rem;
     --post-summary-grid-gap: 2rem;
-    --main-width: 80%;
+    --main-width: 85%;
     --font-size: 62.5%;
     --post-summary-columns: 3;
     --post-padding: 8rem;
     --post-margin: 4rem auto;
     --post-title-font-size: 10rem;
     --post-additional-info-margin-top: 7rem;
+    --welcome-message-margin-top: 7rem;
+    --welcome-message-margin-bottom: 7rem;
+    --welcome-message-logo-size: 10rem;
+  }
+
+  @media screen and (min-width: 1025px) {
+    --post-summary-list-padding: 0 0 6rem;
+    --post-summary-grid-gap: 2rem;
+    --main-width: 80%;
+    --main-max-width: 1520px;
+    --font-size: 72.5%;
+    --post-summary-columns: 3;
+    --post-padding: 8rem;
+    --post-margin: 4rem auto;
+    --post-title-font-size: 10rem;
+    --post-additional-info-margin-top: 7rem;
+    --welcome-message-margin-top: 7rem;
+    --welcome-message-margin-bottom: 7rem;
+    --welcome-message-logo-size: 10rem;
   }
 }
