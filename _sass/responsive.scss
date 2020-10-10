@@ -10,7 +10,7 @@
     --post-title-font-size: 6rem;
     --post-additional-info-margin-top: 3rem;
     --welcome-message-margin-top: 1.5rem;
-    --welcome-message-margin-bottom: 3rem;
+    --welcome-message-margin-bottom: 5rem;
     --welcome-message-logo-size: 5rem;
   }
 
@@ -25,13 +25,13 @@
     --post-title-font-size: 8rem;
     --post-additional-info-margin-top: 5rem;
     --welcome-message-margin-top: 3rem;
-    --welcome-message-margin-bottom: 5rem;
+    --welcome-message-margin-bottom: 8rem;
     --welcome-message-logo-size: 8rem;
   }
   @media screen and (min-width: 769px) and (max-width: 1920px) {
     --post-summary-list-padding: 0 0 6rem;
     --post-summary-grid-gap: 2rem;
-    --main-width: 85%;
+    --main-width: 80%;
     --font-size: 62.5%;
     --post-summary-columns: 3;
     --post-padding: 8rem;
@@ -39,7 +39,7 @@
     --post-title-font-size: 10rem;
     --post-additional-info-margin-top: 7rem;
     --welcome-message-margin-top: 5rem;
-    --welcome-message-margin-bottom: 7rem;
+    --welcome-message-margin-bottom: 10rem;
     --welcome-message-logo-size: 10rem;
   }
 
@@ -55,7 +55,7 @@
     --post-title-font-size: 10rem;
     --post-additional-info-margin-top: 7rem;
     --welcome-message-margin-top: 5rem;
-    --welcome-message-margin-bottom: 7rem;
+    --welcome-message-margin-bottom: 10rem;
     --welcome-message-logo-size: 10rem;
   }
 }
