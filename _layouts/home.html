@@ -3,10 +3,10 @@ layout: default
 ---
 
 <div class="welcome-message">
-  <span class="first-message"
-    >Welcome to <img src="{{site.baseurl}}/assets/img/logo.png" alt="logo" /> <span class="logo-name">DEV Knowledge</span> website</span
-  >
-  <span class="second-message">We hope you find our contents useful :)</span>
+  <span class="first-message">Welcome to <span class="site-name">DEV Knowledge</span></span>
+  <span class="second-message">We are happy to have you on board and hope you find our contents useful :)</span>
 </div>
+
+{% include post-search-input.html %}
 
 <div class="post-summary-list">{% for post in site.posts %} {% include post-summary.html post="post" %} {% endfor %}</div>

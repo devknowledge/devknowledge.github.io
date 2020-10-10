@@ -11,7 +11,7 @@ body.light {
   --background-color-01: #ffffff;
   --background-color-02: #fffffc;
   --background-color-03: #fafafa;
-  --border-color: #eee;
+  --border-color: #dfe1e5;
   --box-shadow-01: 0 2px 5px 0 rgba(74, 74, 74, 0.2);
   --box-shadow-02: 0 0 5px 2px rgba(74, 74, 74, 0.2);
 
@@ -43,7 +43,11 @@ body.light {
 
   --tag-color: var(--text-color-04);
   --tag-background-color: var(--background-color-03);
-  --icon-color: var(--text-color-02);
+  --icon-color: var(--text-color-03);
+
+  --input-background-color: var(--background-color-01);
+  --input-border-color: var(--border-color);
+  --input-color: var(--body-color);
 }
 
 body.dark {
@@ -91,5 +95,9 @@ body.dark {
 
   --tag-color: var(--text-color-04);
   --tag-background-color: var(--background-color-03);
-  --icon-color: var(--text-color-02);
+  --icon-color: var(--text-color-03);
+
+  --input-background-color: var(--background-color-02);
+  --input-border-color: transparent;
+  --input-color: var(--body-color);
 }

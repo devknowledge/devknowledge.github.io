@@ -32,13 +32,13 @@ nav .left img {
 }
 
 nav .left span {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: bold;
   padding-left: 1rem;
   color: var(--logo-text-color);
   transition: var(--transition);
   transition-property: color;
-  font-family: cursive;
+  // font-family: cursive;
 }
 
 nav .left:hover span {

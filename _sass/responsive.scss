@@ -1,6 +1,6 @@
 :root {
   @media screen and (max-width: 375px) {
-    --post-summary-list-padding: 0 0 3rem;
+    --post-summary-list-padding: 3rem 0;
     --post-summary-grid-gap: 3rem;
     --main-width: 90%;
     --font-size: 45%;
@@ -10,12 +10,11 @@
     --post-title-font-size: 6rem;
     --post-additional-info-margin-top: 3rem;
     --welcome-message-margin-top: 1.5rem;
-    --welcome-message-margin-bottom: 5rem;
-    --welcome-message-logo-size: 5rem;
+    --search-input-margin-top: 2rem;
   }
 
   @media screen and (min-width: 376px) and (max-width: 768px) {
-    --post-summary-list-padding: 0 0 4rem;
+    --post-summary-list-padding: 4rem 0;
     --post-summary-grid-gap: 2rem;
     --main-width: 85%;
     --font-size: 52%;
@@ -25,11 +24,10 @@
     --post-title-font-size: 8rem;
     --post-additional-info-margin-top: 5rem;
     --welcome-message-margin-top: 3rem;
-    --welcome-message-margin-bottom: 8rem;
-    --welcome-message-logo-size: 8rem;
+    --search-input-margin-top: 3rem;
   }
   @media screen and (min-width: 769px) and (max-width: 1920px) {
-    --post-summary-list-padding: 0 0 6rem;
+    --post-summary-list-padding: 8rem 0;
     --post-summary-grid-gap: 2rem;
     --main-width: 80%;
     --font-size: 62.5%;
@@ -39,12 +37,11 @@
     --post-title-font-size: 10rem;
     --post-additional-info-margin-top: 7rem;
     --welcome-message-margin-top: 5rem;
-    --welcome-message-margin-bottom: 10rem;
-    --welcome-message-logo-size: 10rem;
+    --search-input-margin-top: 5rem;
   }
 
   @media screen and (min-width: 1921px) {
-    --post-summary-list-padding: 0 0 6rem;
+    --post-summary-list-padding: 10rem 0;
     --post-summary-grid-gap: 2rem;
     --main-width: 80%;
     --main-max-width: 2000px;
@@ -55,7 +52,6 @@
     --post-title-font-size: 10rem;
     --post-additional-info-margin-top: 7rem;
     --welcome-message-margin-top: 5rem;
-    --welcome-message-margin-bottom: 10rem;
-    --welcome-message-logo-size: 10rem;
+    --search-input-margin-top: 5rem;
   }
 }
