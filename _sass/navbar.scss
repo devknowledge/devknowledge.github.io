@@ -4,13 +4,18 @@ nav {
   position: fixed;
   width: 100%;
   padding: 0 2rem;
-  background: var(--navbar-background-color);
-  box-shadow: var(--box-shadow-01);
+  background-color: var(--navbar-background-color);
   z-index: 999;
   height: var(--navbar-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: var(--transition);
+  transition-property: color, background-color, box-shadow;
+}
+
+nav.shadow {
+  box-shadow: var(--box-shadow-01);
 }
 
 nav .left {

@@ -9,14 +9,14 @@ body.light {
   --text-color-05: #939393;
   --text-color-06: #ffffff;
   --background-color-01: #ffffff;
-  --background-color-02: #fafafa;
+  --background-color-02: #fffffc;
   --background-color-03: #eeeeee;
   --border-color: #eee;
   --box-shadow-01: 0 2px 5px 0 rgba(74, 74, 74, 0.2);
   --box-shadow-02: 0 0 5px 2px rgba(74, 74, 74, 0.2);
 
   --body-color: var(--text-color-03);
-  --body-background-color: var(--background-color-02);
+  --body-background-color: var(--background-color-01);
   --navbar-background-color: var(--background-color-01);
   --logo-text-color: var(--text-color-03);
   --logo-text-color-on-hover: var(--primary-color);
@@ -24,7 +24,7 @@ body.light {
   --post-title-border-color: var(--border-color);
   --post-date-color: var(--text-color-04);
 
-  --post-summary-background-color: var(--background-color-01);
+  --post-summary-background-color: var(--background-color-02);
   --post-summary-category-color: var(--text-color-06);
   --post-summary-category-background-color: var(--secondary-color);
   --post-summary-date-color: var(--text-color-06);

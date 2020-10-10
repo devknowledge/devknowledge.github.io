@@ -1,4 +1,4 @@
-<nav>
+<nav id="Navbar">
   <div class="left">
     <a href="/">
       <img src="{{site.baseurl}}/assets/logo.png" alt="logo" />
@@ -21,13 +21,23 @@
     const lightTheme = 'light';
     const darkTheme = 'dark';
     const currentThemeKey = 'CURRENT_THEME';
+    const body = document.querySelector('body');
+    const navbar = document.getElementById('Navbar');
     const changeToDarkThemeIcon = document.getElementById('ChangeToDarkThemeIcon');
     const changeToLightThemeIcon = document.getElementById('ChangeToLightThemeIcon');
-    const body = document.querySelector('body');
 
     initCurrentTheme();
     changeToDarkThemeIcon.addEventListener('click', toggleTheme);
     changeToLightThemeIcon.addEventListener('click', toggleTheme);
+    window.onscroll = onScroll;
+
+    function onScroll(event) {
+      if (window.scrollY === 0) {
+        navbar.classList.remove('shadow');
+      } else {
+        navbar.classList.add('shadow');
+      }
+    }
 
     function initCurrentTheme() {
       const currentTheme = localStorage.getItem(currentThemeKey) || lightTheme;
