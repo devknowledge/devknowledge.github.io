@@ -5,29 +5,35 @@
   flex-direction: column;
   margin: var(--welcome-message-margin-top) auto var(--welcome-message-margin-bottom);
 
-  & img {
-    width: var(--welcome-message-logo-size);
-    height: var(--welcome-message-logo-size);
-    margin: 0 auto;
-    border-radius: 100rem;
-  }
-
   & .first-message {
-    margin-top: 2.5rem;
+    margin: 2.5rem auto 0;
     text-align: center;
     font-weight: bold;
     font-family: cursive;
+    display: flex;
+    align-items: center;
 
     &,
-    & span {
-      font-size: 2.3rem;
+    & .logo-name {
+      font-size: 2.8rem;
+    }
+
+    & .logo-name {
+      padding-right: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    & img {
+      width: 3rem;
+      height: 3rem;
+      margin: 0 0.8rem;
     }
   }
 
   & .second-message {
     text-align: center;
     margin-top: 1rem;
-    font-size: 1.6rem;
+    font-size: 1.9rem;
     font-family: cursive;
   }
 }
