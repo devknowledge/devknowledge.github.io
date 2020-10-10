@@ -28,7 +28,6 @@
     initCurrentTheme();
     changeToDarkThemeIcon.addEventListener('click', toggleTheme);
     changeToLightThemeIcon.addEventListener('click', toggleTheme);
-    console.log(changeToDarkThemeIcon);
 
     function initCurrentTheme() {
       const currentTheme = localStorage.getItem(currentThemeKey) || lightTheme;
