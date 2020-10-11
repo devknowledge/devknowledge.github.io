@@ -11,8 +11,8 @@
 
 .tab-links button {
   font-family: 'Poppins', sans-serif;
-  background-color: inherit;
-  color: inherit;
+  background-color: var(--tab-links-background-color);
+  color: var(--tab-links-color);
   float: left;
   border: none;
   outline: none;

@@ -15,6 +15,8 @@ pre.highlight {
     font-size: var(--code-font-size);
     line-height: var(--code-line-height);
     background-color: var(--post-code-background-color);
+    transition: var(--transition);
+    transition-property: background-color;
     overflow: auto;
     flex: 1;
     @include hide-scroll-bar;
