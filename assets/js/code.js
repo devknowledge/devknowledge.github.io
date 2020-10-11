@@ -1,6 +1,6 @@
 formatCodeTabs();
 addCodeLineNumbers();
-// addCodeCopyIcon();
+addCodeCopyIcon();
 
 function formatCodeTabs() {
   document.querySelectorAll('.code-tabs + ul').forEach((codeTabs) => {
@@ -60,10 +60,16 @@ function addCodeLineNumbers() {
 function addCodeCopyIcon() {
   try {
     document.querySelectorAll('pre.highlight code').forEach((code) => {
+      const codeId = 'code-id-' + Date.now() + Math.floor(Math.random() * 100);
+      code.id = codeId;
       const copyCodeIconHtml = /* html */ `
-        <span title="copy code" class="code-copy-icon" onclick="onCodeCopyIconClick(event)">
-          <span class="iconify" data-icon="carbon:copy" data-inline="false"></span>
-        <span>
+        <span 
+          title="copy code" 
+          onclick="onCodeCopyIconClick(event, '${codeId}')" 
+          class="code-copy-icon iconify" 
+          data-icon="carbon:copy" 
+          data-inline="false"
+        ></span>
       `;
       code.insertAdjacentHTML('beforebegin', copyCodeIconHtml);
     });
@@ -72,6 +78,20 @@ function addCodeCopyIcon() {
   }
 }
 
-function onCodeCopyIconClick(event) {
-  console.log(event);
+function onCodeCopyIconClick(event, codeId) {
+  const code = document.getElementById(codeId);
+  const codeText = code.innerText || code.contentText;
+  const textarea = document.createElement('textarea');
+  textarea.textContent = codeText;
+  textarea.style.position = 'fixed'; // Prevent scrolling to bottom of page in Microsoft Edge.
+  document.body.appendChild(textarea);
+  textarea.select();
+  try {
+    return document.execCommand('copy');
+  } catch (error) {
+    console.error('Copy to clipboard failed.', error);
+    return false;
+  } finally {
+    document.body.removeChild(textarea);
+  }
 }
