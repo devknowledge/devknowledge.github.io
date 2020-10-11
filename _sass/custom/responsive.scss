@@ -27,6 +27,7 @@
     --search-input-margin-top: 3rem;
   }
   @media screen and (min-width: 769px) and (max-width: 1920px) {
+    --post-max-width: 100rem;
     --post-summary-list-padding: 8rem 0;
     --post-summary-grid-gap: 2rem;
     --main-width: 80%;
@@ -41,6 +42,7 @@
   }
 
   @media screen and (min-width: 1921px) {
+    --post-max-width: 125rem;
     --post-summary-list-padding: 10rem 0;
     --post-summary-grid-gap: 2rem;
     --main-width: 80%;

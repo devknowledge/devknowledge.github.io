@@ -2,7 +2,7 @@
 
 .post {
   box-shadow: var(--box-shadow-01);
-  max-width: 85rem;
+  max-width: var(--post-max-width);
   margin: var(--post-margin);
   background-color: var(--post-background-color);
   transition: var(--transition);
