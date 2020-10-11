@@ -89,6 +89,10 @@
     font-weight: bold;
   }
 
+  & .post-summary__extract + p * {
+    all: unset;
+  }
+
   & .post-summary__extract,
   & .post-summary__extract + p {
     padding-top: 0.5rem;

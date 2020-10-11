@@ -11,6 +11,7 @@ body.light {
   --background-color-01: #ffffff;
   --background-color-02: #fffffc;
   --background-color-03: #fafafa;
+  --background-color-04: #eeeeee;
   --border-color: #dfe1e5;
   --box-shadow-01: 0 2px 5px 0 rgba(74, 74, 74, 0.2);
   --box-shadow-02: 0 0 5px 2px rgba(74, 74, 74, 0.2);
@@ -48,6 +49,13 @@ body.light {
   --input-background-color: var(--background-color-01);
   --input-border-color: var(--border-color);
   --input-color: var(--body-color);
+
+  --tab-links-border-color: var(--border-color);
+  --tab-links-color: var(--color-03);
+  --tab-links-background-color: var(--background-color-03);
+  --tab-link-background-color-on-hover: var(--background-color-04);
+  --active-tab-link-color: var(--primary-color);
+  --active-tab-link-background-color: var(--background-color-04);
 }
 
 body.dark {

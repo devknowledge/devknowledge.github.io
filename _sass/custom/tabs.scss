@@ -1,0 +1,48 @@
+@import 'mixin';
+
+.tab-links {
+  overflow: hidden;
+  border-bottom: 1px solid var(--tab-links-border-color);
+  background-color: var(--tab-links-background-color);
+  color: var(--tab-links-color);
+  transition: var(--transition);
+  transition-property: color, background-color, border-color;
+}
+
+.tab-links button {
+  background-color: inherit;
+  color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 1.4rem 1.8rem;
+  transition: var(--transition);
+  transition-property: color, background-color, border-color;
+}
+
+/* Change background color of buttons on hover */
+.tab-links button:hover {
+  background-color: var(--tab-link-background-color-on-hover);
+}
+
+/* Create an active/current tablink class */
+.tab-links button.active {
+  color: var(--active-tab-link-color);
+  position: relative;
+}
+
+.tab-links button.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.2rem;
+  background-color: var(--active-tab-link-color);
+}
+
+/* Style the tab content */
+.tab-content {
+  display: none;
+}
