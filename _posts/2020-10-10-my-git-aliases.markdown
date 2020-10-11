@@ -16,7 +16,7 @@ git config --global alias.ch checkout
 git config --global alias.br branch
 git config --global alias.co commit
 git config --global alias.st status
-git config --global alias.glog 'log --oneline --graphe --decorate --all'
+git config --global alias.glog 'log --oneline --graph --decorate --all'
 git config --global alias.amend 'commit -a --amend --no-edit'
 git config --global alias.re 'reset HEAD --hard'
 ```

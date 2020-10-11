@@ -11,9 +11,11 @@
     background-color: #e3d2d2;
   } // Error
   .k {
+    color: #e06c75;
     font-weight: bold;
   } // Keyword
   .o {
+    color: #c678dd;
     font-weight: bold;
   } // Operator
   .cm {
@@ -78,6 +80,7 @@
   } // Keyword.Constant
   .kd {
     font-weight: bold;
+    color: #a626a4;
   } // Keyword.Declaration
   .kp {
     font-weight: bold;
@@ -86,23 +89,23 @@
     font-weight: bold;
   } // Keyword.Reserved
   .kt {
-    color: #458;
+    color: #a626a4;
     font-weight: bold;
   } // Keyword.Type
   .m {
     color: #099;
   } // Literal.Number
   .s {
-    color: #d14;
+    color: #50a14f;
   } // Literal.String
   .na {
-    color: #008080;
+    // color: #008080;
   } // Name.Attribute
   .nb {
     color: #0086b3;
   } // Name.Builtin
   .nc {
-    color: #458;
+    color: #c18401;
     font-weight: bold;
   } // Name.Class
   .no {
@@ -116,17 +119,17 @@
     font-weight: bold;
   } // Name.Exception
   .nf {
-    color: #900;
+    color: #4078f2;
     font-weight: bold;
   } // Name.Function
   .nn {
-    color: #555;
+    // color: #555;
   } // Name.Namespace
   .nt {
-    color: #000080;
+    // color: #000080;
   } // Name.Tag
   .nv {
-    color: #008080;
+    color: #e06c75;
   } // Name.Variable
   .ow {
     font-weight: bold;
@@ -194,4 +197,14 @@
   .il {
     color: #099;
   } // Literal.Number.Integer.Long
+
+  .kn {
+    color: #a626a4;
+  }
+  .nd {
+    color: #4078f2;
+  }
+
+  .n {
+  }
 }
