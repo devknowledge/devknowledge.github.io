@@ -12,4 +12,7 @@ jobs:
 
       - name: Create github issue for each post
         run: |
-          grep permalink _posts/* | cut -d' ' -f2 | while read issue_title; do echo "{\"title\": \"$issue_title\", \"body\": \"[https://devknowledge.github.io/$issue_title](https://devknowledge.github.io/$issue_title) comments\"}"; done | while read request_body; do curl -X POST 'https://api.github.com/repos/devknowledge/devknowledge.github.io/issues' --header 'Authorization: Bearer ${{ secrets.CREATE_ISSUE_TOKEN }}' --data-raw "$request_body"; done
+          random_dir=/tmp/new_posts-$RANDOM
+          mkdir $random_dir
+          git show --name-only | grep _posts/ | while read new_post; do cp "$new_post" $random_dir; done
+          grep permalink $random_dir/* | cut -d' ' -f2 | while read issue_title; do echo "{\"title\": \"$issue_title\", \"body\": \"[https://devknowledge.github.io/$issue_title](https://devknowledge.github.io/$issue_title) comments\"}"; done | while read request_body; do curl -X POST 'https://api.github.com/repos/devknowledge/devknowledge.github.io/issues' --header 'Authorization: Bearer ${{ secrets.CREATE_ISSUE_TOKEN }}' --data-raw "$request_body"; done
