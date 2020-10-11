@@ -75,7 +75,7 @@ function addCodeCopyIcon() {
       code.id = codeId;
       var copyCodeIconHtml = '\n        <span \n          title="copy code" \n          onclick="onCodeCopyIconClick(event, \''.concat(
         codeId,
-        '\')" \n          class="code-copy-icon iconify" \n          data-icon="carbon:copy" \n          data-inline="false"\n        ></span>\n      '
+        '\')" \n          class="code-copy-icon iconify" \n          data-icon="mdi:content-copy" \n          data-inline="false"\n        ></span>\n      '
       );
       code.insertAdjacentHTML('beforebegin', copyCodeIconHtml);
     });

@@ -67,7 +67,7 @@ function addCodeCopyIcon() {
           title="copy code" 
           onclick="onCodeCopyIconClick(event, '${codeId}')" 
           class="code-copy-icon iconify" 
-          data-icon="carbon:copy" 
+          data-icon="mdi:content-copy" 
           data-inline="false"
         ></span>
       `;
