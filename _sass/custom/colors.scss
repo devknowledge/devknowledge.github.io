@@ -23,13 +23,14 @@ body.light {
   --logo-text-color: var(--text-color-03);
   --logo-text-color-on-hover: var(--primary-color);
 
+  --table-head-background-color: var(--background-color-03);
+  --table-body-background-color: var(--background-color-02);
+
   --post-background-color: var(--background-color-02);
   --post-title-color: var(--text-color-02);
   --post-title-border-color: var(--border-color);
   --post-date-color: var(--text-color-04);
   --post-code-background-color: var(--background-color-03);
-  --post-table-head-background-color: var(--background-color-03);
-  --post-table-body-background-color: var(--background-color-02);
 
   --post-summary-background-color: var(--background-color-02);
   --post-summary-category-color: var(--text-color-06);
@@ -59,6 +60,8 @@ body.light {
 
   --code-line-number-color: var(--text-color-04);
   --code-line-number-background-color: var(--background-color-04);
+  --code-copy-icon-color: var(--text-color-04);
+  --code-copy-icon-color-on-hover: var(--primary-color);
 }
 
 body.dark {
@@ -74,6 +77,7 @@ body.dark {
   --background-color-01: #181a1f;
   --background-color-02: #21252b;
   --background-color-03: #282c34;
+  --background-color-04: #2c313a;
   --border-color: #282c34;
   --box-shadow-01: none;
   --box-shadow-02: none;
@@ -81,6 +85,9 @@ body.dark {
   --body-color: var(--text-color-03);
   --body-background-color: var(--background-color-01);
   --navbar-background-color: var(--background-color-01);
+
+  --table-head-background-color: var(--background-color-03);
+  --table-body-background-color: var(--background-color-02);
 
   --logo-text-color: var(--text-color-03);
   --logo-text-color-on-hover: var(--primary-color);
@@ -90,8 +97,6 @@ body.dark {
   --post-title-border-color: var(--border-color);
   --post-date-color: var(--text-color-04);
   --post-code-background-color: var(--background-color-03);
-  --post-table-head-background-color: var(--background-color-03);
-  --post-table-body-background-color: var(--background-color-02);
 
   --post-summary-background-color: var(--background-color-02);
   --post-summary-category-color: var(--text-color-01);
@@ -111,4 +116,9 @@ body.dark {
   --input-background-color: var(--background-color-02);
   --input-border-color: transparent;
   --input-color: var(--body-color);
+
+  --code-line-number-color: var(--text-color-04);
+  --code-line-number-background-color: var(--background-color-04);
+  --code-copy-icon-color: var(--text-color-04);
+  --code-copy-icon-color-on-hover: var(--primary-color);
 }

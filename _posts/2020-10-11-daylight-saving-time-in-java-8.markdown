@@ -45,51 +45,51 @@ In this post I'm going to share with you the examples that I use to illustrate h
 - Example2
 
   ```java
-    import lombok.AllArgsConstructor;
-    import lombok.Data;
+  import lombok.AllArgsConstructor;
+  import lombok.Data;
 
-    import java.time.Instant;
-    import java.time.LocalDateTime;
-    import java.time.ZoneId;
+  import java.time.Instant;
+  import java.time.LocalDateTime;
+  import java.time.ZoneId;
 
-    import static org.junit.Assert.assertTrue;
+  import static org.junit.Assert.assertTrue;
 
-    public class Main {
+  public class Main {
 
-        public static void main(String[] args) {
-            WindowTime collect1 = new WindowTime(Instant.parse("2020-10-25T00:00:00Z"), Instant.parse("2020-10-25T00:15:00Z"));
-            assertTrue(collect1.isInside(LocalDateTime.parse("2020-10-25T02:07:04").atZone(ZoneId.systemDefault()).toInstant()));
-            assertTrue(collect1.isInside(LocalDateTime.parse("2020-10-25T02:07:04")));
+      public static void main(String[] args) {
+          WindowTime collect1 = new WindowTime(Instant.parse("2020-10-25T00:00:00Z"), Instant.parse("2020-10-25T00:15:00Z"));
+          assertTrue(collect1.isInside(LocalDateTime.parse("2020-10-25T02:07:04").atZone(ZoneId.systemDefault()).toInstant()));
+          assertTrue(collect1.isInside(LocalDateTime.parse("2020-10-25T02:07:04")));
 
-            WindowTime collect2 = new WindowTime(Instant.parse("2020-10-25T00:45:00Z"), Instant.parse("2020-10-25T01:00:00Z"));
-            assertTrue(collect2.isInside(LocalDateTime.parse("2020-10-25T02:59:59").atZone(ZoneId.systemDefault()).toInstant()));
-            assertTrue(collect2.isInside(LocalDateTime.parse("2020-10-25T02:59:59")));
+          WindowTime collect2 = new WindowTime(Instant.parse("2020-10-25T00:45:00Z"), Instant.parse("2020-10-25T01:00:00Z"));
+          assertTrue(collect2.isInside(LocalDateTime.parse("2020-10-25T02:59:59").atZone(ZoneId.systemDefault()).toInstant()));
+          assertTrue(collect2.isInside(LocalDateTime.parse("2020-10-25T02:59:59")));
 
-            WindowTime collect3 = new WindowTime(Instant.parse("2020-10-25T01:00:00Z"), Instant.parse("2020-10-25T01:15:00Z"));
-            assertTrue(collect3.isInside(LocalDateTime.parse("2020-10-25T02:08:56").atZone(ZoneId.systemDefault()).toInstant()));
-            assertTrue(collect3.isInside(LocalDateTime.parse("2020-10-25T02:08:56")));
+          WindowTime collect3 = new WindowTime(Instant.parse("2020-10-25T01:00:00Z"), Instant.parse("2020-10-25T01:15:00Z"));
+          assertTrue(collect3.isInside(LocalDateTime.parse("2020-10-25T02:08:56").atZone(ZoneId.systemDefault()).toInstant()));
+          assertTrue(collect3.isInside(LocalDateTime.parse("2020-10-25T02:08:56")));
 
-            WindowTime collect4 = new WindowTime(Instant.parse("2020-10-25T01:45:00Z"), Instant.parse("2020-10-25T02:00:00Z"));
-            assertTrue(collect4.isInside(LocalDateTime.parse("2020-10-25T02:45:31").atZone(ZoneId.systemDefault()).toInstant()));
-            assertTrue(collect4.isInside(LocalDateTime.parse("2020-10-25T02:45:31")));
-        }
+          WindowTime collect4 = new WindowTime(Instant.parse("2020-10-25T01:45:00Z"), Instant.parse("2020-10-25T02:00:00Z"));
+          assertTrue(collect4.isInside(LocalDateTime.parse("2020-10-25T02:45:31").atZone(ZoneId.systemDefault()).toInstant()));
+          assertTrue(collect4.isInside(LocalDateTime.parse("2020-10-25T02:45:31")));
+      }
 
-        @Data
-        @AllArgsConstructor
-        public static class WindowTime {
+      @Data
+      @AllArgsConstructor
+      public static class WindowTime {
 
-            private Instant start;
-            private Instant end;
+          private Instant start;
+          private Instant end;
 
-            public boolean isInside(LocalDateTime date) {
-                LocalDateTime startLocal = LocalDateTime.ofInstant(start, ZoneId.systemDefault());
-                LocalDateTime endLocal = LocalDateTime.ofInstant(end.minusNanos(1), ZoneId.systemDefault());
-                return (date.isAfter(startLocal) && date.isEqual(startLocal)) || date.isBefore(endLocal);
-            }
+          public boolean isInside(LocalDateTime date) {
+              LocalDateTime startLocal = LocalDateTime.ofInstant(start, ZoneId.systemDefault());
+              LocalDateTime endLocal = LocalDateTime.ofInstant(end.minusNanos(1), ZoneId.systemDefault());
+              return (date.isAfter(startLocal) && date.isEqual(startLocal)) || date.isBefore(endLocal);
+          }
 
-            public boolean isInside(Instant date) {
-                return (date.isAfter(start) && date.equals(start)) || date.isBefore(end);
-            }
-        }
-    }
+          public boolean isInside(Instant date) {
+              return (date.isAfter(start) && date.equals(start)) || date.isBefore(end);
+          }
+      }
+  }
   ```

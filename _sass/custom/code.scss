@@ -7,10 +7,22 @@ code,
 
 pre.highlight {
   display: flex;
+  position: relative;
+  margin-bottom: 1.6rem;
+
+  & code {
+    padding: var(--code-padding-top) 2rem var(--code-padding-bottom);
+    font-size: var(--code-font-size);
+    line-height: var(--code-line-height);
+    background-color: var(--post-code-background-color);
+    overflow: auto;
+    flex: 1;
+    @include hide-scroll-bar;
+  }
 
   & .code-line-number {
-    padding: var(--code-padding-top) 1rem var(--code-padding-bottom) 2rem;
-    width: 5rem;
+    padding: var(--code-padding-top) 1rem var(--code-padding-bottom);
+    width: 5.5rem;
     display: flex;
     flex-direction: column;
     background-color: var(--code-line-number-background-color);
@@ -24,6 +36,22 @@ pre.highlight {
       color: var(--code-line-number-color);
       transition: var(--transition);
       transition-property: color;
+    }
+  }
+
+  & .code-copy-icon {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 10;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--code-copy-icon-color);
+    transition: var(--transition);
+    transition-property: color;
+
+    &:hover {
+      color: var(--code-copy-icon-color-on-hover);
     }
   }
 }

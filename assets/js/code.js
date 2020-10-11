@@ -1,5 +1,6 @@
 formatCodeTabs();
 addCodeLineNumbers();
+// addCodeCopyIcon();
 
 function formatCodeTabs() {
   document.querySelectorAll('.code-tabs + ul').forEach((codeTabs) => {
@@ -24,26 +25,53 @@ function formatCodeTabs() {
   });
 }
 
-function addCodeLineNumbers() {
-  document.querySelectorAll('pre.highlight').forEach((code) => {
-    try {
-      const codeLineNumbers = (code.innerHTML.match(/\n/g) || []).length;
-      let codeLineNumbersHtml = '<div class="code-line-number">';
-      for (let i = 1; i <= codeLineNumbers; i++) {
-        codeLineNumbersHtml += `<span>${i}</span>`;
-      }
-      codeLineNumbersHtml += '</div>';
-      code.insertAdjacentHTML('afterbegin', codeLineNumbersHtml);
-    } catch (error) {
-      console.error(error);
-    }
-  });
+function openCode(event, tabId, tabsContentsId) {
+  try {
+    const tabsContents = document.getElementById(tabsContentsId);
+    tabsContents.querySelectorAll('.tab-content').forEach((tabContent) => (tabContent.style.display = 'none'));
+    tabsContents.querySelectorAll('.tab-link').forEach((tabLink) => tabLink.classList.remove('active'));
+    document.getElementById(tabId).style.display = 'block';
+    event.currentTarget.classList.add('active');
+  } catch (error) {
+    console.error(error);
+  }
 }
 
-function openCode(event, tabId, tabsContentsId) {
-  const tabsContents = document.getElementById(tabsContentsId);
-  tabsContents.querySelectorAll('.tab-content').forEach((tabContent) => (tabContent.style.display = 'none'));
-  tabsContents.querySelectorAll('.tab-link').forEach((tabLink) => tabLink.classList.remove('active'));
-  document.getElementById(tabId).style.display = 'block';
-  event.currentTarget.classList.add('active');
+function addCodeLineNumbers() {
+  try {
+    document.querySelectorAll('pre.highlight').forEach((code) => {
+      try {
+        const codeLineNumbers = (code.innerHTML.match(/\n/g) || []).length;
+        let codeLineNumbersHtml = '<div class="code-line-number">';
+        for (let i = 1; i <= codeLineNumbers; i++) {
+          codeLineNumbersHtml += `<span>${i}</span>`;
+        }
+        codeLineNumbersHtml += '</div>';
+        code.insertAdjacentHTML('afterbegin', codeLineNumbersHtml);
+      } catch (error) {
+        console.error(error);
+      }
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+function addCodeCopyIcon() {
+  try {
+    document.querySelectorAll('pre.highlight code').forEach((code) => {
+      const copyCodeIconHtml = /* html */ `
+        <span title="copy code" class="code-copy-icon" onclick="onCodeCopyIconClick(event)">
+          <span class="iconify" data-icon="carbon:copy" data-inline="false"></span>
+        <span>
+      `;
+      code.insertAdjacentHTML('beforebegin', copyCodeIconHtml);
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+function onCodeCopyIconClick(event) {
+  console.log(event);
 }
