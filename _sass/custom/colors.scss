@@ -78,7 +78,7 @@ body.dark {
   --background-color-02: #21252b;
   --background-color-03: #282c34;
   --background-color-04: #2c313a;
-  --border-color: #282c34;
+  --border-color: #2c313a;
   --box-shadow-01: none;
   --box-shadow-02: none;
 
@@ -116,6 +116,13 @@ body.dark {
   --input-background-color: var(--background-color-02);
   --input-border-color: transparent;
   --input-color: var(--body-color);
+
+  --tab-links-border-color: var(--border-color);
+  --tab-links-color: var(--color-03);
+  --tab-links-background-color: var(--background-color-03);
+  --tab-link-background-color-on-hover: var(--background-color-04);
+  --active-tab-link-color: var(--primary-color);
+  --active-tab-link-background-color: var(--background-color-04);
 
   --code-line-number-color: var(--text-color-04);
   --code-line-number-background-color: var(--background-color-04);
