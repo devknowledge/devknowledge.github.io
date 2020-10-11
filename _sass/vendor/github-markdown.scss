@@ -813,24 +813,33 @@
 
 .markdown-body .highlight pre,
 .markdown-body pre {
-  padding: 16px;
-  overflow: auto;
-  font-size: 85%;
-  line-height: 1.45;
+  font-size: var(--code-font-size);
+  line-height: var(--code-line-height);
   background-color: var(--post-code-background-color);
   border-radius: 3px;
 }
 
 .markdown-body pre code {
+  padding: var(--code-padding-top) 1rem var(--code-padding-bottom);
   display: inline;
   max-width: auto;
-  padding: 0;
   margin: 0;
-  overflow: visible;
+  overflow: auto;
   line-height: inherit;
   word-wrap: normal;
   background-color: initial;
   border: 0;
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  & {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
 
 .markdown-body .commit-tease-sha {

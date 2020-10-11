@@ -1,0 +1,29 @@
+@import 'mixin';
+
+code,
+.code-line-number {
+  font-family: 'Roboto Mono', monospace !important;
+}
+
+pre.highlight {
+  display: flex;
+
+  & .code-line-number {
+    padding: var(--code-padding-top) 1rem var(--code-padding-bottom) 2rem;
+    width: 5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--code-line-number-background-color);
+    transition: var(--transition);
+    transition-property: background-color;
+    text-align: end;
+    font-size: var(--code-font-size);
+    line-height: var(--code-line-height);
+
+    & span {
+      color: var(--code-line-number-color);
+      transition: var(--transition);
+      transition-property: color;
+    }
+  }
+}

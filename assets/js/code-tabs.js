@@ -19,6 +19,20 @@ document.querySelectorAll('.code-tabs + ul').forEach((codeTabs) => {
   }
 });
 
+document.querySelectorAll('pre.highlight').forEach((code) => {
+  try {
+    const codeLineNumbers = (code.innerHTML.match(/\n/g) || []).length;
+    let codeLineNumbersHtml = '<div class="code-line-number">';
+    for (let i = 1; i <= codeLineNumbers; i++) {
+      codeLineNumbersHtml += `<span>${i}</span>`;
+    }
+    codeLineNumbersHtml += '</div>';
+    code.insertAdjacentHTML('afterbegin', codeLineNumbersHtml);
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 function openCode(event, tabId, tabsContentsId) {
   const tabsContents = document.getElementById(tabsContentsId);
   tabsContents.querySelectorAll('.tab-content').forEach((tabContent) => (tabContent.style.display = 'none'));
