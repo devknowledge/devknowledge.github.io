@@ -4,13 +4,11 @@ on:
     branches:
       - master
 jobs:
-  build-and-deploy:
+  create-github-issue-for-each-post:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
 
       - name: Create github issue for each post
-        run: |
-          echo -e "\\033[1;36mgrep permalink _posts/* | cut -d' ' -f2 | tr '/' '-'\\033[0;02m"
-          grep permalink _posts/* | cut -d' ' -f2 | tr '/' '-'
+        run: .github/workflows/create-github-issue-for-each-post.sh
