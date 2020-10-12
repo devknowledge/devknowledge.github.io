@@ -18,7 +18,7 @@ function handleGithubSearchIssuesResponse(responseText) {
   try {
     const response = JSON.parse(responseText);
     if (response.items.length == 1) {
-      renderJoinGithubCommentsLink(response.items[0].html_url);
+      renderJoinPostDiscussionOnGithub(response.items[0].html_url);
       fetchCurrentPostComments(response.items[0].comments_url);
     }
   } catch (error) {
@@ -26,7 +26,7 @@ function handleGithubSearchIssuesResponse(responseText) {
   }
 }
 
-function renderJoinGithubCommentsLink(url) {
+function renderJoinPostDiscussionOnGithub(url) {
   const html = /* html */ `
     <p class="join-discussion">Join the discussion fir this article on <a href="${url}" target="_blank">this github ticket</a></p>  
   `;
