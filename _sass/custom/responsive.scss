@@ -11,6 +11,8 @@
     --post-additional-info-margin-top: 3rem;
     --welcome-message-margin-top: 1.5rem;
     --search-input-margin-top: 2rem;
+    --comments-margin: 3rem 0;
+    --comments-join-discussion-margin-bottom: 3rem;
   }
 
   @media screen and (min-width: 376px) and (max-width: 768px) {
@@ -25,6 +27,8 @@
     --post-additional-info-margin-top: 5rem;
     --welcome-message-margin-top: 3rem;
     --search-input-margin-top: 3rem;
+    --comments-margin: 3rem 0;
+    --comments-join-discussion-margin-bottom: 3rem;
   }
   @media screen and (min-width: 769px) and (max-width: 1920px) {
     --post-max-width: 100rem;
@@ -39,6 +43,8 @@
     --post-additional-info-margin-top: 7rem;
     --welcome-message-margin-top: 5rem;
     --search-input-margin-top: 5rem;
+    --comments-margin: 5rem 0;
+    --comments-join-discussion-margin-bottom: 5rem;
   }
 
   @media screen and (min-width: 1921px) {
@@ -55,5 +61,7 @@
     --post-additional-info-margin-top: 7rem;
     --welcome-message-margin-top: 5rem;
     --search-input-margin-top: 5rem;
+    --comments-margin: 7rem 0;
+    --comments-join-discussion-margin-bottom: 6rem;
   }
 }

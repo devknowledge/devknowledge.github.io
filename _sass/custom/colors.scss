@@ -62,6 +62,9 @@ body.light {
   --code-line-number-background-color: var(--background-color-04);
   --code-copy-icon-color: var(--text-color-04);
   --code-copy-icon-color-on-hover: var(--primary-color);
+
+  --comment-background-color: var(--background-color-03);
+  --comment-header-border-color: var(--border-color);
 }
 
 body.dark {
@@ -78,7 +81,7 @@ body.dark {
   --background-color-02: #21252b;
   --background-color-03: #282c34;
   --background-color-04: #2c313a;
-  --border-color: #2c313a;
+  --border-color: #353b46;
   --box-shadow-01: none;
   --box-shadow-02: none;
 
@@ -128,4 +131,7 @@ body.dark {
   --code-line-number-background-color: var(--background-color-04);
   --code-copy-icon-color: var(--text-color-04);
   --code-copy-icon-color-on-hover: var(--primary-color);
+
+  --comment-background-color: var(--background-color-03);
+  --comment-header-border-color: var(--border-color);
 }
