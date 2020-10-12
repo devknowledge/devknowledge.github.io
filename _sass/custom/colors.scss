@@ -65,6 +65,11 @@ body.light {
 
   --comment-background-color: var(--background-color-03);
   --comment-header-border-color: var(--border-color);
+
+  --buy-me-coffee-color: #9c4221;
+  --buy-me-coffee-background-color: #fffaf0;
+  --buy-me-coffee-button-color: #fff;
+  --buy-me-coffee-button-background-color: #dd6b20;
 }
 
 body.dark {
@@ -134,4 +139,9 @@ body.dark {
 
   --comment-background-color: var(--background-color-03);
   --comment-header-border-color: var(--border-color);
+
+  --buy-me-coffee-color: #ffd599;
+  --buy-me-coffee-background-color: #190f00;
+  --buy-me-coffee-button-color: #fff;
+  --buy-me-coffee-button-background-color: #dd6b20;
 }
