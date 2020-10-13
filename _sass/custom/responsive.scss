@@ -13,6 +13,9 @@
     --search-input-margin-top: 2rem;
     --comments-margin: 3rem 0;
     --comments-join-discussion-margin-bottom: 3rem;
+    --footer-margin-top: 4rem;
+    --footer-padding: 2rem 3rem;
+    --footer-icon-font-size: 2rem;
   }
 
   @media screen and (min-width: 376px) and (max-width: 768px) {
@@ -29,6 +32,9 @@
     --search-input-margin-top: 3rem;
     --comments-margin: 3rem 0;
     --comments-join-discussion-margin-bottom: 3rem;
+    --footer-margin-top: 6rem;
+    --footer-padding: 2.5rem 5rem;
+    --footer-icon-font-size: 2rem;
   }
   @media screen and (min-width: 769px) and (max-width: 1920px) {
     --post-max-width: 100rem;
@@ -45,6 +51,9 @@
     --search-input-margin-top: 5rem;
     --comments-margin: 5rem 0;
     --comments-join-discussion-margin-bottom: 5rem;
+    --footer-margin-top: 10rem;
+    --footer-padding: 3rem 8rem;
+    --footer-icon-font-size: 2.5rem;
   }
 
   @media screen and (min-width: 1921px) {
@@ -63,5 +72,8 @@
     --search-input-margin-top: 5rem;
     --comments-margin: 7rem 0;
     --comments-join-discussion-margin-bottom: 6rem;
+    --footer-margin-top: 10rem;
+    --footer-padding: 3rem 8rem;
+    --footer-icon-font-size: 2.5rem;
   }
 }

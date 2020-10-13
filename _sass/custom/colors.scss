@@ -70,6 +70,9 @@ body.light {
   --buy-me-coffee-background-color: #fffaf0;
   --buy-me-coffee-button-color: #fff;
   --buy-me-coffee-button-background-color: #dd6b20;
+
+  --footer-color: var(--text-color-03);
+  --footer-background-color: var(--background-color-03);
 }
 
 body.dark {
@@ -144,4 +147,7 @@ body.dark {
   --buy-me-coffee-background-color: #190f00;
   --buy-me-coffee-button-color: #fff;
   --buy-me-coffee-button-background-color: #dd6b20;
+
+  --footer-color: var(--text-color-03);
+  --footer-background-color: var(--background-color-03);
 }
