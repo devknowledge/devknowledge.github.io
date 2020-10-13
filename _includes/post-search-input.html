@@ -1,4 +1,82 @@
 <div class="search-wrapper">
   <span class="iconify" data-icon="ic:outline-search" data-inline="false"></span>
   <input type="text" placeholder="Search..." />
+  <span id="CloseAdvancedSearchIcon" class="hide"
+    ><span class="iconify pointer" data-icon="eva:arrow-ios-upward-outline" data-inline="false"></span
+  ></span>
+  <span id="OpenAdvancedSearchIcon"><span class="iconify pointer" data-icon="eva:arrow-ios-downward-outline" data-inline="false"></span></span>
+  <div id="AdvancedSearchInputsWrapper" class="advanced-search-inputs-wrapper hide">
+    <p>Tags:</p>
+    {% for tag in tags %}
+    <span class="tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
 </div>
+
+<script>
+  const openAdvancedSearchIcon = document.getElementById('OpenAdvancedSearchIcon');
+  const closeAdvancedSearchIcon = document.getElementById('CloseAdvancedSearchIcon');
+  const advancedSearchInputsWrapper = document.getElementById('AdvancedSearchInputsWrapper');
+
+  openAdvancedSearchIcon.addEventListener('click', handleOpenAdvancedSearchIconClickEvent);
+  document.addEventListener('click', closeAdvancedSearchInputsWrapper);
+
+  function handleOpenAdvancedSearchIconClickEvent(event) {
+    event.stopPropagation();
+    openAdvancedSearchIcon.classList.add('hide');
+    closeAdvancedSearchIcon.classList.remove('hide');
+    advancedSearchInputsWrapper.classList.remove('hide');
+  }
+
+  function closeAdvancedSearchInputsWrapper() {
+    openAdvancedSearchIcon.classList.remove('hide');
+    closeAdvancedSearchIcon.classList.add('hide');
+    advancedSearchInputsWrapper.classList.add('hide');
+  }
+</script>
+
+<style>
+  .search-wrapper {
+    max-width: 80rem;
+    margin: var(--search-input-margin-top) auto 0;
+    border-radius: 100rem;
+    border: 1px solid var(--input-border-color);
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    padding: 0.5rem 1rem 0.5rem 1.5rem;
+    background-color: var(--input-background-color);
+    transition: var(--transition);
+    transition-property: color, background-color border-color;
+    position: relative;
+  }
+
+  .search-wrapper .iconify {
+    flex-grow: 0;
+    font-size: 2.5rem;
+    margin-right: 0.7rem;
+  }
+
+  .search-wrapper input {
+    flex-grow: 1;
+    font-size: 1.8rem;
+    border: none;
+    outline: none;
+    color: var(--input-color);
+    background-color: var(--input-background-color);
+    transition: var(--transition);
+    transition-property: color, background-color;
+  }
+
+  .search-wrapper .advanced-search-inputs-wrapper {
+    z-index: 30;
+    padding: 2rem;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    width: 100%;
+    border-radius: 0.5rem;
+    background-color: var(--advanced-search-inputs-background-color);
+    box-shadow: var(--box-shadow-01);
+  }
+</style>

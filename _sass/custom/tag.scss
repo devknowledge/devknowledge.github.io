@@ -9,4 +9,9 @@
   transition-property: color, background-color;
   border-radius: 0.3rem;
   cursor: pointer;
+
+  &:hover {
+    color: var(--tag-color-on-hover);
+    background-color: var(--tag-background-color-on-hover);
+  }
 }
