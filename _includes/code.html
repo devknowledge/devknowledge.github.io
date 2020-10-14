@@ -1,11 +1,4 @@
 <style>
-  @import 'mixin';
-
-  code,
-  .code-line-number {
-    font-family: 'Roboto Mono', monospace;
-  }
-
   .tab-content div.highlight {
     --code-border-top-left-radius: 0;
     --code-border-top-right-radius: 0;
@@ -27,12 +20,13 @@
   }
 
   pre.highlight code {
+    font-family: 'Roboto Mono', monospace;
     padding: var(--code-padding-top) 2rem var(--code-padding-bottom);
     font-size: var(--code-font-size);
     line-height: var(--code-line-height);
     background-color: var(--post-code-background-color);
     transition: var(--transition);
-    transition-property: background-color;
+    transition-property: background-color, box-shadow;
     overflow: auto;
     flex: 1;
     /* Hide scrollbar for IE, Edge and Firefox */
@@ -44,7 +38,12 @@
     display: none;
   }
 
+  pre.highlight code.scroll-left {
+    box-shadow: var(--code-shadow-on-scroll-left);
+  }
+
   pre.highlight .code-line-number {
+    font-family: 'Roboto Mono', monospace;
     padding: var(--code-padding-top) 1rem var(--code-padding-bottom);
     width: 5.5rem;
     display: flex;
@@ -82,6 +81,7 @@
   formatCodeTabs();
   addCodeLineNumbers();
   addCodeCopyIcon();
+  addCodeShadowOnLeftScroll();
 
   function formatCodeTabs() {
     document.querySelectorAll('.code-tabs + ul').forEach((codeTabs) => {
@@ -175,5 +175,28 @@
     } finally {
       document.body.removeChild(textarea);
     }
+  }
+
+  function addCodeShadowOnLeftScroll() {
+    document.querySelectorAll('pre.highlight code').forEach((code) => {
+      code.addEventListener('scroll', delay(handleCodeLeftScroll, 100));
+    });
+  }
+
+  function handleCodeLeftScroll(event) {
+    const target = event.target;
+    if (target.scrollLeft !== 0) {
+      target.classList.add('scroll-left');
+    } else {
+      target.classList.remove('scroll-left');
+    }
+  }
+
+  function delay(fn, ms) {
+    let timer = 0;
+    return function (...args) {
+      clearTimeout(timer);
+      timer = setTimeout(fn.bind(null, ...args), ms || 0);
+    };
   }
 </script>

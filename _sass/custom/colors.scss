@@ -17,8 +17,8 @@ body.light {
   --box-shadow-01: 0 2px 5px 0 rgba(74, 74, 74, 0.2);
   --box-shadow-02: 0 0 5px 2px rgba(74, 74, 74, 0.2);
 
-  --info-color: #e8f4fd;
-  --info-background-color: #0d3c61;
+  --info-color: #0d3c61;
+  --info-background-color: #e8f4fd;
   --warn-color: #9c4221;
   --warn-background-color: #fffaf0;
 
@@ -70,6 +70,7 @@ body.light {
   --code-line-number-background-color: var(--background-color-04);
   --code-copy-icon-color: var(--text-color-04);
   --code-copy-icon-color-on-hover: var(--primary-color);
+  --code-shadow-on-scroll-left: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;
 
   --comment-background-color: var(--background-color-03);
   --comment-header-border-color: var(--border-color);
@@ -159,6 +160,7 @@ body.dark {
   --code-line-number-background-color: var(--background-color-04);
   --code-copy-icon-color: var(--text-color-04);
   --code-copy-icon-color-on-hover: var(--primary-color);
+  --code-shadow-on-scroll-left: 17px 0 16px -16px rgba(0, 0, 0, 1) inset;
 
   --comment-background-color: var(--background-color-03);
   --comment-header-border-color: var(--border-color);
