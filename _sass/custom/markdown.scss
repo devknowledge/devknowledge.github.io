@@ -1,0 +1,148 @@
+@import 'mixin';
+
+.markdown {
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  & h1 {
+    font-size: 2em;
+  }
+
+  & h1,
+  & h2 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+    transition-property: border-color;
+  }
+
+  & h2 {
+    font-size: 1.5em;
+  }
+
+  & h3 {
+    font-size: 1.25em;
+  }
+
+  & h4 {
+    font-size: 1em;
+  }
+
+  & h5 {
+    font-size: 0.875em;
+  }
+
+  & h6 {
+    font-size: 0.85em;
+    color: #6a737d;
+  }
+
+  & h1 {
+    font-size: 32px;
+  }
+
+  & h1,
+  & h2 {
+    font-weight: 600;
+  }
+
+  & h2 {
+    font-size: 24px;
+  }
+
+  & h3 {
+    font-size: 20px;
+  }
+
+  & h3,
+  & h4 {
+    font-weight: 600;
+  }
+
+  & h4 {
+    font-size: 16px;
+  }
+
+  & h5 {
+    font-size: 14px;
+  }
+
+  & h5,
+  & h6 {
+    font-weight: 600;
+  }
+
+  & h6 {
+    font-size: 12px;
+  }
+
+  & blockquote,
+  & details,
+  & dl,
+  & ol,
+  & p,
+  & pre,
+  & table,
+  & ul {
+    margin-top: 0;
+    margin-bottom: 1.6rem;
+    font-size: 1.6rem;
+  }
+
+  & ol,
+  & ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 2em;
+  }
+
+  & ol ol,
+  & ul ol {
+    list-style-type: lower-roman;
+  }
+
+  & ol ol ol,
+  & ol ul ol,
+  & ul ol ol,
+  & ul ul ol {
+    list-style-type: lower-alpha;
+  }
+
+  & table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+    overflow: auto;
+  }
+
+  & table th {
+    font-weight: 600;
+  }
+
+  & table td,
+  & table th {
+    padding: 6px 13px;
+  }
+
+  & table th {
+    background-color: var(--table-head-background-color);
+    transition: var(--transition);
+    transition-property: background-color;
+  }
+
+  & table tbody tr {
+    background-color: var(--table-body-background-color);
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+    transition-property: border-color, background-color;
+  }
+}

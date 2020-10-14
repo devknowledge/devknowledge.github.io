@@ -5,10 +5,24 @@ code,
   font-family: 'Roboto Mono', monospace !important;
 }
 
+.tab-content div.highlight {
+  --code-border-top-left-radius: 0;
+  --code-border-top-right-radius: 0;
+}
+
+div.highlight {
+  margin-bottom: 1.6rem;
+  border-top-left-radius: var(--code-border-top-left-radius, var(--border-radius));
+  border-top-right-radius: var(--code-border-top-right-radius, var(--border-radius));
+  border-bottom-left-radius: var(--code-border-bottom-left-radius, var(--border-radius));
+  border-bottom-right-radius: var(--code-border-bottom-right-radius, var(--border-radius));
+  overflow: hidden;
+}
+
 pre.highlight {
   display: flex;
   position: relative;
-  margin-bottom: 1.6rem;
+  margin-bottom: 0;
 
   & code {
     padding: var(--code-padding-top) 2rem var(--code-padding-bottom);

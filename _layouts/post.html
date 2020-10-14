@@ -17,11 +17,12 @@ layout: default
     </div>
   </div>
   <div class="post__body">
-    {{ content }} {% include buy-me-coffee.html %}
+    <div class="markdown">{{ content }}</div>
+    {% include buy-me-coffee.html %}
     <h2 class="comments-header">Comments</h2>
     <div id="JoinGithubDiscussion"></div>
     <div id="Comments"></div>
   </div>
 </div>
 <script src="/assets/js/bable/code-es5.js"></script>
-<script src="/assets/js/comments.js"></script>
+{% include comments.html %}
