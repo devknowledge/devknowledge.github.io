@@ -15,3 +15,8 @@
     background-color: var(--tag-background-color-on-hover);
   }
 }
+
+.tag.selected {
+  color: var(--tag-color-on-select);
+  background-color: var(--tag-background-color-on-select);
+}
