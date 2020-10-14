@@ -1,6 +1,7 @@
 body.light {
   --primary-color: #078eed;
   --secondary-color: #f57173;
+  --white-color: #fff;
 
   --text-color-01: #1e1e1e;
   --text-color-02: #3b3b3b;
@@ -15,6 +16,11 @@ body.light {
   --border-color: #dfe1e5;
   --box-shadow-01: 0 2px 5px 0 rgba(74, 74, 74, 0.2);
   --box-shadow-02: 0 0 5px 2px rgba(74, 74, 74, 0.2);
+
+  --info-color: #e8f4fd;
+  --info-background-color: #0d3c61;
+  --warn-color: #9c4221;
+  --warn-background-color: #fffaf0;
 
   --body-color: var(--text-color-03);
   --body-background-color: var(--background-color-01);
@@ -67,12 +73,12 @@ body.light {
 
   --comment-background-color: var(--background-color-03);
   --comment-header-border-color: var(--border-color);
-  --comments-join-discussion-background-color: #e8f4fd;
-  --comments-join-discussion-color: #0d3c61;
+  --comments-join-discussion-color: var(--info-color);
+  --comments-join-discussion-background-color: var(--info-background-color);
 
-  --buy-me-coffee-color: #9c4221;
-  --buy-me-coffee-background-color: #fffaf0;
-  --buy-me-coffee-button-color: #fff;
+  --buy-me-coffee-color: var(--warn-color);
+  --buy-me-coffee-background-color: var(--warn-background-color);
+  --buy-me-coffee-button-color: var(--white-color);
   --buy-me-coffee-button-background-color: #dd6b20;
 
   --footer-color: var(--text-color-03);
@@ -84,6 +90,7 @@ body.light {
 body.dark {
   --primary-color: #078eed;
   --secondary-color: #f57173;
+  --white-color: #fff;
 
   --text-color-01: #fafafa;
   --text-color-02: #eeeeee;
@@ -98,6 +105,11 @@ body.dark {
   --border-color: #353b46;
   --box-shadow-01: 0 -2px 5px rgba(0, 0, 0, 1);
   --box-shadow-02: 0 -2px 10px rgba(0, 0, 0, 1);
+
+  --info-color: #a6d5fa;
+  --info-background-color: #030e18;
+  --warn-color: #ffd599;
+  --warn-background-color: #190f00;
 
   --body-color: var(--text-color-03);
   --body-background-color: var(--background-color-01);
@@ -150,12 +162,12 @@ body.dark {
 
   --comment-background-color: var(--background-color-03);
   --comment-header-border-color: var(--border-color);
-  --comments-join-discussion-background-color: #030e18;
-  --comments-join-discussion-color: #a6d5fa;
+  --comments-join-discussion-color: var(--info-color);
+  --comments-join-discussion-background-color: var(--info-background-color);
 
-  --buy-me-coffee-color: #ffd599;
-  --buy-me-coffee-background-color: #190f00;
-  --buy-me-coffee-button-color: #fff;
+  --buy-me-coffee-color: var(--warn-color);
+  --buy-me-coffee-background-color: var(--warn-background-color);
+  --buy-me-coffee-button-color: var(--white-color);
   --buy-me-coffee-button-background-color: #dd6b20;
 
   --footer-color: var(--text-color-03);
