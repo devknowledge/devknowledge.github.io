@@ -1,39 +1,3 @@
-<div class="search-wrapper">
-  <span class="iconify" data-icon="ic:outline-search" data-inline="false"></span>
-  <input type="text" placeholder="Search..." />
-  <span id="CloseAdvancedSearchIcon" class="hide"
-    ><span class="iconify pointer" data-icon="eva:arrow-ios-upward-outline" data-inline="false"></span
-  ></span>
-  <span id="OpenAdvancedSearchIcon"><span class="iconify pointer" data-icon="eva:arrow-ios-downward-outline" data-inline="false"></span></span>
-  <div id="AdvancedSearchInputsWrapper" class="advanced-search-inputs-wrapper hide">
-    <p>Tags:</p>
-    {% for tag in tags %}
-    <span class="tag">{{ tag }}</span>
-    {% endfor %}
-  </div>
-</div>
-
-<script>
-  const openAdvancedSearchIcon = document.getElementById('OpenAdvancedSearchIcon');
-  const closeAdvancedSearchIcon = document.getElementById('CloseAdvancedSearchIcon');
-  const advancedSearchInputsWrapper = document.getElementById('AdvancedSearchInputsWrapper');
-
-  openAdvancedSearchIcon.addEventListener('click', handleOpenAdvancedSearchIconClickEvent);
-  document.addEventListener('click', closeAdvancedSearchInputsWrapper);
-
-  function handleOpenAdvancedSearchIconClickEvent(event) {
-    event.stopPropagation();
-    openAdvancedSearchIcon.classList.add('hide');
-    closeAdvancedSearchIcon.classList.remove('hide');
-    advancedSearchInputsWrapper.classList.remove('hide');
-  }
-
-  function closeAdvancedSearchInputsWrapper() {
-    openAdvancedSearchIcon.classList.remove('hide');
-    closeAdvancedSearchIcon.classList.add('hide');
-    advancedSearchInputsWrapper.classList.add('hide');
-  }
-</script>
 
 <style>
   .search-wrapper {
@@ -80,3 +44,40 @@
     box-shadow: var(--box-shadow-01);
   }
 </style>
+
+<div class="search-wrapper">
+  <span class="iconify" data-icon="ic:outline-search" data-inline="false"></span>
+  <input type="text" placeholder="Search..." />
+  <span id="CloseAdvancedSearchIcon" class="hide"
+    ><span class="iconify pointer" data-icon="eva:arrow-ios-upward-outline" data-inline="false"></span
+  ></span>
+  <span id="OpenAdvancedSearchIcon"><span class="iconify pointer" data-icon="eva:arrow-ios-downward-outline" data-inline="false"></span></span>
+  <div id="AdvancedSearchInputsWrapper" class="advanced-search-inputs-wrapper hide">
+    <p>Tags:</p>
+    {% for tag in tags %}
+    <span class="tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  const openAdvancedSearchIcon = document.getElementById('OpenAdvancedSearchIcon');
+  const closeAdvancedSearchIcon = document.getElementById('CloseAdvancedSearchIcon');
+  const advancedSearchInputsWrapper = document.getElementById('AdvancedSearchInputsWrapper');
+
+  openAdvancedSearchIcon.addEventListener('click', handleOpenAdvancedSearchIconClickEvent);
+  document.addEventListener('click', closeAdvancedSearchInputsWrapper);
+
+  function handleOpenAdvancedSearchIconClickEvent(event) {
+    event.stopPropagation();
+    openAdvancedSearchIcon.classList.add('hide');
+    closeAdvancedSearchIcon.classList.remove('hide');
+    advancedSearchInputsWrapper.classList.remove('hide');
+  }
+
+  function closeAdvancedSearchInputsWrapper() {
+    openAdvancedSearchIcon.classList.remove('hide');
+    closeAdvancedSearchIcon.classList.add('hide');
+    advancedSearchInputsWrapper.classList.add('hide');
+  }
+</script>
