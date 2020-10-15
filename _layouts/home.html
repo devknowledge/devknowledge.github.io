@@ -11,26 +11,105 @@ layout: default
 
 {% include post-search-input.html %}
 
-<div class="post-summary-list">{% for post in site.posts %} {% include post-summary.html post="post" %} {% endfor %}</div>
+<div id="PostSummaryList" class="post-summary-list"></div>
 
 <script>
   const allPosts = getAllPosts();
-  console.log(allPosts);
-  document.addEventListener('filter-posts', (event) => console.log(event));
+  const postSummaryListElement = document.getElementById('PostSummaryList');
+  document.addEventListener('filter-posts', handleFilterPostsEvent);
 
   function getAllPosts() {
     const res = [];
     {% for post in site.posts %}
+      {% assign post_tags_raw = post.tags | join:' ' %}
+      {% assign post_excerpt = post.excerpt | jsonify %}
       res.push({
         title: '{{ post.title }}',
-        tags: '{{ post.tags }}',
+        tags: getPostTags('{{ post_tags_raw }}'),
         category: '{{ post.category }}',
         date: new Date('{{ post.date }}'),
-        excerpt: '{{ post.excerpt | jsonify }}',
+        day: "{{ post.date | date: '%d' }}",
+        month: "{{ post.date | date: '%b' }}",
+        excerpt: {{ post_excerpt }},
         author: '{{ post.author }}',
-        author_profile: '{{ post.author_profile }}'
+        banner: '{{ post.banner }}',
+        url: '{{ post.url }}',
+        author_profile: '{{ post.author_profile }}',
+        search_key: '{{ post.title | append:' ' | append:post_tags_raw | append:' ' | append:post_excerpt }}'
       });
     {% endfor %}
+    return res;
+  }
+
+  function getPostTags(postTagsRaw) {
+    return postTagsRaw.split(' ');
+  }
+
+  function handleFilterPostsEvent(event) {
+    const postSearchQuery = event.detail;
+    let filteredPosts = filterBySelectedTags(allPosts, postSearchQuery.selectedTags);
+    filteredPosts = filterByTextInput(filteredPosts, postSearchQuery.searchInputText);
+    postSummaryListElement.innerHTML = '';
+    filteredPosts.forEach(post => {
+      postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummary(post));
+    });
+  }
+
+  function filterBySelectedTags(posts, selectedTags) {
+    return posts.filter(post => post.tags.filter(tag => selectedTags.includes(tag)).length > 0);
+  }
+
+  function filterByTextInput(posts, textInput) {
+    if (textInput) {
+      const textInputWords = textInput.split(/\s+/);
+      return posts.filter(post => {
+        for (const word of textInputWords) {
+          if (post.search_key.indexOf(word) > -1 ) {
+            return true;
+          }
+        }
+        return false;
+      });
+    }
+    return posts;
+  }
+
+  function renderPostSummary(post) {
+    return /*html*/ `
+      <div class="post-summary">
+        <a href="${post.url}">
+          <div class="post-summary__top-section">
+            <img class="post-summary__banner" src="${post.banner}" alt="banner" />
+            <p class="post-summary__category">${post.category}</p>
+            <div class="post-summary__date">
+              <p class="post-summary__day">${post.day}</p>
+              <p class="post-summary__month">${post.month}</p>
+            </div>
+          </div>
+          <div class="post-summary__bottom-section">
+            <div>
+              <h2 class="post-summary__title">${post.title}</h2>
+              <p class="post-summary__extract">${post.excerpt}</p>
+            </div>
+            <div>
+              <div class="post-summary__tags-wrapper">
+                <span class="post-summary__icon iconify" data-icon="ion:pricetags" data-inline="false"></span>
+                ${renderPostTags(post)}
+              </div>
+              <div class="post-summary__author-wrapper">
+                <span class="post-summary__icon iconify" data-icon="mdi:account-edit" data-inline="false"></span>
+                <object><a target="_blank" class="post-summary__author" href="${post.author_profile}">${post.author}</a></object>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    `
+  }
+
+  function renderPostTags(post) {
+    let res = '';
+    post.tags.forEach(tag => res += `<span class="tag">${tag}</span>`);
     return res;
   }
 </script>

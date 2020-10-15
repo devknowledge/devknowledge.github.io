@@ -100,7 +100,7 @@
       ></span>
     </div>
     {% for tag in tags %}
-    <span class="tag selected">{{ tag }}</span>
+    <span class="tag">{{ tag }}</span>
     {% endfor %}
   </div>
 </div>
@@ -112,16 +112,19 @@
   const selectAllTagsIcon = document.getElementById('SelectAllTagsIcon');
   const unselectAllTagsIcon = document.getElementById('UnselectAllTagsIcon');
   const advancedSearchInputsWrapper = document.getElementById('AdvancedSearchInputsWrapper');
-  const tags = document.querySelectorAll('.advanced-search-inputs-wrapper .tag');
-  let selectedTags = [];
+  const allTagsElements = document.querySelectorAll('.advanced-search-inputs-wrapper .tag');
+  const allTags = getAllTags();
+  let selectedTags = getSelectedTags();
 
-  selectAllTags();
+  styleSelectedTags();
+  setTimeout(dispatchFilterPostsEvent);
   openAdvancedSearchIcon.addEventListener('click', handleOpenAdvancedSearchIconClickEvent);
   advancedSearchInputsWrapper.addEventListener('click', handleAdvancedSearchInputsWrapperClickEvent);
   selectAllTagsIcon.addEventListener('click', handleSelectAllTagsIconClickEvent);
   unselectAllTagsIcon.addEventListener('click', handleUnselectAllTagsIconClickEvent);
   document.addEventListener('click', closeAdvancedSearchInputsWrapper);
-  tags.forEach((tag) => tag.addEventListener('click', toggleTag));
+  allTagsElements.forEach((tag) => tag.addEventListener('click', toggleTag));
+  searchPostInput.addEventListener('keyup', delay(handleSearchPostsInputChangeEvent, 1000))
 
   function handleOpenAdvancedSearchIconClickEvent(event) {
     event.stopPropagation();
@@ -140,14 +143,14 @@
     unselectAllTagsIcon.classList.add('hide');
     selectAllTagsIcon.classList.remove('hide');
     selectedTags = [];
-    tags.forEach((tag) => tag.classList.remove('selected'));
+    allTagsElements.forEach((tag) => tag.classList.remove('selected'));
     dispatchFilterPostsEvent();
   }
 
   function handleSelectAllTagsIconClickEvent() {
     selectAllTagsIcon.classList.add('hide');
     unselectAllTagsIcon.classList.remove('hide');
-    tags.forEach((tag) => {
+    allTagsElements.forEach((tag) => {
       tag.classList.add('selected');
       selectedTags.push(tag.innerText);
     });
@@ -171,8 +174,32 @@
     dispatchFilterPostsEvent();
   }
 
-  function selectAllTags() {
-    tags.forEach((tag) => selectedTags.push(tag.innerText));
+  function getSelectedTags() {
+    let res = [];
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlSelectedTag = urlParams.get('tag');
+    if (urlSelectedTag !== null) {
+      res.push(urlSelectedTag);
+    } else {
+      allTags.forEach(tag => res.push(tag));
+    }
+    return res;
+  }
+
+  function styleSelectedTags() {
+    allTagsElements.forEach((tag) => {
+      if (selectedTags.includes(tag.innerText)) {
+        tag.classList.add('selected');
+      }
+    });
+  }
+
+  function getAllTags() {
+    let res = [];
+    {% for tag in tags %}
+      res.push('{{ tag }}');
+    {% endfor %}
+    return res;
   }
 
   function dispatchFilterPostsEvent() {
@@ -180,9 +207,13 @@
       new CustomEvent('filter-posts', {
         detail: {
           selectedTags,
-          searchText: searchPostInput.value,
+          searchInputText: searchPostInput.value,
         },
       })
     );
+  }
+
+  function handleSearchPostsInputChangeEvent() {
+    dispatchFilterPostsEvent();
   }
 </script>
