@@ -118,13 +118,25 @@
     -webkit-box-orient: vertical;
   }
 
+  & .post-summary__tags-wrapper {
+    padding-top: 1.8rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  & .post-summary__tags-wrapper .tag {
+    margin-right: 0.75rem;
+  }
+
   & .post-summary__author-wrapper {
     padding-top: 1rem;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
 
-  & .post-summary__author-icon {
+  & .post-summary__icon {
     font-size: 1.5rem;
     margin-right: 0.7rem;
     color: var(--post-summary-author-icon-color);
