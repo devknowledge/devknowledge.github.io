@@ -12,3 +12,25 @@ layout: default
 {% include post-search-input.html %}
 
 <div class="post-summary-list">{% for post in site.posts %} {% include post-summary.html post="post" %} {% endfor %}</div>
+
+<script>
+  const allPosts = getAllPosts();
+  console.log(allPosts);
+  document.addEventListener('filter-posts', (event) => console.log(event));
+
+  function getAllPosts() {
+    const res = [];
+    {% for post in site.posts %}
+      res.push({
+        title: '{{ post.title }}',
+        tags: '{{ post.tags }}',
+        category: '{{ post.category }}',
+        date: new Date('{{ post.date }}'),
+        excerpt: '{{ post.excerpt | jsonify }}',
+        author: '{{ post.author }}',
+        author_profile: '{{ post.author_profile }}'
+      });
+    {% endfor %}
+    return res;
+  }
+</script>

@@ -84,7 +84,7 @@
 
 <div class="search-wrapper">
   <span class="iconify" data-icon="ic:outline-search" data-inline="false"></span>
-  <input type="text" placeholder="Search..." />
+  <input id="SearchPostInput" type="text" placeholder="Search..." />
   <span id="CloseAdvancedSearchIcon" class="hide"
     ><span class="iconify pointer" data-icon="eva:arrow-ios-upward-outline" data-inline="false"></span
   ></span>
@@ -106,6 +106,7 @@
 </div>
 
 <script>
+  const searchPostInput = document.getElementById('SearchPostInput');
   const openAdvancedSearchIcon = document.getElementById('OpenAdvancedSearchIcon');
   const closeAdvancedSearchIcon = document.getElementById('CloseAdvancedSearchIcon');
   const selectAllTagsIcon = document.getElementById('SelectAllTagsIcon');
@@ -140,6 +141,7 @@
     selectAllTagsIcon.classList.remove('hide');
     selectedTags = [];
     tags.forEach((tag) => tag.classList.remove('selected'));
+    dispatchFilterPostsEvent();
   }
 
   function handleSelectAllTagsIconClickEvent() {
@@ -149,6 +151,7 @@
       tag.classList.add('selected');
       selectedTags.push(tag.innerText);
     });
+    dispatchFilterPostsEvent();
   }
 
   function handleAdvancedSearchInputsWrapperClickEvent(event) {
@@ -165,9 +168,21 @@
       selectedTags.push(tagValue);
       tag.classList.add('selected');
     }
+    dispatchFilterPostsEvent();
   }
 
   function selectAllTags() {
     tags.forEach((tag) => selectedTags.push(tag.innerText));
+  }
+
+  function dispatchFilterPostsEvent() {
+    document.dispatchEvent(
+      new CustomEvent('filter-posts', {
+        detail: {
+          selectedTags,
+          searchText: searchPostInput.value,
+        },
+      })
+    );
   }
 </script>
