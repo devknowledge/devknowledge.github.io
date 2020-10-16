@@ -124,7 +124,8 @@
   unselectAllTagsIcon.addEventListener('click', handleUnselectAllTagsIconClickEvent);
   document.addEventListener('click', closeAdvancedSearchInputsWrapper);
   allTagsElements.forEach((tag) => tag.addEventListener('click', toggleTag));
-  searchPostInput.addEventListener('keyup', delay(handleSearchPostsInputChangeEvent, 1000))
+  searchPostInput.addEventListener('keyup', delay(handleSearchPostsInputChangeEvent, 1000));
+  document.addEventListener('select-tag', handleSelectTagEvent);
 
   function handleOpenAdvancedSearchIconClickEvent(event) {
     event.stopPropagation();
@@ -190,6 +191,8 @@
     allTagsElements.forEach((tag) => {
       if (selectedTags.includes(tag.innerText)) {
         tag.classList.add('selected');
+      } else {
+        tag.classList.remove('selected');
       }
     });
   }
@@ -211,6 +214,13 @@
         },
       })
     );
+  }
+
+  function handleSelectTagEvent(event) {
+    selectedTags = [];
+    selectedTags.push(event.detail.selectedTag);
+    dispatchFilterPostsEvent();
+    styleSelectedTags();
   }
 
   function handleSearchPostsInputChangeEvent() {

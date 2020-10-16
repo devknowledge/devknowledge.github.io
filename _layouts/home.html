@@ -53,6 +53,7 @@ layout: default
     filteredPosts.forEach(post => {
       postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummary(post));
     });
+    addPostSummariesTagsClickEventListener();
   }
 
   function filterBySelectedTags(posts, selectedTags) {
@@ -111,5 +112,17 @@ layout: default
     let res = '';
     post.tags.forEach(tag => res += `<span class="tag">${tag}</span>`);
     return res;
+  }
+
+  function addPostSummariesTagsClickEventListener() {
+    document.querySelectorAll('.post-summary .tag').forEach(tag => tag.addEventListener('click', event => {
+      event.stopPropagation();
+      event.preventDefault();
+      document.dispatchEvent(
+        new CustomEvent('select-tag', {
+          detail: { selectedTag: event.target.innerText },
+        })
+      )
+    }));
   }
 </script>
