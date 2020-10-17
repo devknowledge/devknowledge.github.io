@@ -1,6 +1,14 @@
 const allPosts = getAllPosts();
+let filteredPosts = [];
+let displayedPosts = [];
+let currentMaxDisplayedPostsNumber = 3;
+let loadMorePostMaxNumber = 3;
 const postSummaryListElement = document.getElementById('PostSummaryList');
+const loadMorePostsElement = document.getElementById('LoadMorePosts');
+
+// add event listeners
 document.addEventListener('filter-posts', handleFilterPostsEvent);
+loadMorePostsElement.addEventListener('click', handleLoadMorePostsClickEvent);
 
 function getAllPosts() {
   const res = [];
@@ -31,10 +39,12 @@ function getPostTags(postTagsRaw) {
 
 function handleFilterPostsEvent(event) {
   const postSearchQuery = event.detail;
-  let filteredPosts = filterBySelectedCategories(allPosts, postSearchQuery.selectedCategoriesLowerCase);
+  filteredPosts = filterBySelectedCategories(allPosts, postSearchQuery.selectedCategoriesLowerCase);
   filteredPosts = filterByTextInput(filteredPosts, postSearchQuery.searchInputText);
+  displayedPosts = filteredPosts.slice(0, currentMaxDisplayedPostsNumber);
+  hideLoadMorePostsButtonWhenNoMorePostsToLoad();
   postSummaryListElement.innerHTML = '';
-  filteredPosts.forEach(post => {
+  displayedPosts.forEach(post => {
     postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummary(post));
   });
 }
@@ -95,4 +105,24 @@ function renderPostTags(post) {
   let res = '';
   post.tags.forEach(tag => res += `<span class="tag">${tag}</span>`);
   return res;
+}
+
+function handleLoadMorePostsClickEvent(event) {
+  currentMaxDisplayedPostsNumber += loadMorePostMaxNumber;
+  displayedPosts = filteredPosts.slice(0, currentMaxDisplayedPostsNumber);
+  hideLoadMorePostsButtonWhenNoMorePostsToLoad();
+  postSummaryListElement.innerHTML = '';
+  displayedPosts.forEach(post => {
+    postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummary(post));
+  });
+}
+
+function hideLoadMorePostsButtonWhenNoMorePostsToLoad() {
+  console.log(displayedPosts.length);
+  console.log(filteredPosts.length);
+  if (displayedPosts.length === filteredPosts.length) {
+    loadMorePostsElement.classList.add('hide');
+  } else {
+    loadMorePostsElement.classList.remove('hide');
+  }
 }

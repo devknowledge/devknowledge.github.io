@@ -89,6 +89,13 @@ body.light {
   --footer-background-color: var(--background-color-03);
 
   --advanced-search-inputs-background-color: var(--background-color-02);
+
+  --load-more-posts-color: var(--secondary-color);
+  --load-more-posts-background-color: transparent;
+  --load-more-posts-border-color: var(--secondary-color);
+  --load-more-posts-color-on-hover: var(--white-color);
+  --load-more-posts-background-color-on-hover: var(--secondary-color);
+  --load-more-posts-border-color-on-hover: var(--secondary-color);
 }
 
 body.dark {
@@ -182,4 +189,11 @@ body.dark {
   --footer-background-color: var(--background-color-03);
 
   --advanced-search-inputs-background-color: var(--background-color-02);
+
+  --load-more-posts-color: var(--secondary-color);
+  --load-more-posts-background-color: transparent;
+  --load-more-posts-border-color: var(--secondary-color);
+  --load-more-posts-color-on-hover: var(--white-color);
+  --load-more-posts-background-color-on-hover: var(--secondary-color);
+  --load-more-posts-border-color-on-hover: var(--secondary-color);
 }
