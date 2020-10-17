@@ -61,10 +61,10 @@ layout: default
 
   function filterByTextInput(posts, textInput) {
     if (textInput) {
-      const textInputWords = textInput.split(/\s+/);
+      const textInputWords = textInput.split(/\s+/).map(word => word.toLowerCase());
       return posts.filter(post => {
         for (const word of textInputWords) {
-          if (post.search_key.indexOf(word) > -1 ) {
+          if (post.search_key.toLowerCase().indexOf(word) > -1 ) {
             return true;
           }
         }
