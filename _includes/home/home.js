@@ -1,10 +1,11 @@
 {% include home/post-summary.js %}
 
 const allPosts = getAllPosts();
+const postsColumnsNumber = getPostsColumnsNumber();
 let filteredPosts = [];
 let displayedPosts = [];
-let currentMaxDisplayedPostsNumber = 3;
-let loadMorePostMaxNumber = 3;
+let loadMorePostMaxNumber = getLoadMorePostMaxNumber();
+let currentMaxDisplayedPostsNumber = getLoadMorePostMaxNumber();
 const postSummaryListElement = document.getElementById('PostSummaryList');
 const loadMorePostsElement = document.getElementById('LoadMorePosts');
 
@@ -50,9 +51,9 @@ function handleFilterPostsEvent(event) {
 }
 
 function displayPostsWithDelay(delay) {
-  postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummaryTemplate());
-  postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummaryTemplate());
-  postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummaryTemplate());
+  for (let i = 0; i < postsColumnsNumber; i++) {
+    postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummaryTemplate());
+  }
   setTimeout(() => {
     postSummaryListElement.innerHTML = '';
     displayedPosts.forEach(post => {
@@ -92,5 +93,23 @@ function hideLoadMorePostsButtonWhenNoMorePostsToLoad() {
     loadMorePostsElement.classList.add('hide');
   } else {
     loadMorePostsElement.classList.remove('hide');
+  }
+}
+
+function getPostsColumnsNumber() {
+  try {
+    const posts = document.getElementById('PostSummaryList');
+    return window.getComputedStyle(posts).gridTemplateColumns.split(' ').length;
+  } catch (error) {
+    console.error(error);
+    return 3;
+  }
+}
+
+function getLoadMorePostMaxNumber() {
+  if (postsColumnsNumber < 3) {
+    return 4;
+  } else {
+    return postsColumnsNumber;
   }
 }
