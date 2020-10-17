@@ -67,3 +67,19 @@ a:hover {
 .hide {
   display: none;
 }
+
+.shimmer {
+  background: var(--shimmer-background);
+  background-size: 600% 600%;
+  animation: shimmer 1s ease infinite;
+  animation-direction: reverse;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}

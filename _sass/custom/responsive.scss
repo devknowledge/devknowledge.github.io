@@ -1,6 +1,6 @@
 :root {
   @media screen and (max-width: 375px) {
-    --post-summary-list-padding: 3rem 0;
+    --post-summary-list-margin-top: 3rem;
     --post-summary-grid-gap: 3rem;
     --main-width: 90%;
     --font-size: 45%;
@@ -19,7 +19,7 @@
   }
 
   @media screen and (min-width: 376px) and (max-width: 768px) {
-    --post-summary-list-padding: 6rem 0;
+    --post-summary-list-margin-top: 6rem;
     --post-summary-grid-gap: 2rem;
     --main-width: 85%;
     --font-size: 52%;
@@ -38,7 +38,7 @@
   }
   @media screen and (min-width: 769px) and (max-width: 1920px) {
     --post-max-width: 100rem;
-    --post-summary-list-padding: 8rem 0;
+    --post-summary-list-margin-top: 12rem;
     --post-summary-grid-gap: 2rem;
     --main-width: 80%;
     --font-size: 62.5%;
@@ -51,14 +51,14 @@
     --search-input-margin-top: 5rem;
     --comments-margin: 5rem 0;
     --comments-join-discussion-margin-bottom: 5rem;
-    --footer-margin-top: 10rem;
+    --footer-margin-top: 12rem;
     --footer-padding: 3rem 8rem;
     --footer-icon-font-size: 2.5rem;
   }
 
   @media screen and (min-width: 1921px) {
     --post-max-width: 125rem;
-    --post-summary-list-padding: 10rem 0;
+    --post-summary-list-margin-top: 16rem;
     --post-summary-grid-gap: 2rem;
     --main-width: 80%;
     --main-max-width: 2000px;
@@ -72,7 +72,7 @@
     --search-input-margin-top: 5rem;
     --comments-margin: 7rem 0;
     --comments-join-discussion-margin-bottom: 6rem;
-    --footer-margin-top: 10rem;
+    --footer-margin-top: 16rem;
     --footer-padding: 3rem 8rem;
     --footer-icon-font-size: 2.5rem;
   }

@@ -46,10 +46,19 @@ function handleFilterPostsEvent(event) {
   displayedPosts = filteredPosts.slice(0, currentMaxDisplayedPostsNumber);
   hideLoadMorePostsButtonWhenNoMorePostsToLoad();
   postSummaryListElement.innerHTML = '';
-  displayedPosts.forEach(post => {
-    postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummary(post));
-  });
+  displayPostsWithDelay(750);
+}
+
+function displayPostsWithDelay(delay) {
   postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummaryTemplate());
+  postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummaryTemplate());
+  postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummaryTemplate());
+  setTimeout(() => {
+    postSummaryListElement.innerHTML = '';
+    displayedPosts.forEach(post => {
+      postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummary(post));
+    });
+  }, delay);
 }
 
 function filterBySelectedCategories(posts, selectedCategoriesLowerCase) {
@@ -75,10 +84,7 @@ function handleLoadMorePostsClickEvent(event) {
   currentMaxDisplayedPostsNumber += loadMorePostMaxNumber;
   displayedPosts = filteredPosts.slice(0, currentMaxDisplayedPostsNumber);
   hideLoadMorePostsButtonWhenNoMorePostsToLoad();
-  postSummaryListElement.innerHTML = '';
-  displayedPosts.forEach(post => {
-    postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummary(post));
-  });
+  displayPostsWithDelay(2000);
 }
 
 function hideLoadMorePostsButtonWhenNoMorePostsToLoad() {

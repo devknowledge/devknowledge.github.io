@@ -13,6 +13,7 @@ body.light {
   --background-color-02: #fffffc;
   --background-color-03: #fafafa;
   --background-color-04: #eeeeee;
+  --background-color-05: #e5e5e5;
   --border-color: #dfe1e5;
   --box-shadow-01: 0 2px 5px 0 rgba(74, 74, 74, 0.2);
   --box-shadow-02: 0 0 5px 2px rgba(74, 74, 74, 0.2);
@@ -21,6 +22,8 @@ body.light {
   --info-background-color: #e8f4fd;
   --warn-color: #9c4221;
   --warn-background-color: #fffaf0;
+
+  --shimmer-background: linear-gradient(270deg, var(--background-color-05), var(--background-color-04), var(--background-color-03));
 
   --body-color: var(--text-color-03);
   --body-background-color: var(--background-color-01);
@@ -118,9 +121,12 @@ body.dark {
   --background-color-02: #21252b;
   --background-color-03: #282c34;
   --background-color-04: #2c313a;
+  --background-color-05: #353b46;
   --border-color: #353b46;
   --box-shadow-01: 0 -2px 5px rgba(0, 0, 0, 1);
   --box-shadow-02: 0 -2px 10px rgba(0, 0, 0, 1);
+
+  --shimmer-background: linear-gradient(270deg, var(--background-color-05), var(--background-color-04), var(--background-color-03));
 
   --info-color: #a6d5fa;
   --info-background-color: #030e18;

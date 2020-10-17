@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: repeat(var(--post-summary-columns), 1fr);
   grid-gap: var(--post-summary-grid-gap);
-  padding: var(--post-summary-list-padding);
+  margin-top: var(--post-summary-list-margin-top);
 }
 
 .post-summary {
@@ -167,7 +167,7 @@
 
 .load-more-posts {
   display: flex;
-  margin: 0 auto;
+  margin: 5rem auto 0;
   padding: 0.8rem 4rem;
   border: 1px solid var(--load-more-posts-border-color);
   border-radius: 100rem;
@@ -199,7 +199,6 @@
 
   & .post-summary-template__top-section {
     height: 20rem;
-    background-color: var(--post-summary-template-top-section-background-color);
   }
 
   & .post-summary-template__bottom-section {
