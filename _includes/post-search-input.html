@@ -67,18 +67,19 @@
     display: none;
   }
 
-  .search-wrapper .advanced-search-inputs-wrapper .tag {
+  .search-wrapper .advanced-search-inputs-wrapper .category {
+    cursor: pointer;
     margin-right: 0.75rem;
   }
 
-  .search-wrapper .advanced-search-inputs-wrapper .tag:hover {
-    color: var(--tag-color);
-    background-color: var(--tag-background-color);
+  .search-wrapper .advanced-search-inputs-wrapper .category:hover {
+    color: var(--category-color);
+    background-color: var(--category-background-color);
   }
 
-  .search-wrapper .advanced-search-inputs-wrapper .tag.selected:hover {
-    color: var(--tag-color-on-select);
-    background-color: var(--tag-background-color-on-select);
+  .search-wrapper .advanced-search-inputs-wrapper .category.selected:hover {
+    color: var(--category-color-on-select);
+    background-color: var(--category-background-color-on-select);
   }
 </style>
 
@@ -91,16 +92,16 @@
   <span id="OpenAdvancedSearchIcon"><span class="iconify pointer" data-icon="eva:arrow-ios-downward-outline" data-inline="false"></span></span>
   <div id="AdvancedSearchInputsWrapper" class="advanced-search-inputs-wrapper hide">
     <div class="section-title-wrapper">
-      <p class="section-title">Selected tags</p>
-      <span id="UnselectAllTagsIcon" class="iconify-wrapper"
-        ><span class="iconify pointer" title="unselect all tags" data-icon="gg:remove-r" data-inline="false"></span
+      <p class="section-title">Selected categories</p>
+      <span id="UnselectAllCategoriesIcon" class="iconify-wrapper"
+        ><span class="iconify pointer" title="unselect all categories" data-icon="gg:remove-r" data-inline="false"></span
       ></span>
-      <span id="SelectAllTagsIcon" class="hide iconify-wrapper">
-        <span class="iconify pointer" title="select all tags" data-icon="feather:plus-square" data-inline="false"></span
+      <span id="SelectAllCategoriesIcon" class="hide iconify-wrapper">
+        <span class="iconify pointer" title="select all categories" data-icon="feather:plus-square" data-inline="false"></span
       ></span>
     </div>
-    {% for tag in tags %}
-    <span class="tag">{{ tag }}</span>
+    {% for category in categories %}
+    <span class="category">{{ category }}</span>
     {% endfor %}
   </div>
 </div>
@@ -109,23 +110,22 @@
   const searchPostInput = document.getElementById('SearchPostInput');
   const openAdvancedSearchIcon = document.getElementById('OpenAdvancedSearchIcon');
   const closeAdvancedSearchIcon = document.getElementById('CloseAdvancedSearchIcon');
-  const selectAllTagsIcon = document.getElementById('SelectAllTagsIcon');
-  const unselectAllTagsIcon = document.getElementById('UnselectAllTagsIcon');
+  const selectAllCategoriesIcon = document.getElementById('SelectAllCategoriesIcon');
+  const unselectAllCategoriesIcon = document.getElementById('UnselectAllCategoriesIcon');
   const advancedSearchInputsWrapper = document.getElementById('AdvancedSearchInputsWrapper');
-  const allTagsElements = document.querySelectorAll('.advanced-search-inputs-wrapper .tag');
-  const allTags = getAllTags();
-  let selectedTags = getSelectedTags();
+  const allCategoriesElements = document.querySelectorAll('.advanced-search-inputs-wrapper .category');
+  const allCategories = getAllCategories();
+  let selectedCategories = getSelectedCategories();
 
-  styleSelectedTags();
+  styleSelectedCategories();
   setTimeout(dispatchFilterPostsEvent);
   openAdvancedSearchIcon.addEventListener('click', handleOpenAdvancedSearchIconClickEvent);
   advancedSearchInputsWrapper.addEventListener('click', handleAdvancedSearchInputsWrapperClickEvent);
-  selectAllTagsIcon.addEventListener('click', handleSelectAllTagsIconClickEvent);
-  unselectAllTagsIcon.addEventListener('click', handleUnselectAllTagsIconClickEvent);
+  selectAllCategoriesIcon.addEventListener('click', handleSelectAllCategoriesIconClickEvent);
+  unselectAllCategoriesIcon.addEventListener('click', handleUnselectAllCategoriesIconClickEvent);
   document.addEventListener('click', closeAdvancedSearchInputsWrapper);
-  allTagsElements.forEach((tag) => tag.addEventListener('click', toggleTag));
+  allCategoriesElements.forEach((tag) => tag.addEventListener('click', toggleCategory));
   searchPostInput.addEventListener('keyup', delay(handleSearchPostsInputChangeEvent, 1000));
-  document.addEventListener('select-tag', handleSelectTagEvent);
 
   function handleOpenAdvancedSearchIconClickEvent(event) {
     event.stopPropagation();
@@ -140,20 +140,20 @@
     advancedSearchInputsWrapper.classList.add('hide');
   }
 
-  function handleUnselectAllTagsIconClickEvent() {
-    unselectAllTagsIcon.classList.add('hide');
-    selectAllTagsIcon.classList.remove('hide');
-    selectedTags = [];
-    allTagsElements.forEach((tag) => tag.classList.remove('selected'));
+  function handleUnselectAllCategoriesIconClickEvent() {
+    unselectAllCategoriesIcon.classList.add('hide');
+    selectAllCategoriesIcon.classList.remove('hide');
+    selectedCategories = [];
+    allCategoriesElements.forEach((category) => category.classList.remove('selected'));
     dispatchFilterPostsEvent();
   }
 
-  function handleSelectAllTagsIconClickEvent() {
-    selectAllTagsIcon.classList.add('hide');
-    unselectAllTagsIcon.classList.remove('hide');
-    allTagsElements.forEach((tag) => {
-      tag.classList.add('selected');
-      selectedTags.push(tag.innerText);
+  function handleSelectAllCategoriesIconClickEvent() {
+    selectAllCategoriesIcon.classList.add('hide');
+    unselectAllCategoriesIcon.classList.remove('hide');
+    allCategoriesElements.forEach((category) => {
+      category.classList.add('selected');
+      selectedCategories.push(category.innerText);
     });
     dispatchFilterPostsEvent();
   }
@@ -162,45 +162,45 @@
     event.stopPropagation();
   }
 
-  function toggleTag(event) {
-    const tag = event.target;
-    const tagValue = event.target.innerText;
-    if (selectedTags.includes(tagValue)) {
-      selectedTags = selectedTags.filter((t) => t !== tagValue);
-      tag.classList.remove('selected');
+  function toggleCategory(event) {
+    const category = event.target;
+    const categoryValue = event.target.innerText;
+    if (selectedCategories.includes(categoryValue)) {
+      selectedCategories = selectedCategories.filter((t) => t !== categoryValue);
+      category.classList.remove('selected');
     } else {
-      selectedTags.push(tagValue);
-      tag.classList.add('selected');
+      selectedCategories.push(categoryValue);
+      category.classList.add('selected');
     }
     dispatchFilterPostsEvent();
   }
 
-  function getSelectedTags() {
+  function getSelectedCategories() {
     let res = [];
     const urlParams = new URLSearchParams(window.location.search);
-    const urlSelectedTag = urlParams.get('tag');
-    if (urlSelectedTag !== null) {
-      res.push(urlSelectedTag);
+    const urlSelectedCategory = urlParams.get('category');
+    if (urlSelectedCategory !== null) {
+      res.push(urlSelectedCategory);
     } else {
-      allTags.forEach(tag => res.push(tag));
+      allCategories.forEach(category => res.push(category));
     }
     return res;
   }
 
-  function styleSelectedTags() {
-    allTagsElements.forEach((tag) => {
-      if (selectedTags.includes(tag.innerText)) {
-        tag.classList.add('selected');
+  function styleSelectedCategories() {
+    allCategoriesElements.forEach((category) => {
+      if (selectedCategories.includes(category.innerText)) {
+        category.classList.add('selected');
       } else {
-        tag.classList.remove('selected');
+        category.classList.remove('selected');
       }
     });
   }
 
-  function getAllTags() {
+  function getAllCategories() {
     let res = [];
-    {% for tag in tags %}
-      res.push('{{ tag }}');
+    {% for category in categories %}
+      res.push('{{ category }}');
     {% endfor %}
     return res;
   }
@@ -209,18 +209,11 @@
     document.dispatchEvent(
       new CustomEvent('filter-posts', {
         detail: {
-          selectedTags,
+          selectedCategories,
           searchInputText: searchPostInput.value,
         },
       })
     );
-  }
-
-  function handleSelectTagEvent(event) {
-    selectedTags = [];
-    selectedTags.push(event.detail.selectedTag);
-    dispatchFilterPostsEvent();
-    styleSelectedTags();
   }
 
   function handleSearchPostsInputChangeEvent() {

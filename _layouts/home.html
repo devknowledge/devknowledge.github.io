@@ -47,17 +47,16 @@ layout: default
 
   function handleFilterPostsEvent(event) {
     const postSearchQuery = event.detail;
-    let filteredPosts = filterBySelectedTags(allPosts, postSearchQuery.selectedTags);
+    let filteredPosts = filterBySelectedCategories(allPosts, postSearchQuery.selectedCategories);
     filteredPosts = filterByTextInput(filteredPosts, postSearchQuery.searchInputText);
     postSummaryListElement.innerHTML = '';
     filteredPosts.forEach(post => {
       postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummary(post));
     });
-    addPostSummariesTagsClickEventListener();
   }
 
-  function filterBySelectedTags(posts, selectedTags) {
-    return posts.filter(post => post.tags.filter(tag => selectedTags.includes(tag)).length > 0);
+  function filterBySelectedCategories(posts, selectedCategories) {
+    return posts.filter(post => post.tags.filter(category => selectedCategories.includes(category)).length > 0);
   }
 
   function filterByTextInput(posts, textInput) {
@@ -112,17 +111,5 @@ layout: default
     let res = '';
     post.tags.forEach(tag => res += `<span class="tag">${tag}</span>`);
     return res;
-  }
-
-  function addPostSummariesTagsClickEventListener() {
-    document.querySelectorAll('.post-summary .tag').forEach(tag => tag.addEventListener('click', event => {
-      event.stopPropagation();
-      event.preventDefault();
-      document.dispatchEvent(
-        new CustomEvent('select-tag', {
-          detail: { selectedTag: event.target.innerText },
-        })
-      )
-    }));
   }
 </script>

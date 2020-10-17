@@ -52,11 +52,11 @@ body.light {
   --post-summary-title-color-on-hover: var(--primary-color);
 
   --tag-color: var(--text-color-04);
-  --tag-background-color: var(--background-color-03);
-  --tag-color-on-hover: var(--text-color-06);
-  --tag-background-color-on-hover: var(--primary-color);
-  --tag-color-on-select: var(--text-color-06);
-  --tag-background-color-on-select: var(--primary-color);
+  --tag-background-color: var(--background-color-04);
+  --category-color: var(--text-color-04);
+  --category-background-color: var(--background-color-04);
+  --category-color-on-select: var(--text-color-06);
+  --category-background-color-on-select: var(--secondary-color);
 
   --input-background-color: var(--background-color-01);
   --input-border-color: var(--border-color);
@@ -145,11 +145,11 @@ body.dark {
   --post-summary-title-color-on-hover: var(--primary-color);
 
   --tag-color: var(--text-color-04);
-  --tag-background-color: var(--background-color-03);
-  --tag-color-on-hover: var(--text-color-01);
-  --tag-background-color-on-hover: var(--primary-color);
-  --tag-color-on-select: var(--text-color-01);
-  --tag-background-color-on-select: var(--primary-color);
+  --tag-background-color: var(--background-color-04);
+  --category-color: var(--text-color-04);
+  --category-background-color: var(--background-color-03);
+  --category-color-on-select: var(--text-color-01);
+  --category-background-color-on-select: var(--secondary-color);
 
   --input-background-color: var(--background-color-02);
   --input-border-color: transparent;
