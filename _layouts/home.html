@@ -47,7 +47,7 @@ layout: default
 
   function handleFilterPostsEvent(event) {
     const postSearchQuery = event.detail;
-    let filteredPosts = filterBySelectedCategories(allPosts, postSearchQuery.selectedCategories);
+    let filteredPosts = filterBySelectedCategories(allPosts, postSearchQuery.selectedCategoriesLowerCase);
     filteredPosts = filterByTextInput(filteredPosts, postSearchQuery.searchInputText);
     postSummaryListElement.innerHTML = '';
     filteredPosts.forEach(post => {
@@ -55,8 +55,8 @@ layout: default
     });
   }
 
-  function filterBySelectedCategories(posts, selectedCategories) {
-    return posts.filter(post => post.tags.filter(category => selectedCategories.includes(category)).length > 0);
+  function filterBySelectedCategories(posts, selectedCategoriesLowerCase) {
+    return posts.filter(post => selectedCategoriesLowerCase.includes(post.category));
   }
 
   function filterByTextInput(posts, textInput) {

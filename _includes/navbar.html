@@ -113,7 +113,8 @@
       }
     }
 
-    function toggleTheme() {
+    function toggleTheme(event) {
+      event.stopPropagation();
       const currentTheme = localStorage.getItem(currentThemeKey);
       if (currentTheme === lightTheme) {
         body.classList.remove(lightTheme);

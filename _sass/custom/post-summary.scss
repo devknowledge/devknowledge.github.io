@@ -150,6 +150,10 @@
     transition-property: color;
     font-size: 1.35rem;
     font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 

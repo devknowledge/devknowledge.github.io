@@ -41,6 +41,8 @@
     border-radius: 0.5rem;
     background-color: var(--advanced-search-inputs-background-color);
     box-shadow: var(--box-shadow-01);
+    transition: var(--transition);
+    transition-property: background-color, box-shadow;
   }
 
   .search-wrapper .advanced-search-inputs-wrapper .section-title-wrapper {
@@ -70,16 +72,6 @@
   .search-wrapper .advanced-search-inputs-wrapper .category {
     cursor: pointer;
     margin-right: 0.75rem;
-  }
-
-  .search-wrapper .advanced-search-inputs-wrapper .category:hover {
-    color: var(--category-color);
-    background-color: var(--category-background-color);
-  }
-
-  .search-wrapper .advanced-search-inputs-wrapper .category.selected:hover {
-    color: var(--category-color-on-select);
-    background-color: var(--category-background-color-on-select);
   }
 </style>
 
@@ -115,7 +107,7 @@
   const advancedSearchInputsWrapper = document.getElementById('AdvancedSearchInputsWrapper');
   const allCategoriesElements = document.querySelectorAll('.advanced-search-inputs-wrapper .category');
   const allCategories = getAllCategories();
-  let selectedCategories = getSelectedCategories();
+  let selectedCategoriesLowerCase = getSelectedCategoriesLowerCase();
 
   styleSelectedCategories();
   setTimeout(dispatchFilterPostsEvent);
@@ -143,7 +135,7 @@
   function handleUnselectAllCategoriesIconClickEvent() {
     unselectAllCategoriesIcon.classList.add('hide');
     selectAllCategoriesIcon.classList.remove('hide');
-    selectedCategories = [];
+    selectedCategoriesLowerCase = [];
     allCategoriesElements.forEach((category) => category.classList.remove('selected'));
     dispatchFilterPostsEvent();
   }
@@ -153,7 +145,7 @@
     unselectAllCategoriesIcon.classList.remove('hide');
     allCategoriesElements.forEach((category) => {
       category.classList.add('selected');
-      selectedCategories.push(category.innerText);
+      selectedCategoriesLowerCase.push(category.innerText.toLowerCase());
     });
     dispatchFilterPostsEvent();
   }
@@ -164,32 +156,32 @@
 
   function toggleCategory(event) {
     const category = event.target;
-    const categoryValue = event.target.innerText;
-    if (selectedCategories.includes(categoryValue)) {
-      selectedCategories = selectedCategories.filter((t) => t !== categoryValue);
+    const categoryValueLowerCase = event.target.innerText.toLowerCase();
+    if (selectedCategoriesLowerCase.includes(categoryValueLowerCase)) {
+      selectedCategoriesLowerCase = selectedCategoriesLowerCase.filter((t) => t !== categoryValueLowerCase);
       category.classList.remove('selected');
     } else {
-      selectedCategories.push(categoryValue);
+      selectedCategoriesLowerCase.push(categoryValueLowerCase);
       category.classList.add('selected');
     }
     dispatchFilterPostsEvent();
   }
 
-  function getSelectedCategories() {
+  function getSelectedCategoriesLowerCase() {
     let res = [];
     const urlParams = new URLSearchParams(window.location.search);
     const urlSelectedCategory = urlParams.get('category');
     if (urlSelectedCategory !== null) {
-      res.push(urlSelectedCategory);
+      res.push(urlSelectedCategory.toLowerCase());
     } else {
-      allCategories.forEach(category => res.push(category));
+      allCategories.forEach(category => res.push(category.toLowerCase()));
     }
     return res;
   }
 
   function styleSelectedCategories() {
     allCategoriesElements.forEach((category) => {
-      if (selectedCategories.includes(category.innerText)) {
+      if (selectedCategoriesLowerCase.includes(category.innerText)) {
         category.classList.add('selected');
       } else {
         category.classList.remove('selected');
@@ -209,7 +201,7 @@
     document.dispatchEvent(
       new CustomEvent('filter-posts', {
         detail: {
-          selectedCategories,
+          selectedCategoriesLowerCase,
           searchInputText: searchPostInput.value,
         },
       })
