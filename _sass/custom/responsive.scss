@@ -1,4 +1,12 @@
 :root {
+  --transition: all 0.15s ease-in-out;
+  --navbar-height: 6.5rem;
+  --code-padding-top: 1.5rem;
+  --code-padding-bottom: 1.5rem;
+  --code-line-height: 1.45;
+  --code-font-size: 1.3rem;
+  --border-radius: 0.3rem;
+
   @media screen and (max-width: 375px) {
     --post-summary-list-margin-top: 3rem;
     --post-summary-grid-gap: 3rem;

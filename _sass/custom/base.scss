@@ -8,16 +8,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  --transition: all 0.15s ease-in-out;
-  --navbar-height: 6.5rem;
-  --code-padding-top: 1.5rem;
-  --code-padding-bottom: 1.5rem;
-  --code-line-height: 1.45;
-  --code-font-size: 1.3rem;
-  --border-radius: 0.3rem;
-}
-
 html {
   font-size: var(--font-size);
   scroll-behavior: smooth;
@@ -31,9 +21,16 @@ body {
   transition-property: color, background-color;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 main {
   @include site-width;
   padding-top: var(--navbar-height);
+  flex: 1;
 }
 
 a {
