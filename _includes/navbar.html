@@ -102,7 +102,7 @@
     }
 
     function initCurrentTheme() {
-      const currentTheme = localStorage.getItem(currentThemeKey) || lightTheme;
+      const currentTheme = localStorage.getItem(currentThemeKey) || darkTheme;
       body.classList.remove(lightTheme, darkTheme);
       body.classList.add(currentTheme);
       localStorage.setItem(currentThemeKey, currentTheme);
