@@ -49,6 +49,7 @@ function handleFilterPostsEvent(event) {
   displayedPosts.forEach(post => {
     postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummary(post));
   });
+  postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummaryTemplate());
 }
 
 function filterBySelectedCategories(posts, selectedCategoriesLowerCase) {
@@ -81,8 +82,6 @@ function handleLoadMorePostsClickEvent(event) {
 }
 
 function hideLoadMorePostsButtonWhenNoMorePostsToLoad() {
-  console.log(displayedPosts.length);
-  console.log(filteredPosts.length);
   if (displayedPosts.length === filteredPosts.length) {
     loadMorePostsElement.classList.add('hide');
   } else {

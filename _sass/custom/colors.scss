@@ -50,6 +50,11 @@ body.light {
   --post-summary-author-color: var(--primary-color);
   --post-summary-author-icon-color: var(--text-color-04);
   --post-summary-title-color-on-hover: var(--primary-color);
+  --post-summary-template-background-color: var(--background-color-02);
+  --post-summary-template-top-section-background-color: var(--background-color-03);
+  --post-summary-template-title-background-color: var(--background-color-03);
+  --post-summary-template-extract-background-color: var(--background-color-03);
+  --post-summary-template-author-background-color: var(--background-color-03);
 
   --tag-color: var(--text-color-04);
   --tag-background-color: var(--background-color-04);
@@ -150,6 +155,11 @@ body.dark {
   --post-summary-author-color: var(--primary-color);
   --post-summary-author-icon-color: var(--text-color-04);
   --post-summary-title-color-on-hover: var(--primary-color);
+  --post-summary-template-background-color: var(--background-color-02);
+  --post-summary-template-top-section-background-color: var(--background-color-03);
+  --post-summary-template-title-background-color: var(--background-color-03);
+  --post-summary-template-extract-background-color: var(--background-color-03);
+  --post-summary-template-author-background-color: var(--background-color-03);
 
   --tag-color: var(--text-color-04);
   --tag-background-color: var(--background-color-04);

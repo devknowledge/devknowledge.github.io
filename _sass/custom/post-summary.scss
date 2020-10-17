@@ -191,3 +191,53 @@
   background-color: var(--load-more-posts-background-color-on-hover);
   color: var(--load-more-posts-color-on-hover);
 }
+
+.post-summary-template {
+  background-color: var(--post-summary-template-background-color);
+  border-radius: 0.4rem;
+  box-shadow: var(--box-shadow-01);
+
+  & .post-summary-template__top-section {
+    height: 20rem;
+    background-color: var(--post-summary-template-top-section-background-color);
+  }
+
+  & .post-summary-template__bottom-section {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 25rem;
+
+    & > div {
+      width: 100%;
+    }
+  }
+
+  & .post-summary-template__title {
+    width: 100%;
+    height: 2.8rem;
+    background-color: var(--post-summary-template-title-background-color);
+  }
+
+  & .post-summary-template__extract {
+    margin-top: 1rem;
+    height: 2rem;
+    background-color: var(--post-summary-template-extract-background-color);
+  }
+
+  & .post-summary-template__extract:first-child {
+    margin-top: 2rem;
+  }
+
+  & .post-summary-template__extract:last-child {
+    width: 80%;
+  }
+
+  & .post-summary-template__author {
+    height: 2rem;
+    background-color: var(--post-summary-template-author-background-color);
+    width: 65%;
+  }
+}

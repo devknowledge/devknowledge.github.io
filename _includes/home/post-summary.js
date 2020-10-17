@@ -36,3 +36,25 @@ function renderPostTags(post) {
   post.tags.forEach((tag) => (res += `<span class="tag">${tag}</span>`));
   return res;
 }
+
+function renderPostSummaryTemplate() {
+  return /*html*/ `
+    <div class="post-summary-template">
+      <div class="post-summary-template__top-section">
+      </div>
+      <div class="post-summary-template__bottom-section">
+        <div>
+          <div class="post-summary-template__title"></div>
+          <div>
+            <div class="post-summary-template__extract"></div>
+            <div class="post-summary-template__extract"></div>
+            <div class="post-summary-template__extract"></div>
+          </div>
+        </div>
+        <div>
+          <div class="post-summary-template__author"></div>
+        </div>
+      </div>
+    </div>
+  `;
+}
