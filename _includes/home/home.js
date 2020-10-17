@@ -2,12 +2,13 @@
 
 const allPosts = getAllPosts();
 const postsColumnsNumber = getPostsColumnsNumber();
+const postSummaryListElement = document.getElementById('PostSummaryList');
+const loadMorePostsElement = document.getElementById('LoadMorePosts');
 let filteredPosts = [];
 let displayedPosts = [];
 let loadMorePostMaxNumber = getLoadMorePostMaxNumber();
 let currentMaxDisplayedPostsNumber = getLoadMorePostMaxNumber();
-const postSummaryListElement = document.getElementById('PostSummaryList');
-const loadMorePostsElement = document.getElementById('LoadMorePosts');
+let loadedPostsBanners = 0;
 
 // add event listeners
 document.addEventListener('filter-posts', handleFilterPostsEvent);
@@ -47,18 +48,48 @@ function handleFilterPostsEvent(event) {
   displayedPosts = filteredPosts.slice(0, currentMaxDisplayedPostsNumber);
   hideLoadMorePostsButtonWhenNoMorePostsToLoad();
   postSummaryListElement.innerHTML = '';
-  displayPostsWithDelay(750);
+  displayPostsAfterLoadingImages(750);
 }
 
-function displayPostsWithDelay(delay) {
+function displayPostsAfterLoadingImages(delay) {
   for (let i = 0; i < postsColumnsNumber; i++) {
     postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummaryTemplate());
   }
-  setTimeout(() => {
-    postSummaryListElement.innerHTML = '';
+  loadedPostsBanners = 0;
+  if (displayedPosts.length > 0) {
     displayedPosts.forEach(post => {
-      postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummary(post));
+      let image = document.createElement('img');
+      image.src = post.banner;
+      image.style.position = 'fixed'; // Prevent scrolling to bottom of page in Microsoft Edge.
+      image.style.visibility = 'hidden';
+      document.body.appendChild(image);
+      image.onload = () => onPostBannerLoad(delay);
     });
+  } else {
+    renderNoPostToDisplay(delay);
+  }
+}
+
+function onPostBannerLoad(delay) {
+  setTimeout(() => {
+    loadedPostsBanners++;
+    if (loadedPostsBanners == displayedPosts.length) {
+      postSummaryListElement.innerHTML = '';
+      displayedPosts.forEach(post => {
+        postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummary(post));
+      });
+    }
+  }, delay);
+}
+
+function renderNoPostToDisplay(delay) {
+  setTimeout(() => {
+    postSummaryListElement.innerHTML = /*html*/ `
+      <div class="no-post-to-display">
+        <p>No posts to display!</p>
+        <p>Please give us your suggestion in this <a target="_blank" href="https://github.com/devknowledge/devknowledge.github.io/issues/24">github discussion</a></p>
+      </div>
+    `;
   }, delay);
 }
 
@@ -85,7 +116,7 @@ function handleLoadMorePostsClickEvent(event) {
   currentMaxDisplayedPostsNumber += loadMorePostMaxNumber;
   displayedPosts = filteredPosts.slice(0, currentMaxDisplayedPostsNumber);
   hideLoadMorePostsButtonWhenNoMorePostsToLoad();
-  displayPostsWithDelay(2000);
+  displayPostsAfterLoadingImages(2000);
 }
 
 function hideLoadMorePostsButtonWhenNoMorePostsToLoad() {
