@@ -5,10 +5,7 @@ function renderPostSummary(post) {
         <div class="post-summary__top-section">
           <img class="post-summary__banner" src="${post.banner}" alt="banner" />
           <p class="post-summary__category">${post.category}</p>
-          <div class="post-summary__date">
-            <p class="post-summary__day">${post.day}</p>
-            <p class="post-summary__month">${post.month}</p>
-          </div>
+          <p class="post-summary__date">${post.date}</p>
         </div>
         <div class="post-summary__bottom-section">
           <div>
