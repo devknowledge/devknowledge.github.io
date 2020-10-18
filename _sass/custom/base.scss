@@ -28,7 +28,9 @@ body {
 }
 
 main {
-  @include site-width;
+  width: var(--main-width);
+  max-width: var(--main-max-width);
+  margin: 0 auto;
   padding-top: var(--navbar-height);
   flex: 1;
 }

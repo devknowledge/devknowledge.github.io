@@ -22,9 +22,17 @@ layout: default
     <h2 class="comments-header">Comments</h2>
     <div id="JoinGithubDiscussion"></div>
     <div id="Comments"></div>
+    <div id="RelatedPostsWrapper" class="related-posts-wrapper">
+      <h2>Related posts</h2>
+      <div class="related-posts">{% include related-posts.html %}</div>
+    </div>
   </div>
 </div>
-
-<script></script>
+<script>
+  const relatedPostsCount = document.querySelectorAll('.related-posts .post-summary').length;
+  if (relatedPostsCount < 1) {
+    document.getElementById('RelatedPostsWrapper').style.display = 'none';
+  }
+</script>
 
 {% include code.html %} {% include comments.html %}

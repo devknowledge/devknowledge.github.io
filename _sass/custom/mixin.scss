@@ -4,12 +4,6 @@
   list-style: none;
 }
 
-@mixin site-width {
-  width: var(--main-width);
-  max-width: var(--main-max-width);
-  margin: 0 auto;
-}
-
 @mixin overflow-ellipsis {
   white-space: nowrap;
   overflow: hidden;

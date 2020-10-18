@@ -1,19 +1,19 @@
 @import 'mixin';
 
 .post {
+  margin: var(--post-margin);
   box-shadow: var(--box-shadow-01);
   max-width: var(--post-max-width);
-  margin: var(--post-margin);
   background-color: var(--post-background-color);
   transition: var(--transition);
-  transition-property: background-color;
+  transition-property: background-color, box-shadow;
   padding: var(--post-padding);
+  min-width: 0;
 
   & .post__overview::after {
     content: '';
     display: block;
     height: 0.3rem;
-    width: 100%;
     background: var(--post-title-border-color);
     margin: 2rem 0 4rem;
   }
@@ -46,7 +46,7 @@
     font-size: 1.4rem;
   }
 
-  & .comments-header {
+  & h2 {
     margin: 5rem 0;
     line-height: 1.25;
     padding-bottom: 0.3em;
@@ -55,5 +55,26 @@
     transition-property: border-color;
     font-size: 2.4rem;
     font-weight: 600;
+  }
+}
+
+.related-posts {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  @include hide-scroll-bar;
+
+  & .post-summary {
+    flex: 0 0 30rem;
+    margin: 1rem 1.5rem 1rem 0.6rem;
+  }
+
+  & .post-summary .post-summary__top-section {
+    height: 15rem;
+  }
+
+  & .post-summary .post-summary__bottom-section {
+    padding: 2rem;
+    height: calc(100% - 15rem);
   }
 }

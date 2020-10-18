@@ -42,6 +42,10 @@ body.light {
   --post-title-border-color: var(--border-color);
   --post-date-color: var(--text-color-04);
   --post-code-background-color: var(--background-color-03);
+  --related-posts-background-color: var(--background-color-02);
+  --related-post-background-color-on-hover: var(--background-color-03);
+  --related-posts-title-color: var(--secondary-color);
+  --related-post-border-color: var(--border-color);
 
   --post-summary-background-color: var(--background-color-02);
   --post-summary-category-color: var(--text-color-06);
@@ -150,6 +154,10 @@ body.dark {
   --post-title-border-color: var(--border-color);
   --post-date-color: var(--text-color-04);
   --post-code-background-color: var(--background-color-03);
+  --related-posts-background-color: var(--background-color-02);
+  --related-post-background-color-on-hover: var(--background-color-03);
+  --related-posts-title-color: var(--secondary-color);
+  --related-post-border-color: var(--border-color);
 
   --post-summary-background-color: var(--background-color-02);
   --post-summary-category-color: var(--text-color-01);
