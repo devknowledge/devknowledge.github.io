@@ -23,6 +23,8 @@ body.light {
   --warn-color: #9c4221;
   --warn-background-color: #fffaf0;
 
+  --code-background-color: var(--background-color-04);
+
   --shimmer-background: linear-gradient(270deg, var(--background-color-05), var(--background-color-04), var(--background-color-03));
 
   --body-color: var(--text-color-03);
@@ -136,6 +138,8 @@ body.dark {
   --info-background-color: #030e18;
   --warn-color: #ffd599;
   --warn-background-color: #190f00;
+
+  --code-background-color: var(--background-color-04);
 
   --body-color: var(--text-color-03);
   --body-background-color: var(--background-color-01);

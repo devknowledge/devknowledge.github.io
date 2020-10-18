@@ -82,3 +82,13 @@ a:hover {
     background-position: 100% 50%;
   }
 }
+
+code {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 85%;
+  background: var(--code-background-color);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.6rem;
+  transition: var(--transition);
+  transition-property: color, background-color;
+}
