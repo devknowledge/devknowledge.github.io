@@ -28,8 +28,7 @@ public class ReverseStringDemo {
 ```
 
 In this example, we are using String concatenation. But as `Strings` are immutables in java, this code will create `text.length()`
-String objects in the JVM! So this example shows bad performance and bad memory management. To fix this problem, we are going to use
-the `StringBuilder` as shown in the next example.
+String objects in the JVM! To fix this bad memory management, we are going to use the `StringBuilder` as shown in the next example.
 
 ## Example 2
 
