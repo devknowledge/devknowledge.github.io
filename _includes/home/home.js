@@ -87,7 +87,7 @@ function renderNoPostToDisplay(delay) {
     postSummaryListElement.innerHTML = /*html*/ `
       <div class="no-post-to-display">
         <p>No posts to display!</p>
-        <p>Please give us your suggestion in this <a target="_blank" href="https://github.com/devknowledge/devknowledge.github.io/issues/24">github discussion</a></p>
+        <p>Please give us your suggestion in this <a target="_blank" href="https://github.com/devknowledge/devknowledge.github.io/issues/25">github discussion</a></p>
       </div>
     `;
   }, delay);
