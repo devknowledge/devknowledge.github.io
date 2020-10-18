@@ -7,7 +7,7 @@
   --code-font-size: 1.3rem;
   --border-radius: 0.3rem;
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 426px) {
     --post-summary-list-margin-top: 3rem;
     --post-summary-grid-gap: 3rem;
     --main-width: 90%;
@@ -26,7 +26,7 @@
     --footer-icon-font-size: 2rem;
   }
 
-  @media screen and (min-width: 376px) and (max-width: 768px) {
+  @media screen and (min-width: 427px) and (max-width: 768px) {
     --post-summary-list-margin-top: 6rem;
     --post-summary-grid-gap: 2rem;
     --main-width: 85%;
@@ -76,7 +76,7 @@
     --post-margin: 4rem auto;
     --post-title-font-size: 10rem;
     --post-additional-info-margin-top: 7rem;
-    --welcome-message-margin-top: 8rem;
+    --welcome-message-margin-top: 18rem;
     --search-input-margin-top: 5rem;
     --comments-margin: 7rem 0;
     --comments-join-discussion-margin-bottom: 6rem;
