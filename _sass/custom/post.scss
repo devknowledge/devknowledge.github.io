@@ -14,8 +14,10 @@
     content: '';
     display: block;
     height: 0.3rem;
-    background: var(--post-title-border-color);
     margin: 2rem 0 4rem;
+    background-color: var(--post-title-border-color);
+    transition: var(--transition);
+    transition-property: background-color;
   }
 
   & .post__title {
