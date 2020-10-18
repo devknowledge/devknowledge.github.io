@@ -3,6 +3,8 @@
 const allPosts = getAllPosts();
 const postsColumnsNumber = getPostsColumnsNumber();
 const postSummaryListElement = document.getElementById('PostSummaryList');
+const displayedPostsCountElement = document.getElementById('DisplayedPostsCount');
+const displayedPostsCountRuleElement = document.getElementById('DisplayedPostsCountRule');
 const loadMorePostsElement = document.getElementById('LoadMorePosts');
 let filteredPosts = [];
 let displayedPosts = [];
@@ -13,6 +15,11 @@ let loadedPostsBanners = 0;
 // add event listeners
 document.addEventListener('filter-posts', handleFilterPostsEvent);
 loadMorePostsElement.addEventListener('click', handleLoadMorePostsClickEvent);
+
+function updateDisplayedPostsCountCount() {
+  displayedPostsCountElement.innerHTML = `You are viewing ${displayedPosts.length} of ${filteredPosts.length} posts`
+  displayedPostsCountRuleElement.style.width = `${((displayedPosts.length / filteredPosts.length) * 100)}%`;
+} 
 
 function getAllPosts() {
   const res = [];
@@ -47,6 +54,7 @@ function handleFilterPostsEvent(event) {
   hideLoadMorePostsButtonWhenNoMorePostsToLoad();
   postSummaryListElement.innerHTML = '';
   displayPostsAfterLoadingImages(750);
+  updateDisplayedPostsCountCount();
 }
 
 function displayPostsAfterLoadingImages(delay) {
@@ -76,6 +84,7 @@ function onPostBannerLoad(delay) {
       displayedPosts.forEach(post => {
         postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummary(post));
       });
+      updateDisplayedPostsCountCount();
     }
   }, delay);
 }

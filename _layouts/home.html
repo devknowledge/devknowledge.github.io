@@ -4,6 +4,10 @@ layout: default
 
 {% include collect-tags-and-categories.html %}
 
+<style>
+  {% include home/home.css %}
+</style>
+
 <div class="welcome-message">
   <span class="first-message">Welcome to <span class="site-name">DEV Knowledge</span></span>
   <span class="second-message">We are happy to have you on board and hope you find our contents useful :)</span>
@@ -13,7 +17,14 @@ layout: default
 
 <div id="PostSummaryList" class="post-summary-list"></div>
 
-<button id="LoadMorePosts" class="load-more-posts hide">Load more posts</button>
+<div class="load-more-posts-wrapper">
+  <p id="DisplayedPostsCount" class="displayed-posts-count"></p>
+  <div class="displayed-posts-count-rule-wrapper">
+    <div id="DisplayedPostsCountRule" class="displayed-posts-count-rule"></div>
+    <div class="displayed-posts-count-100-rule"></div>
+  </div>
+  <button id="LoadMorePosts" class="load-more-posts hide">Load more posts</button>
+</div>
 
 <script>
   {% include home/home.js %}

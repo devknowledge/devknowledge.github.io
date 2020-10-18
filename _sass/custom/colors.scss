@@ -48,6 +48,9 @@ body.light {
   --related-post-background-color-on-hover: var(--background-color-03);
   --related-posts-title-color: var(--secondary-color);
   --related-post-border-color: var(--border-color);
+  --displayed-posts-count-color: var(--text-color-04);
+  --displayed-posts-count-rule-background-color: var(--secondary-color);
+  --displayed-posts-count-100-rule-background-color: var(--background-color-04);
 
   --post-summary-background-color: var(--background-color-02);
   --post-summary-category-color: var(--text-color-06);
@@ -162,6 +165,9 @@ body.dark {
   --related-post-background-color-on-hover: var(--background-color-03);
   --related-posts-title-color: var(--secondary-color);
   --related-post-border-color: var(--border-color);
+  --displayed-posts-count-color: var(--text-color-04);
+  --displayed-posts-count-rule-background-color: var(--secondary-color);
+  --displayed-posts-count-100-rule-background-color: var(--background-color-03);
 
   --post-summary-background-color: var(--background-color-02);
   --post-summary-category-color: var(--text-color-01);
