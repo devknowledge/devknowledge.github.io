@@ -9,6 +9,7 @@
   --main-max-width: 2000px;
 
   @media screen and (max-width: 426px) {
+    --site-name-font-size: 2.5rem;
     --post-summary-list-margin-top: 3rem;
     --post-summary-grid-gap: 3rem;
     --main-width: 100%;
@@ -29,6 +30,7 @@
   }
 
   @media screen and (min-width: 427px) and (max-width: 768px) {
+    --site-name-font-size: 2.8rem;
     --post-summary-list-margin-top: 6rem;
     --post-summary-grid-gap: 2rem;
     --main-width: 100%;
@@ -49,6 +51,7 @@
   }
 
   @media screen and (min-width: 769px) and (max-width: 1024px) {
+    --site-name-font-size: 3.2rem;
     --post-max-width: 100rem;
     --post-summary-list-margin-top: 12rem;
     --post-summary-grid-gap: 2rem;
@@ -69,6 +72,7 @@
   }
 
   @media screen and (min-width: 1025px) and (max-width: 1920px) {
+    --site-name-font-size: 3.5rem;
     --post-max-width: 100rem;
     --post-summary-list-margin-top: 12rem;
     --post-summary-grid-gap: 2rem;
@@ -89,6 +93,7 @@
   }
 
   @media screen and (min-width: 1921px) {
+    --site-name-font-size: 3.5rem;
     --post-max-width: 125rem;
     --post-summary-list-margin-top: 16rem;
     --post-summary-grid-gap: 2rem;
