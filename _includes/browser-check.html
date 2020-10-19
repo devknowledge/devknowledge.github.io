@@ -28,7 +28,10 @@
   // Blink engine detection
   const isBlink = (isChrome || isOpera) && !!window.CSS;
 
-  if (!isChrome && !isEdgeChromium && !isFirefox) {
+  // https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  if (!isChrome && !isEdgeChromium && !isFirefox && !isMobile) {
     console.log('not supported browser!');
     document.body.innerHTML =
       '<p style="font-size: 16px; text-align: center; padding-top: 30px;">Sorry, only Chrome and Firefox are supported by this website!</p>';
