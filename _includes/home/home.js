@@ -4,6 +4,7 @@ const allPosts = getAllPosts();
 const postsColumnsNumber = getPostsColumnsNumber();
 const postSummaryListElement = document.getElementById('PostSummaryList');
 const displayedPostsCountElement = document.getElementById('DisplayedPostsCount');
+const loadMorePostsWrapperElement = document.getElementById('LoadMorePostsWrapper');
 const displayedPostsCountRuleElement = document.getElementById('DisplayedPostsCountRule');
 const loadMorePostsElement = document.getElementById('LoadMorePosts');
 let filteredPosts = [];
@@ -84,6 +85,7 @@ function onPostBannerLoad(delay) {
       displayedPosts.forEach(post => {
         postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummary(post));
       });
+      loadMorePostsWrapperElement.classList.remove('hide');
       updateDisplayedPostsCountCount();
     }
   }, delay);
@@ -97,6 +99,7 @@ function renderNoPostToDisplay(delay) {
         <p>Please give us your suggestion in this <a target="_blank" href="https://github.com/devknowledge/devknowledge.github.io/issues/25">github discussion</a></p>
       </div>
     `;
+    loadMorePostsWrapperElement.classList.add('hide');
   }, delay);
 }
 
