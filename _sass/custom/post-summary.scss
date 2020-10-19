@@ -2,13 +2,13 @@
 
 .post-summary,
 .post-summary-template {
+  min-width: 0;
   max-width: 42rem;
   margin: 0 auto;
 }
 
 .post-summary {
   box-shadow: var(--box-shadow-01);
-  min-width: 0;
   background-color: var(--post-summary-background-color);
   border-radius: 0.4rem;
   overflow: hidden;
