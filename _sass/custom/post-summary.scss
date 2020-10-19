@@ -1,5 +1,11 @@
 @import 'mixin';
 
+.post-summary,
+.post-summary-template {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
 .post-summary {
   box-shadow: var(--box-shadow-01);
   min-width: 0;
@@ -8,8 +14,6 @@
   overflow: hidden;
   transition: var(--transition);
   transition-property: background-color transform box-shadow;
-  max-width: 42rem;
-  margin: 0 auto;
 
   &:hover {
     box-shadow: var(--box-shadow-02);
