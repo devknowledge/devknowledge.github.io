@@ -109,7 +109,7 @@
     font-weight: bold;
   } // Name.Class
   .no {
-    color: #008080;
+    color: #e06c75;
   } // Name.Constant
   .ni {
     color: #800080;
@@ -159,7 +159,7 @@
     color: #d14;
   } // Literal.String.Doc
   .s2 {
-    color: #d14;
+    color: #98c379;
   } // Literal.String.Double
   .se {
     color: #d14;
@@ -205,6 +205,7 @@
     color: #4078f2;
   }
 
-  .n {
+  .nl {
+    color: #e06c75;
   }
 }
