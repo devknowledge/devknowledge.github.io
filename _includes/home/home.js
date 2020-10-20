@@ -148,5 +148,9 @@ function getPostsColumnsNumber() {
 }
 
 function getLoadMorePostMaxNumber() {
-  return Math.floor(allPosts.length / postsColumnsNumber);
+  let divisor = postsColumnsNumber;
+  if (postsColumnsNumber < 3) {
+    divisor = 4;
+  }
+  return Math.floor(allPosts.length / divisor);
 }
