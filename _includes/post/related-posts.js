@@ -9,8 +9,18 @@ function renderRelatedPosts() {
   }
 
   const relatedPostsElement = document.getElementById('RelatedPosts');
+  relatedPostsElement.innerHTML += /* html */ `
+    <div class="related-posts-wrapper">
+      <h2>Related posts</h2>
+      <div class="related-posts">${getRelatedPostsHtml(relatedPosts)}</div>
+    </div>
+  `;
+}
+
+function getRelatedPostsHtml(relatedPosts) {
+  let res = '';
   relatedPosts.forEach((relatedPost) => {
-    relatedPostsElement.innerHTML += /* html */ `
+    res += /* html */ `
       <div class="post-summary">
         <a href="${relatedPost.url}">
           <div class="post-summary__top-section">
@@ -32,4 +42,5 @@ function renderRelatedPosts() {
       </div>
     `;
   });
+  return res;
 }
