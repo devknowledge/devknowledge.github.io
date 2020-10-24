@@ -1,5 +1,12 @@
 <script>
   window.jekyll = {};
+
+  window.jekyll.post = {}
+  window.jekyll.post.title = '{{ page.title }}';
+  window.jekyll.post.tags = getPostTags('{{ page.tags | join:' ' }}');
+  window.jekyll.post.date = '{{ page.date | date: '%B %d, %Y' }}';
+  window.jekyll.post.content = {{ content | jsonify }};
+
   window.jekyll.relatedPosts = [];
   {% assign maxRelated = 5 %}
   {% assign minCommonTags =  1 %}
@@ -32,4 +39,9 @@
       {% endif %}
     {% endif %}
   {% endfor %}
+
+  function getPostTags(postTagsRaw) {
+    console.log(postTagsRaw);
+    return postTagsRaw.split(' ');
+  }
 </script>
