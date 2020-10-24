@@ -1,4 +1,16 @@
+renderCommentsWrapper();
 fetchCurrentPostAssociatedGithubIssue();
+
+function renderCommentsWrapper() {
+  const comments = document.getElementById('Comments');
+  comments.innerHTML = /* html */ `
+    <div class="comments-wrapper">
+      <h2 class="comments-header">Comments</h2>
+      <div id="JoinGithubDiscussion"></div>
+      <div id="PostComments"></div>
+    </div>
+  `;
+}
 
 function fetchCurrentPostAssociatedGithubIssue() {
   try {
@@ -61,7 +73,7 @@ function renderPostsComments(comments) {
         </div>
       `;
     });
-    document.getElementById('Comments').outerHTML = html;
+    document.getElementById('PostComments').outerHTML = html;
   } catch (error) {
     console.log('error in renderPostsComments method: ' + error);
   }
