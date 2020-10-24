@@ -1,10 +1,12 @@
+renderLoadMorePosts();
+
 const allPosts = window.jekyll.posts;
 const postsColumnsNumber = getPostsColumnsNumber();
 const postSummaryListElement = document.getElementById('PostSummaryList');
 const displayedPostsCountElement = document.getElementById('DisplayedPostsCount');
 const loadMorePostsWrapperElement = document.getElementById('LoadMorePostsWrapper');
 const displayedPostsCountRuleElement = document.getElementById('DisplayedPostsCountRule');
-const loadMorePostsElement = document.getElementById('LoadMorePosts');
+const loadMorePostsButtonElement = document.getElementById('LoadMorePostsButton');
 let filteredPosts = [];
 let displayedPosts = [];
 let loadMorePostMaxNumber = getLoadMorePostMaxNumber();
@@ -13,7 +15,21 @@ let loadedPostsBanners = 0;
 
 // add event listeners
 document.addEventListener('filter-posts', handleFilterPostsEvent);
-loadMorePostsElement.addEventListener('click', handleLoadMorePostsClickEvent);
+loadMorePostsButtonElement.addEventListener('click', handleLoadMorePostsClickEvent);
+
+function renderLoadMorePosts() {
+  const element = document.getElementById('LoadMorePosts');
+  element.innerHTML = /* html */ `
+    <div id="LoadMorePostsWrapper" class="load-more-posts-wrapper">
+      <p id="DisplayedPostsCount" class="displayed-posts-count"></p>
+      <div class="displayed-posts-count-rule-wrapper">
+        <div id="DisplayedPostsCountRule" class="displayed-posts-count-rule"></div>
+        <div class="displayed-posts-count-100-rule"></div>
+      </div>
+      <button id="LoadMorePostsButton" class="load-more-posts hide">Load more posts</button>
+    </div>
+  `;
+}
 
 function updateDisplayedPostsCountCount() {
   displayedPostsCountElement.innerHTML = `You are viewing ${displayedPosts.length} of ${filteredPosts.length} posts`;
@@ -104,9 +120,9 @@ function handleLoadMorePostsClickEvent(event) {
 
 function hideLoadMorePostsButtonWhenNoMorePostsToLoad() {
   if (displayedPosts.length === filteredPosts.length) {
-    loadMorePostsElement.classList.add('hide');
+    loadMorePostsButtonElement.classList.add('hide');
   } else {
-    loadMorePostsElement.classList.remove('hide');
+    loadMorePostsButtonElement.classList.remove('hide');
   }
 }
 
