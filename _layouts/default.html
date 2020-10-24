@@ -1,11 +1,12 @@
 <!-- prettier-ignore -->
 <!DOCTYPE html>
 <html lang="en">
-  {% include head.html %} {% include common.html %} {% include google-analytics.html %}
+  {% include head.html %} {% include google-analytics.html %} {% include browser-check.html %}
   <body>
-    {% include navbar.html %}
+    <nav></nav>
     <main>{{ content }}</main>
-    {% include footer/footer.html %} {% include browser-check.html %}
+    <footer></footer>
+    {% include common/index.html %}
     <script src="/assets/main-bundle.js"></script>
   </body>
 </html>
