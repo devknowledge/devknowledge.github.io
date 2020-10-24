@@ -70,12 +70,14 @@ function onPostBannerLoad(delay) {
   setTimeout(() => {
     loadedPostsBanners++;
     if (loadedPostsBanners == displayedPosts.length) {
-      postSummaryListElement.innerHTML = '';
-      displayedPosts.forEach((post) => {
-        postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummary(post));
-      });
-      loadMorePostsWrapperElement.classList.remove('hide');
-      updateDisplayedPostsCountCount();
+      let newPostSummaryHtml = '';
+      displayedPosts.forEach((post) => (newPostSummaryHtml += renderPostSummary(post)));
+      postSummaryListElement.classList.add('on-change');
+      setTimeout(() => {
+        postSummaryListElement.innerHTML = newPostSummaryHtml;
+        postSummaryListElement.classList.remove('on-change');
+        updateDisplayedPostsCountCount();
+      }, 800);
     }
   }, delay);
 }

@@ -3,6 +3,11 @@
   grid-template-columns: repeat(var(--post-summary-columns), 1fr);
   grid-gap: var(--post-summary-grid-gap);
   margin-top: var(--post-summary-list-margin-top);
+  transition: opacity 0.8s ease-in;
+}
+
+.post-summary-list.on-change {
+  opacity: 0;
 }
 
 .load-more-posts-wrapper {
