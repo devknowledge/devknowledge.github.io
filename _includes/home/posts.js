@@ -1,6 +1,4 @@
-{% include home/post-summary.js %}
-
-const allPosts = getAllPosts();
+const allPosts = window.jekyll.posts;
 const postsColumnsNumber = getPostsColumnsNumber();
 const postSummaryListElement = document.getElementById('PostSummaryList');
 const displayedPostsCountElement = document.getElementById('DisplayedPostsCount');
@@ -18,33 +16,8 @@ document.addEventListener('filter-posts', handleFilterPostsEvent);
 loadMorePostsElement.addEventListener('click', handleLoadMorePostsClickEvent);
 
 function updateDisplayedPostsCountCount() {
-  displayedPostsCountElement.innerHTML = `You are viewing ${displayedPosts.length} of ${filteredPosts.length} posts`
-  displayedPostsCountRuleElement.style.width = `${((displayedPosts.length / filteredPosts.length) * 100)}%`;
-} 
-
-function getAllPosts() {
-  const res = [];
-  {% for post in site.posts %}
-    {% assign post_tags_raw = post.tags | join:' ' %}
-    {% assign post_excerpt = post.excerpt | jsonify %}
-    res.push({
-      title: '{{ post.title }}',
-      tags: getPostTags('{{ post_tags_raw }}'),
-      category: '{{ post.category }}',
-      date: "{{ post.date | date: '%b %d, %Y' }}",
-      excerpt: {{ post_excerpt }},
-      author: '{{ post.author }}',
-      banner: '{{ post.banner }}',
-      url: '{{ post.url }}',
-      author_profile: '{{ post.author_profile }}',
-      search_key: '{{ post.title | append:' ' | append:post_tags_raw | append:' ' | append:post_excerpt }}'
-    });
-  {% endfor %}
-  return res;
-}
-
-function getPostTags(postTagsRaw) {
-  return postTagsRaw.split(' ');
+  displayedPostsCountElement.innerHTML = `You are viewing ${displayedPosts.length} of ${filteredPosts.length} posts`;
+  displayedPostsCountRuleElement.style.width = `${(displayedPosts.length / filteredPosts.length) * 100}%`;
 }
 
 function handleFilterPostsEvent(event) {
@@ -64,7 +37,7 @@ function displayPostsAfterLoadingImages(delay) {
   }
   loadedPostsBanners = 0;
   if (displayedPosts.length > 0) {
-    displayedPosts.forEach(post => {
+    displayedPosts.forEach((post) => {
       let image = document.createElement('img');
       image.src = post.banner;
       image.style.position = 'fixed'; // Prevent scrolling to bottom of page in Microsoft Edge.
@@ -82,7 +55,7 @@ function onPostBannerLoad(delay) {
     loadedPostsBanners++;
     if (loadedPostsBanners == displayedPosts.length) {
       postSummaryListElement.innerHTML = '';
-      displayedPosts.forEach(post => {
+      displayedPosts.forEach((post) => {
         postSummaryListElement.insertAdjacentHTML('beforeend', renderPostSummary(post));
       });
       loadMorePostsWrapperElement.classList.remove('hide');
@@ -104,15 +77,15 @@ function renderNoPostToDisplay(delay) {
 }
 
 function filterBySelectedCategories(posts, selectedCategoriesLowerCase) {
-  return posts.filter(post => selectedCategoriesLowerCase.includes(post.category));
+  return posts.filter((post) => selectedCategoriesLowerCase.includes(post.category));
 }
 
 function filterByTextInput(posts, textInput) {
   if (textInput) {
-    const textInputWords = textInput.split(/\s+/).map(word => word.toLowerCase());
-    return posts.filter(post => {
+    const textInputWords = textInput.split(/\s+/).map((word) => word.toLowerCase());
+    return posts.filter((post) => {
       for (const word of textInputWords) {
-        if (post.search_key.toLowerCase().indexOf(word) > -1 ) {
+        if (post.search_key.toLowerCase().indexOf(word) > -1) {
           return true;
         }
       }

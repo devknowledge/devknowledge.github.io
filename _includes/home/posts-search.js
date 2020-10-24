@@ -1,3 +1,6 @@
+const allCategories = window.jekyll.categories;
+renderPostsSearch();
+
 const searchPostInput = document.getElementById('SearchPostInput');
 const openAdvancedSearchIcon = document.getElementById('OpenAdvancedSearchIcon');
 const closeAdvancedSearchIcon = document.getElementById('CloseAdvancedSearchIcon');
@@ -5,7 +8,6 @@ const selectAllCategoriesIcon = document.getElementById('SelectAllCategoriesIcon
 const unselectAllCategoriesIcon = document.getElementById('UnselectAllCategoriesIcon');
 const advancedSearchInputsWrapper = document.getElementById('AdvancedSearchInputsWrapper');
 const allCategoriesElements = document.querySelectorAll('.advanced-search-inputs-wrapper .category');
-const allCategories = getAllCategories();
 let selectedCategoriesLowerCase = getSelectedCategoriesLowerCase();
 
 styleSelectedCategories();
@@ -17,6 +19,38 @@ unselectAllCategoriesIcon.addEventListener('click', handleUnselectAllCategoriesI
 document.addEventListener('click', closeAdvancedSearchInputsWrapper);
 allCategoriesElements.forEach((tag) => tag.addEventListener('click', toggleCategory));
 searchPostInput.addEventListener('keyup', delay(handleSearchPostsInputChangeEvent, 1000));
+
+function renderPostsSearch() {
+  const postsSearch = document.getElementById('PostsSearch');
+  postsSearch.innerHTML = /* html */ `
+    <div class="search-wrapper">
+      <span class="iconify" data-icon="ic:outline-search" data-inline="false"></span>
+      <input id="SearchPostInput" type="text" placeholder="Search..." />
+      <span id="CloseAdvancedSearchIcon" class="hide"
+        ><span class="iconify pointer" data-icon="eva:arrow-ios-upward-outline" data-inline="false"></span
+      ></span>
+      <span id="OpenAdvancedSearchIcon"><span class="iconify pointer" data-icon="eva:arrow-ios-downward-outline" data-inline="false"></span></span>
+      <div id="AdvancedSearchInputsWrapper" class="advanced-search-inputs-wrapper hide">
+        <div class="section-title-wrapper">
+          <p class="section-title">Selected categories</p>
+          <span id="UnselectAllCategoriesIcon" class="iconify-wrapper"
+            ><span class="iconify pointer" title="unselect all categories" data-icon="gg:remove-r" data-inline="false"></span
+          ></span>
+          <span id="SelectAllCategoriesIcon" class="hide iconify-wrapper">
+            <span class="iconify pointer" title="select all categories" data-icon="feather:plus-square" data-inline="false"></span
+          ></span>
+        </div>
+        ${renderCategories()}
+      </div>
+    </div>
+  `;
+}
+
+function renderCategories() {
+  let res = '';
+  window.jekyll.categories.forEach((category) => (res += `<span class="category">${category}</span>`));
+  return res;
+}
 
 function handleOpenAdvancedSearchIconClickEvent(event) {
   event.stopPropagation();
@@ -73,7 +107,7 @@ function getSelectedCategoriesLowerCase() {
   if (urlSelectedCategory !== null) {
     res.push(urlSelectedCategory.toLowerCase());
   } else {
-    allCategories.forEach(category => res.push(category.toLowerCase()));
+    allCategories.forEach((category) => res.push(category.toLowerCase()));
   }
   return res;
 }
@@ -86,14 +120,6 @@ function styleSelectedCategories() {
       category.classList.remove('selected');
     }
   });
-}
-
-function getAllCategories() {
-  let res = [];
-  {% for category in categories %}
-    res.push('{{ category }}');
-  {% endfor %}
-  return res;
 }
 
 function dispatchFilterPostsEvent() {

@@ -31,6 +31,8 @@ body.light {
   --body-background-color: var(--background-color-01);
 
   --navbar-background-color: var(--background-color-01);
+  --navbar-box-shadow: var(--box-shadow-01);
+
   --icon-color: var(--text-color-03);
 
   --logo-text-color: var(--text-color-03);
@@ -148,6 +150,8 @@ body.dark {
   --body-background-color: var(--background-color-01);
 
   --navbar-background-color: var(--background-color-01);
+  --navbar-box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+
   --icon-color: var(--text-color-03);
 
   --table-head-background-color: var(--background-color-03);

@@ -1,0 +1,52 @@
+.buy-me-coffee__hr {
+  margin: 10rem 0 3rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition);
+  transition-property: border-color;
+}
+
+.buy-me-coffee {
+  width: 100;
+  padding: 4rem 3rem;
+  background-color: var(--buy-me-coffee-background-color);
+  transition: var(--transition);
+  transition-property: background-color;
+  border-radius: var(--border-radius);
+}
+
+.buy-me-coffee p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 0.3rem;
+  color: var(--buy-me-coffee-color);
+  transition: var(--transition);
+  transition-property: color;
+}
+
+.buy-me-coffee .buy-me-coffee__button {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 2rem;
+}
+
+.buy-me-coffee .buy-me-coffee__button-container {
+  display: inline-flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.45rem;
+  padding: 1rem 1.8rem;
+  border-radius: 0.3rem;
+  color: var(--buy-me-coffee-button-color);
+  background-color: var(--buy-me-coffee-button-background-color);
+  transition: var(--transition);
+  transition-property: color, background-color;
+}
+.buy-me-coffee .buy-me-coffee__button-container .iconify {
+  font-size: 2rem;
+  margin-right: 1rem;
+  color: var(--buy-me-coffee-button-color);
+  transition: var(--transition);
+  transition-property: color;
+}

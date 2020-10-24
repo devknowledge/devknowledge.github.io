@@ -2,6 +2,8 @@
 layout: default
 ---
 
+{% include jekyll/post.html %}
+
 <div class="post">
   <div class="post__overview">
     <h1 class="post__title">{{ page.title }}</h1>
@@ -18,21 +20,19 @@ layout: default
   </div>
   <div class="post__body">
     <div class="markdown">{{ content }}</div>
-    {% include buy-me-coffee.html %}
-    <h2 class="comments-header">Comments</h2>
-    <div id="JoinGithubDiscussion"></div>
-    <div id="Comments"></div>
+    <div id="BuyMeCoffee"></div>
+
     <div id="RelatedPostsWrapper" class="related-posts-wrapper">
       <h2>Related posts</h2>
-      <div class="related-posts">{% include related-posts.html %}</div>
+      <div id="RelatedPosts" class="related-posts"></div>
+    </div>
+
+    <div class="comments-wrapper">
+      <h2 class="comments-header">Comments</h2>
+      <div id="JoinGithubDiscussion"></div>
+      <div id="Comments"></div>
     </div>
   </div>
 </div>
-<script>
-  const relatedPostsCount = document.querySelectorAll('.related-posts .post-summary').length;
-  if (relatedPostsCount < 2) {
-    document.getElementById('RelatedPostsWrapper').style.display = 'none';
-  }
-</script>
 
-{% include code.html %} {% include comments.html %}
+{% include post/post.html %}
