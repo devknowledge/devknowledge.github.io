@@ -1,12 +1,11 @@
 ---
 layout: default
 ---
-
-{% include jekyll/home.html %}
-
-<div id="WelcomeMessage"></div>
-<div id="PostsSearch"></div>
-<div id="PostSummaryList" class="post-summary-list"></div>
-<div id="LoadMorePosts"></div>
-
-{% include home/index.html %}
+<style>
+  {% include webpack/home-bundle.css %}
+</style>
+<body></body>
+<script>
+  {% include jekyll/home.js %}
+  {% include webpack/home-bundle.js %}
+</script>

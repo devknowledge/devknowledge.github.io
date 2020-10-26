@@ -1,34 +1,37 @@
 const path = require('path');
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: path.join(__dirname, 'webpack', 'main'),
+  mode: 'production',
+  watch: true,
+  entry: {
+    home: path.join(__dirname, 'webpack/home.ts'),
+    post: path.join(__dirname, 'webpack/post.ts'),
+  },
   output: {
     filename: '[name]-bundle.js',
-    path: path.resolve(__dirname, 'assets'),
+    path: path.resolve(__dirname, '_includes/webpack'),
   },
   plugins: [
-    new ExtractTextWebpackPlugin({
+    new MiniCssExtractPlugin({
       filename: '[name]-bundle.css',
     }),
   ],
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.ts$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'ts-loader',
       },
       {
-        test: /\.s?[ac]ss$/,
-        use: ExtractTextWebpackPlugin.extract({
-          use: ['css-loader', 'postcss-loader', 'sass-loader'],
-        }),
+        test: /\.scss$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
       },
     ],
   },
   resolve: {
     modules: [path.resolve('./webpack'), path.resolve('./node_modules')],
-    extensions: ['.json', '.js'],
+    extensions: ['.js', '.ts'],
   },
 };

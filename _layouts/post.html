@@ -1,14 +1,12 @@
 ---
 layout: default
 ---
-
-{% include jekyll/post.html %}
-
-<div class="post">
-  <div id="Post"></div>
-  <div id="BuyMeCoffee"></div>
-  <div id="RelatedPosts"></div>
-  <div id="Comments"></div>
-</div>
-
-{% include post/index.html %}
+<style>
+  {% include webpack/post-bundle.css %}
+</style>
+<body></body>
+<script>
+  {% include jekyll/post.js %}
+  {% include webpack/post-bundle.js %}
+  {% include jekyll/markdown.js %}
+</script>
