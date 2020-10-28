@@ -1,8 +1,10 @@
 export interface HtmlComponent {
 
+  toHtml(): string;
+  
   preHtmlInsert(): void;
 
-  toHtml(): string;
+  insertHtml(parentElement: HTMLElement, insertPosition: InsertPosition): void;
 
   postHtmlInsert(): void;
 
@@ -16,6 +18,10 @@ export abstract class BaseHtmlComponent implements HtmlComponent {
 
   preHtmlInsert(): void {
     // nothing to do!
+  }
+
+  insertHtml(parentElement: HTMLElement, insertPosition: InsertPosition): void {
+    parentElement.insertAdjacentHTML(insertPosition, this.toHtml());
   }
 
   dispatchCustomEvent(eventName: string, eventDetail = {}) {

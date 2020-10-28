@@ -12,5 +12,5 @@ components.push(new HomeMainHtmlComponent());
 components.push(new FooterHtmlComponent());
 
 components.forEach(component => component.preHtmlInsert());
-components.forEach(component => body.insertAdjacentHTML('beforeend', component.toHtml()));
+components.forEach(component => component.insertHtml(body, 'beforeend'));
 components.forEach(component => component.postHtmlInsert());
