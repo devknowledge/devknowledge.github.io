@@ -1,5 +1,5 @@
 import { BuyMeCoffeeHtmlComponent } from "./buy-me-coffee.component";
-import { BaseHtmlComponent } from "./component.interface";
+import { BaseHtmlComponent, HtmlComponent } from "./component.interface";
 import { PostCommentListHtmlComponent } from "./post-comment-list.component";
 import { PostMarkdownHtmlComponent } from "./post-markdown.component";
 import { PostOverviewHtmlComponent } from "./post-overview.component";
@@ -7,27 +7,20 @@ import { RelatedPostSummaryListHtmlComponent } from "./related-post-summary-list
 
 export class PostMainHtmlComponent extends BaseHtmlComponent {
 
-  private postOverview: PostOverviewHtmlComponent;
-  private postMarkdown: PostMarkdownHtmlComponent;
-  private buyMeCoffeeComponent: BuyMeCoffeeHtmlComponent;
-  private relatedPostsComponent: RelatedPostSummaryListHtmlComponent;
-  private postCommentListComponent: PostCommentListHtmlComponent;
+  private components: Array<HtmlComponent>;
 
   constructor() {
     super();
-    this.postOverview = new PostOverviewHtmlComponent();
-    this.postMarkdown = new PostMarkdownHtmlComponent();
-    this.relatedPostsComponent = new RelatedPostSummaryListHtmlComponent();
-    this.buyMeCoffeeComponent = new BuyMeCoffeeHtmlComponent();
-    this.postCommentListComponent = new PostCommentListHtmlComponent();
+    this.components = [];
+    this.components.push(new PostOverviewHtmlComponent());
+    this.components.push(new PostMarkdownHtmlComponent());
+    this.components.push(new RelatedPostSummaryListHtmlComponent());
+    this.components.push(new BuyMeCoffeeHtmlComponent());
+    this.components.push(new PostCommentListHtmlComponent());
   }
 
   preHtmlInsert() {
-    this.postOverview.preHtmlInsert();
-    this.postMarkdown.preHtmlInsert();
-    this.buyMeCoffeeComponent.preHtmlInsert();
-    this.relatedPostsComponent.preHtmlInsert();
-    this.postCommentListComponent.preHtmlInsert();
+    this.components.forEach(component => component.preHtmlInsert());
   }
 
   toHtml() {
@@ -35,11 +28,7 @@ export class PostMainHtmlComponent extends BaseHtmlComponent {
       return /* html */ `
         <main>
           <div class="post">
-            ${this.postOverview.toHtml()}
-            ${this.postMarkdown.toHtml()}
-            ${this.buyMeCoffeeComponent.toHtml()}
-            ${this.relatedPostsComponent.toHtml()}
-            ${this.postCommentListComponent.toHtml()}
+            ${this.components.map(component => component.toHtml()).join()}
           </div>
         </main>
       `;
@@ -49,11 +38,7 @@ export class PostMainHtmlComponent extends BaseHtmlComponent {
   }
 
   postHtmlInsert() {
-    this.postOverview.postHtmlInsert();
-    this.postMarkdown.postHtmlInsert();
-    this.buyMeCoffeeComponent.postHtmlInsert();
-    this.relatedPostsComponent.postHtmlInsert();
-    this.postCommentListComponent.postHtmlInsert();
+    this.components.forEach(component => component.postHtmlInsert());
   }
 
 
