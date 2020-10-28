@@ -28,7 +28,7 @@ export class PostCommentListHtmlComponent extends BaseHtmlComponent {
     }
   }
 
-  postHtmlInsert(): void {
+  postInsertHtml(): void {
     this.joinGithubDiscussionDomElement = document.getElementById(JOIN_GITHUB_DISCUSSION);
     this.postCommentsDomElement = document.getElementById(POST_COMMENTS_ID);
     this.fetchCurrentPostAssociatedGithubIssue();

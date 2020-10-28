@@ -30,7 +30,7 @@ export class LoadMorePostsHtmlComponent extends BaseHtmlComponent {
     }
   }
 
-  postHtmlInsert() {
+  postInsertHtml() {
     this.initClassAttributes();
     this.addCustomEventListener(DISPLAYED_POSTS_CHANGE_EVENT_NAME, this.handleDisplayedPostsChangeEvent.bind(this));
     this.loadMorePostsButtonDomElement.addEventListener('click', this.handleLoadMorePostsButtonClickEvent.bind(this));

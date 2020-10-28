@@ -52,7 +52,7 @@ export class PostSearchHtmlComponent extends BaseHtmlComponent {
     }
   }
 
-  postHtmlInsert() {
+  postInsertHtml() {
     this.initClassAttributes();
     this.addEventListeners();
   }

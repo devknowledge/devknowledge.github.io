@@ -2,11 +2,11 @@ export interface HtmlComponent {
 
   toHtml(): string;
   
-  preHtmlInsert(): void;
+  preInsertHtml(): void;
 
   insertHtml(parentElement: HTMLElement, insertPosition: InsertPosition): void;
 
-  postHtmlInsert(): void;
+  postInsertHtml(): void;
 
 }
 
@@ -14,9 +14,9 @@ export abstract class BaseHtmlComponent implements HtmlComponent {
 
   abstract toHtml(): string;
 
-  abstract postHtmlInsert(): void 
+  abstract postInsertHtml(): void 
 
-  preHtmlInsert(): void {
+  preInsertHtml(): void {
     // nothing to do!
   }
 
@@ -47,7 +47,7 @@ export abstract class BaseHtmlComponent implements HtmlComponent {
 }
 
 export abstract class BaseStaticHtmlComponent extends BaseHtmlComponent {
-  postHtmlInsert(): void {
+  postInsertHtml(): void {
     // nothing to do!
   }
 }

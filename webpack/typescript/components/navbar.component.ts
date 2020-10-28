@@ -16,13 +16,13 @@ export class NavbarHtmlComponent extends BaseHtmlComponent {
   constructor() {
     super();
     this.toHtml = this.toHtml.bind(this);
-    this.postHtmlInsert = this.postHtmlInsert.bind(this);
+    this.postInsertHtml = this.postInsertHtml.bind(this);
     this.initDomElements = this.initDomElements.bind(this);
     this.onChangeThemeEvent = this.onChangeThemeEvent.bind(this);
     this.onWindowScrollEvent = this.onWindowScrollEvent.bind(this);
   }
 
-  preHtmlInsert(): void {
+  preInsertHtml(): void {
     this.setThemeFromLocalStorage();
   }
 
@@ -51,7 +51,7 @@ export class NavbarHtmlComponent extends BaseHtmlComponent {
     }
   }
 
-  postHtmlInsert() {
+  postInsertHtml() {
     try {
       this.initDomElements();
       this.showHideToggleThemeIcons();

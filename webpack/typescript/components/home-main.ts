@@ -17,8 +17,8 @@ export class HomeMainHtmlComponent extends BaseHtmlComponent {
     this.components.push(new LoadMorePostsHtmlComponent());
   }
 
-  preHtmlInsert() {
-    this.components.forEach(component => component.preHtmlInsert());
+  preInsertHtml() {
+    this.components.forEach(component => component.preInsertHtml());
   }
 
   toHtml() {
@@ -33,8 +33,8 @@ export class HomeMainHtmlComponent extends BaseHtmlComponent {
     }
   }
 
-  postHtmlInsert() {
-    this.components.forEach(component => component.postHtmlInsert());
+  postInsertHtml() {
+    this.components.forEach(component => component.postInsertHtml());
   }
 
 

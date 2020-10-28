@@ -19,8 +19,8 @@ export class PostMainHtmlComponent extends BaseHtmlComponent {
     this.components.push(new PostCommentListHtmlComponent());
   }
 
-  preHtmlInsert() {
-    this.components.forEach(component => component.preHtmlInsert());
+  preInsertHtml() {
+    this.components.forEach(component => component.preInsertHtml());
   }
 
   toHtml() {
@@ -37,8 +37,8 @@ export class PostMainHtmlComponent extends BaseHtmlComponent {
     }
   }
 
-  postHtmlInsert() {
-    this.components.forEach(component => component.postHtmlInsert());
+  postInsertHtml() {
+    this.components.forEach(component => component.postInsertHtml());
   }
 
 

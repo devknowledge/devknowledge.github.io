@@ -28,7 +28,7 @@ export class PostSummaryListHtmlComponent extends BaseHtmlComponent {
     }
   }
 
-  postHtmlInsert() {
+  postInsertHtml() {
     this.initClassAttributes();
     this.loadPosts(1500);
     this.addCustomEventListener(LOAD_MORE_POSTS_EVENT_NAME, this.handleLoadMorePostsEvent.bind(this));
