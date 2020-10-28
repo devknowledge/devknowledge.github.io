@@ -28,7 +28,7 @@ export class PostMainHtmlComponent extends BaseHtmlComponent {
       return /* html */ `
         <main>
           <div class="post">
-            ${this.components.map(component => component.toHtml()).join()}
+            ${this.components.map(component => component.toHtml()).join(' ')}
           </div>
         </main>
       `;
