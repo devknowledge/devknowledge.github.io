@@ -14,8 +14,8 @@ export class PostMainHtmlComponent extends BaseHtmlComponent {
     this.components = [];
     this.components.push(new PostOverviewHtmlComponent());
     this.components.push(new PostMarkdownHtmlComponent());
-    this.components.push(new RelatedPostSummaryListHtmlComponent());
     this.components.push(new BuyMeCoffeeHtmlComponent());
+    this.components.push(new RelatedPostSummaryListHtmlComponent());
     this.components.push(new PostCommentListHtmlComponent());
   }
 
