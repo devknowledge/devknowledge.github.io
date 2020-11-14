@@ -4,7 +4,7 @@
 .post-summary-template {
   width: 100%;
   min-width: 0;
-  max-width: 42rem;
+  max-width: var(--post-summary-max-width);
   margin: 0 auto;
 }
 
@@ -14,7 +14,7 @@
   border-radius: 0.4rem;
   overflow: hidden;
   transition: var(--transition);
-  transition-property: background-color transform box-shadow;
+  transition-property: background-color, transform, box-shadow;
 
   &:hover {
     box-shadow: var(--box-shadow-02);

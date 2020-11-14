@@ -7,17 +7,18 @@
   --code-font-size: 1.3rem;
   --border-radius: 0.3rem;
   --main-max-width: 2000px;
+  --post-summary-max-width: 42rem;
 
   @media screen and (max-width: 426px) {
+    --post-summary-max-width: initial;
     --site-name-font-size: 2.5rem;
-    --post-summary-list-margin-top: 3rem;
+    --post-summary-list-margin-top: 4.5rem;
     --post-summary-grid-gap: 3rem;
-    --main-width: 100%;
     --main-width: 90%;
-    --font-size: 45%;
+    --font-size: 48%;
     --post-summary-columns: 1;
     --post-padding: 3rem;
-    --post-margin: 2rem auto;
+    --post-margin: 0;
     --post-title-font-size: 6rem;
     --post-additional-info-margin-top: 5rem;
     --welcome-message-margin-top: 3rem;
@@ -33,7 +34,6 @@
     --site-name-font-size: 2.8rem;
     --post-summary-list-margin-top: 6rem;
     --post-summary-grid-gap: 2rem;
-    --main-width: 100%;
     --main-width: 85%;
     --font-size: 52%;
     --post-summary-columns: 2;

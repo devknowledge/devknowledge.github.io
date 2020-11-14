@@ -1,5 +1,14 @@
 @import 'mixin';
 
+:root {
+  @media screen and (max-width: 426px) {
+    --main-width: 100%;
+    & .post {
+      box-shadow: none;
+    }
+  }
+}
+
 .post {
   margin: var(--post-margin);
   box-shadow: var(--box-shadow-01);
