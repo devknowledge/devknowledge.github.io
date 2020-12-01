@@ -115,6 +115,8 @@ body.light {
   --load-more-posts-color-on-hover: var(--white-color);
   --load-more-posts-background-color-on-hover: var(--secondary-color);
   --load-more-posts-border-color-on-hover: var(--secondary-color);
+  --blockquote-color: #6a737d;
+  --blockquote-border-color: var(--border-color);
 }
 
 body.dark {
@@ -234,4 +236,6 @@ body.dark {
   --load-more-posts-color-on-hover: var(--white-color);
   --load-more-posts-background-color-on-hover: var(--secondary-color);
   --load-more-posts-border-color-on-hover: var(--secondary-color);
+  --blockquote-color: #6a737d;
+  --blockquote-border-color: var(--border-color);
 }
