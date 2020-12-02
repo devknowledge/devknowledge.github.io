@@ -1,7 +1,7 @@
 ---
 permalink: email/email-end-mission-example
 layout: post
-title: 'Email end mission example'
+title: 'Email end-mission example'
 tags:
   - email
 category: email
