@@ -2,6 +2,7 @@
 permalink: email/email-end-mission-example
 layout: post
 title: 'Email end-mission example'
+excerpt: 'In this post I am going to share with you the mail that I send at the of a mission to the team'
 tags:
   - email
 category: email

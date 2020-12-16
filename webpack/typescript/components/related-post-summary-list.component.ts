@@ -1,12 +1,7 @@
-import { BaseStaticHtmlComponent } from "./component.interface";
-import { RelatedPostSummaryHtmlComponent } from "./related-post-summary.component";
+import { BaseStaticHtmlComponent } from './component.interface';
+import { RelatedPostSummaryHtmlComponent } from './related-post-summary.component';
 
 export class RelatedPostSummaryListHtmlComponent extends BaseStaticHtmlComponent {
-
-  constructor() {
-    super();
-  }
-  
   toHtml() {
     try {
       return /* html */ `
@@ -20,13 +15,17 @@ export class RelatedPostSummaryListHtmlComponent extends BaseStaticHtmlComponent
     }
   }
 
+  postInsertHtml() {
+    if (window.jekyll.relatedPosts.length == 0) {
+      document.querySelector('.related-posts-wrapper').classList.add('hide');
+    }
+  }
+
   private getRelatedPostsHtml() {
     let res = '';
-    window.jekyll.relatedPosts.forEach(relatedPost => {
+    window.jekyll.relatedPosts.forEach((relatedPost) => {
       res += new RelatedPostSummaryHtmlComponent(relatedPost).toHtml();
     });
     return res;
   }
-
 }
-

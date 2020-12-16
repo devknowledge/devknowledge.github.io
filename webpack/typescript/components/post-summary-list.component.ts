@@ -1,13 +1,12 @@
-import { PostSummary } from "../models/post-summary.model";
-import { BaseHtmlComponent } from "./component.interface";
-import { DISPLAYED_POSTS_CHANGE_EVENT_NAME, FILTER_POSTS_EVENT_NAME, LOAD_MORE_POSTS_EVENT_NAME } from "../constants/events.constants";
-import { PostSummaryTemplateHtmlComponent } from "./post-summary-template.component";
-import { PostSummaryHtmlComponent } from "./post-summary.component";
+import { PostSummary } from '../models/post-summary.model';
+import { BaseHtmlComponent } from './component.interface';
+import { DISPLAYED_POSTS_CHANGE_EVENT_NAME, FILTER_POSTS_EVENT_NAME, LOAD_MORE_POSTS_EVENT_NAME } from '../constants/events.constants';
+import { PostSummaryTemplateHtmlComponent } from './post-summary-template.component';
+import { PostSummaryHtmlComponent } from './post-summary.component';
 
 const POST_SUMMARY_LIST_ID = 'POST_SUMMARY_LIST_ID';
 
 export class PostSummaryListHtmlComponent extends BaseHtmlComponent {
-
   private postSummaryTemplate: PostSummaryTemplateHtmlComponent;
   private allPosts: Array<PostSummary>;
   private filteredPosts: Array<PostSummary>;
@@ -47,7 +46,7 @@ export class PostSummaryListHtmlComponent extends BaseHtmlComponent {
   private filterBySelectedCategories(posts, selectedCategoriesLowercase) {
     return posts.filter((post) => selectedCategoriesLowercase.includes(post.category));
   }
-  
+
   private filterByTextInput(posts, textInput) {
     if (textInput) {
       const textInputWords = textInput.split(/\s+/).map((word) => word.toLowerCase());
@@ -68,7 +67,7 @@ export class PostSummaryListHtmlComponent extends BaseHtmlComponent {
     this.displayedPosts = this.filteredPosts.slice(0, this.maxDisplayedPostsNumber);
     this.loadPosts(2000);
   }
-  
+
   private initClassAttributes() {
     this.postSummaryTemplate = new PostSummaryTemplateHtmlComponent();
     this.postSummaryListDomElement = document.getElementById(POST_SUMMARY_LIST_ID);
@@ -90,8 +89,8 @@ export class PostSummaryListHtmlComponent extends BaseHtmlComponent {
   }
 
   getLoadPostsMaxNumber(): number {
-    let divisor = (this.postsColumnsNumber < 3) ? 4 : this.postsColumnsNumber;
-    return Math.floor(this.allPosts.length / divisor);
+    let divisor = this.postsColumnsNumber < 3 ? 4 : this.postsColumnsNumber;
+    return Math.floor(this.allPosts.length / divisor) + (divisor - (Math.floor(this.allPosts.length / divisor) % divisor));
   }
 
   private loadPosts(delay: number) {
@@ -148,9 +147,7 @@ export class PostSummaryListHtmlComponent extends BaseHtmlComponent {
       this.dispatchCustomEvent(DISPLAYED_POSTS_CHANGE_EVENT_NAME, {
         displayedPostsCount: this.displayedPosts.length,
         filteredPostsCount: this.filteredPosts.length,
-      })
+      });
     }, 0);
   }
-
 }
-
