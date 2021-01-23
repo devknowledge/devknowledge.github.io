@@ -32,6 +32,7 @@ body.light {
 
   --navbar-background-color: var(--background-color-01);
   --navbar-box-shadow: var(--box-shadow-01);
+  --post-image-box-shadow: var(--box-shadow-01);
 
   --icon-color: var(--text-color-03);
 
@@ -44,7 +45,7 @@ body.light {
   --post-background-color: var(--background-color-02);
   --post-title-color: var(--text-color-02);
   --post-title-border-color: var(--border-color);
-  --post-date-color: var(--text-color-04);
+  --post-additional-info-color: var(--text-color-04);
   --post-code-background-color: var(--background-color-03);
   --related-posts-background-color: var(--background-color-02);
   --related-post-background-color-on-hover: var(--background-color-03);
@@ -153,6 +154,7 @@ body.dark {
 
   --navbar-background-color: var(--background-color-01);
   --navbar-box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+  --post-image-box-shadow: var(--box-shadow-01);
 
   --icon-color: var(--text-color-03);
 
@@ -165,7 +167,7 @@ body.dark {
   --post-background-color: var(--background-color-02);
   --post-title-color: var(--text-color-02);
   --post-title-border-color: var(--border-color);
-  --post-date-color: var(--text-color-04);
+  --post-additional-info-color: var(--text-color-04);
   --post-code-background-color: var(--background-color-03);
   --related-posts-background-color: var(--background-color-02);
   --related-post-background-color-on-hover: var(--background-color-03);

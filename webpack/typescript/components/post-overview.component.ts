@@ -1,9 +1,7 @@
-import { Post } from "../models/post.model";
-import { BaseStaticHtmlComponent } from "./component.interface";
-import { TagListHtmlComponent } from "./tag-list.component";
+import { Post } from '../models/post.model';
+import { BaseStaticHtmlComponent } from './component.interface';
 
 export class PostOverviewHtmlComponent extends BaseStaticHtmlComponent {
-
   private post: Post;
 
   constructor() {
@@ -17,10 +15,12 @@ export class PostOverviewHtmlComponent extends BaseStaticHtmlComponent {
         <div class="post__overview">
           <h1 class="post__title">${this.post.title}</h1>
           <div class="post__additional-info">
-            <div class="post__tags">
-              ${new TagListHtmlComponent(this.post.tags).toHtml()}
+            <div class="post__additional-info__left">
+              <span class="iconify" data-icon="mdi:account-edit" data-inline="false"></span>
+              <a href="${this.post.authorProfile}" target="_blank">${this.post.author}</a>
             </div>
-            <div class="post__date">
+            <div class="post__additional-info__right">
+              <span class="iconify" data-icon="clarity:date-line" data-inline="false"></span>
               <time>${this.post.date}</time>
             </div>
           </div>
@@ -30,6 +30,4 @@ export class PostOverviewHtmlComponent extends BaseStaticHtmlComponent {
       console.error('error while executing PostOverviewHtmlComponent.toHtml() method. error: ' + error);
     }
   }
-
 }
-

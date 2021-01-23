@@ -1,12 +1,11 @@
-import { PostSummary } from "../models/post-summary.model";
-import { BaseStaticHtmlComponent } from "./component.interface";
+import { PostSummary } from '../models/post-summary.model';
+import { BaseStaticHtmlComponent } from './component.interface';
 
 export class PostSummaryHtmlComponent extends BaseStaticHtmlComponent {
-
   constructor(private post: PostSummary) {
     super();
   }
-  
+
   toHtml() {
     try {
       return /* html */ `
@@ -46,6 +45,4 @@ export class PostSummaryHtmlComponent extends BaseStaticHtmlComponent {
     this.post.tags.forEach((tag) => (res += `<span class="tag">${tag}</span>`));
     return res;
   }
-
 }
-

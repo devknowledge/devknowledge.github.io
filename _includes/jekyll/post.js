@@ -3,6 +3,8 @@ window.jekyll = {};
 window.jekyll.post = {}
 window.jekyll.post.title = '{{ page.title }}';
 window.jekyll.post.tags = getPostTags('{{ page.tags | join:' ' }}');
+window.jekyll.post.author = '{{ page.author }}';
+window.jekyll.post.authorProfile = '{{ page.author_profile }}';
 window.jekyll.post.date = '{{ page.date | date: '%B %d, %Y' }}';
 window.jekyll.post.content = {{ content | jsonify }};
 
