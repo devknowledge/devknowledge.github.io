@@ -1,5 +1,5 @@
-import { BaseHtmlComponent } from "./component.interface";
-import { FILTER_POSTS_EVENT_NAME } from "../constants/events.constants";
+import { BaseHtmlComponent } from './component.interface';
+import { FILTER_POSTS_EVENT_NAME } from '../constants/events.constants';
 
 const SEARCH_POSTS_INPUT_ID = 'SEARCH_POSTS_INPUT_ID';
 const ADVANCED_SEARCH_PANEL_ID = 'ADVANCED_SEARCH_PANEL_ID';
@@ -10,7 +10,6 @@ const UNSELECT_ALL_CATEGORIES_BUTTON_ID = 'UNSELECT_ALL_CATEGORIES_BUTTON_ID';
 const ALL_CATEGORIES_QUERY_SELECTOR = '.search-wrapper .category';
 
 export class PostSearchHtmlComponent extends BaseHtmlComponent {
-
   private searchPostsInputDomElement: HTMLInputElement;
   private advancedSearchPanelDomElement: HTMLElement;
   private closeAdvancedSearchPanelButtonDomElement: HTMLElement;
@@ -58,9 +57,9 @@ export class PostSearchHtmlComponent extends BaseHtmlComponent {
   }
 
   private renderCategories() {
-    let res = '';
+    let res = '<span class="categories-wrapper">';
     window.jekyll.categories.forEach((category) => (res += `<span class="category">${category}</span>`));
-    return res;
+    return res + '</span>';
   }
 
   private initClassAttributes() {
@@ -154,6 +153,4 @@ export class PostSearchHtmlComponent extends BaseHtmlComponent {
       searchInputText: this.searchPostsInputDomElement.value,
     });
   }
-
 }
-

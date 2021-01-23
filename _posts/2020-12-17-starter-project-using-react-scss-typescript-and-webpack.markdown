@@ -140,4 +140,4 @@ In this post you can find a starter project using React, Scss, Typescript and We
 
 You can also find the source code in my github [repository](https://github.com/ahenteti/starter-project-using-react-scss-typescript-and-webpack)
 
-I hope you find it useful.
+I hope you find it useful

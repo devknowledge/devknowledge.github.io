@@ -69,7 +69,14 @@
   display: none;
 }
 
+.search-wrapper .advanced-search-inputs-wrapper .categories-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 .search-wrapper .advanced-search-inputs-wrapper .category {
   cursor: pointer;
   margin-right: 0.75rem;
+  margin-bottom: 0.75rem;
 }
