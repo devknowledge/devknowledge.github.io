@@ -44,6 +44,12 @@
   background-color: var(--active-tab-link-color);
 }
 
+.tab-content-wrapper {
+  overflow: scroll;
+  max-height: 50rem;
+  margin-bottom: 1.6rem;
+}
+
 /* Style the tab content */
 .tab-content {
   display: none;

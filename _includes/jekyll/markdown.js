@@ -8,7 +8,7 @@ function formatCodeTabs() {
     try {
       const tabsContentsId = 'tas-contents-id-' + Date.now() + Math.floor(Math.random() * 100);
       let tabsLinks = '<div class="tab-links">';
-      let tabsContents = `<div>`;
+      let tabsContents = `<div class="tab-content-wrapper">`;
       codeTabs.querySelectorAll('li').forEach((codeTab) => {
         const tabName = codeTab.querySelector('p').textContent;
         const tabId = tabName + '-' + tabsContentsId;
