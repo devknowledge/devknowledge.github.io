@@ -38,7 +38,7 @@ And here are the steps that went through to upload my first JAR:
 
    and upload it using the [GPG Key Server](https://keyserver.ubuntu.com/)
 
-4. Create a Java project to share
+4. Create a maven project
 
    Here my **hello-world** project
 
