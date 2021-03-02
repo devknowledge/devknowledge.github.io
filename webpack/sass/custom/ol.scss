@@ -1,0 +1,26 @@
+@import 'mixin';
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+
+.markdown {
+  & ol {
+    counter-reset: my-awesome-counter;
+    list-style: none;
+    padding-left: 4.5rem;
+  }
+
+  & ol li {
+    margin-top: 2rem;
+    counter-increment: my-awesome-counter;
+    position: relative;
+  }
+
+  & ol li::before {
+    content: counter(my-awesome-counter) '.';
+    font-weight: bold;
+    font-family: 'Abril Fatface', serif;
+    position: absolute;
+    font-size: 3.2rem;
+    left: -3.5rem;
+    top: -1.6rem;
+  }
+}
