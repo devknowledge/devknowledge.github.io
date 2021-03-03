@@ -25,67 +25,67 @@ Nowadays, in software engineering, when we what to add a feature in our software
 
 Today, we are going to publish our first NPM package, so other people can be reused and here the steps that I have followed to achieve that:
 
-- Create an account on the NPM public registry. Here is the NPM [documentation](https://docs.npmjs.com/creating-a-new-npm-user-account) on how to create your account
+1. Create an account on the NPM public registry. Here is the NPM [documentation](https://docs.npmjs.com/creating-a-new-npm-user-account) on how to create your account
 
-- Create a folder with the following files:
+2. Create a folder with the following files:
 
-  <p class="code-tabs"></p>
+   <p class="code-tabs"></p>
 
-  - package.json
+   - package.json
 
-    ```json
-    {
-      "name": "@ahenteti/hello-npm",
-      "version": "1.0.0",
-      "description": "Hello NPM from @ahenteti",
-      "main": "index.js",
-      "type": "module",
-      "keywords": ["hello-npm"],
-      "author": "Ahmed HENTETI (https://ahenteti.github.io)",
-      "license": "MIT",
-      "scripts": {},
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/ahenteti/hello-npm.git"
-      }
-    }
-    ```
+     ```json
+     {
+       "name": "@ahenteti/hello-npm",
+       "version": "1.0.0",
+       "description": "Hello NPM from @ahenteti",
+       "main": "index.js",
+       "type": "module",
+       "keywords": ["hello-npm"],
+       "author": "Ahmed HENTETI (https://ahenteti.github.io)",
+       "license": "MIT",
+       "scripts": {},
+       "repository": {
+         "type": "git",
+         "url": "https://github.com/ahenteti/hello-npm.git"
+       }
+     }
+     ```
 
-  - index.js
+   - index.js
 
-    ```js
-    const helloNpm = () => {
-      console.log('hello npm!');
-    };
+     ```js
+     const helloNpm = () => {
+       console.log('hello npm!');
+     };
 
-    export default helloNpm;
-    ```
+     export default helloNpm;
+     ```
 
-  - README.md
+   - README.md
 
-    ```md
-    ## Hello NPM from @ahenteti
+     ```md
+     ## Hello NPM from @ahenteti
 
-    ## Installation
+     ## Installation
 
-    Run `npm install @ahenteti/hello-npm`
+     Run `npm install @ahenteti/hello-npm`
 
-    ## Usage
+     ## Usage
 
-    \`\`\`
+     \`\`\`
 
-    import hello from @ahenteti/hello-npm
+     import hello from @ahenteti/hello-npm
 
-    hello();
+     hello();
 
-    \`\`\`
-    ```
+     \`\`\`
+     ```
 
-  The `package.json` file is the entry point of our package where we define properties like the **name**, **description**, ... of the package
+   The `package.json` file is the entry point of our package where we define properties like the **name**, **description**, ... of the package
 
-  For instance, the property **main** points to the file **index.js** where we define the logic of our package.
+   For instance, the property **main** points to the file **index.js** where we define the logic of our package.
 
-- When ready, run the command `npm publish --access=public` to publish your package
+3. When ready, run the command `npm publish --access=public` to publish your package
 
 Voilà, now you can check your NPM account and verify your package
 ![npm-registry.png](/assets/how-to-publish-npm-package/npm-registry.png)

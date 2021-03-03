@@ -183,7 +183,7 @@ And here are the steps that went through to upload my first JAR:
 
 <br/>
 
-Voilà, after a few moments, you can find your JAR in [Maven Central](https://search.maven.org/)
+Voilà, after a few moments, you can find your JAR in [Maven Central](https://search.maven.org/) :)
 ![maven-repo.png](/assets/how-to-upload-jar-to-maven-central/maven-repo.png)
 
 I hope you find it useful
